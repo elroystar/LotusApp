@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="machine_1" type="id" />
+    <item name="machine_2" type="id" />
+    <item name="machine_3" type="id" />
+    <item name="machine_4" type="id" />
+    <item name="machine_5" type="id" />
+    <item name="machine_6" type="id" />
+    <item name="machine_7" type="id" />
+    <item name="machine_8" type="id" />
+    <item name="machine_9" type="id" />
+    <item name="machine_10" type="id" />
+    <item name="machine_11" type="id" />
+    <item name="machine_12" type="id" />
+    <item name="machine_13" type="id" />
+    <item name="machine_14" type="id" />
+    <item name="machine_15" type="id" />
+    <item name="machine_16" type="id" />
+    <item name="machine_17" type="id" />
+</resources>

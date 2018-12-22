@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="1920px"
+    android:layout_height="1080px"
+    android:orientation="vertical"
+    tools:context=".B09Activity">
+
+    <FrameLayout
+        android:layout_width="445px"
+        android:layout_height="230px"
+        android:layout_gravity="top|left"
+        android:layout_marginLeft="100px"
+        android:layout_marginTop="748px"
+        android:background="@drawable/bt_shape">
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="210px"
+        android:layout_height="210px"
+        android:layout_gravity="top|left"
+        android:layout_marginLeft="645px"
+        android:layout_marginTop="698px"
+        android:background="@drawable/bt_shape">
+
+        <TextView
+            android:id="@+id/b09_machine_num"
+            android:layout_width="100px"
+            android:layout_height="100px"
+            android:textSize="25sp"
+            android:textColor="@android:color/white"
+            android:layout_gravity="center"
+            android:background="@color/green"/>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="210px"
+        android:layout_height="210px"
+        android:layout_gravity="top|left"
+        android:layout_marginLeft="855px"
+        android:layout_marginTop="698px"
+        android:background="@drawable/bt_shape">
+
+        <TextView
+            android:id="@+id/bt_drying"
+            android:layout_width="100px"
+            android:layout_height="100px"
+            android:text="甩干"
+            android:textSize="25sp"
+            android:textColor="@android:color/white"
+            android:layout_gravity="center"
+            android:background="@color/green"/>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="210px"
+        android:layout_height="210px"
+        android:layout_gravity="top|left"
+        android:layout_marginLeft="1065px"
+        android:layout_marginTop="698px"
+        android:background="@drawable/bt_shape">
+
+        <TextView
+            android:id="@+id/bt_rinse"
+            android:layout_width="100px"
+            android:layout_height="100px"
+            android:text="漂洗"
+            android:textSize="25sp"
+            android:textColor="@android:color/white"
+            android:layout_gravity="center"
+            android:background="@color/green"/>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="210px"
+        android:layout_height="210px"
+        android:layout_gravity="top|left"
+        android:layout_marginLeft="1275px"
+        android:layout_marginTop="698px"
+        android:background="@drawable/bt_shape">
+
+        <TextView
+            android:id="@+id/bt_cowboy"
+            android:layout_width="100px"
+            android:layout_height="100px"
+            android:text="牛仔"
+            android:textSize="25sp"
+            android:textColor="@android:color/white"
+            android:layout_gravity="center"
+            android:background="@color/green"/>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="210px"
+        android:layout_height="210px"
+        android:layout_gravity="top|left"
+        android:layout_marginLeft="1485px"
+        android:layout_marginTop="698px"
+        android:background="@drawable/bt_shape">
+
+        <TextView
+            android:id="@+id/bt_sheets"
+            android:layout_width="100px"
+            android:layout_height="100px"
+            android:text="被单"
+            android:textSize="25sp"
+            android:textColor="@android:color/white"
+            android:layout_gravity="center"
+            android:background="@color/green"/>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="210px"
+        android:layout_height="210px"
+        android:layout_gravity="top|left"
+        android:layout_marginLeft="1695px"
+        android:layout_marginTop="698px"
+        android:background="@drawable/bt_shape">
+
+        <TextView
+            android:id="@+id/bt_standard"
+            android:layout_width="100px"
+            android:layout_height="100px"
+            android:text="标准"
+            android:textSize="25sp"
+            android:textColor="@android:color/white"
+            android:layout_gravity="center"
+            android:background="@color/green"/>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="210px"
+        android:layout_height="210px"
+        android:layout_gravity="top|left"
+        android:layout_marginLeft="750px"
+        android:layout_marginTop="855px"
+        android:background="@drawable/bt_shape">
+
+        <TextView
+            android:id="@+id/bt_water"
+            android:layout_width="100px"
+            android:layout_height="100px"
+            android:text="加水"
+            android:textSize="25sp"
+            android:textColor="@android:color/white"
+            android:layout_gravity="center"
+            android:background="@color/green"/>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="210px"
+        android:layout_height="210px"
+        android:layout_gravity="top|left"
+        android:layout_marginLeft="960px"
+        android:layout_marginTop="855px"
+        android:background="@drawable/bt_shape">
+
+        <TextView
+            android:id="@+id/bt_washing_liquid"
+            android:layout_width="100px"
+            android:layout_height="100px"
+            android:text="洗液"
+            android:textSize="25sp"
+            android:textColor="@android:color/white"
+            android:layout_gravity="center"
+            android:background="@color/green"/>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="210px"
+        android:layout_height="210px"
+        android:layout_gravity="top|left"
+        android:layout_marginLeft="1170px"
+        android:layout_marginTop="855px"
+        android:background="@drawable/bt_shape">
+
+        <TextView
+            android:id="@+id/bt_softening"
+            android:layout_width="100px"
+            android:layout_height="100px"
+            android:text="柔顺"
+            android:textSize="25sp"
+            android:textColor="@android:color/white"
+            android:layout_gravity="center"
+            android:background="@color/green"/>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="210px"
+        android:layout_height="210px"
+        android:layout_gravity="top|left"
+        android:layout_marginLeft="1380px"
+        android:layout_marginTop="855px"
+        android:background="@drawable/bt_shape">
+
+        <TextView
+            android:id="@+id/bt_disinfection_ing"
+            android:layout_width="100px"
+            android:layout_height="100px"
+            android:text="中消"
+            android:textSize="25sp"
+            android:textColor="@android:color/white"
+            android:layout_gravity="center"
+            android:background="@color/green"/>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="210px"
+        android:layout_height="210px"
+        android:layout_gravity="top|left"
+        android:layout_marginLeft="1590px"
+        android:layout_marginTop="855px"
+        android:background="@drawable/bt_shape">
+
+        <TextView
+            android:id="@+id/bt_disinfection_before"
+            android:layout_width="100px"
+            android:layout_height="100px"
+            android:text="前消"
+            android:textSize="25sp"
+            android:textColor="@android:color/white"
+            android:layout_gravity="center"
+            android:background="@color/green"/>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="600px"
+        android:layout_height="76px"
+        android:layout_gravity="top|left"
+        android:layout_marginLeft="797px"
+        android:layout_marginTop="133px"
+        android:background="@drawable/bt_shape">
+
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="300px"
+        android:layout_height="150px"
+        android:layout_gravity="top|left"
+        android:layout_marginLeft="1425px"
+        android:layout_marginTop="80px"
+        android:background="@drawable/bt_shape">
+
+        <TextView
+            android:id="@+id/mobile_price"
+            android:textSize="55sp"
+            android:textColor="@android:color/black"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="133px"
+        android:layout_height="50px"
+        android:layout_gravity="top|left"
+        android:layout_marginLeft="1747px"
+        android:layout_marginTop="161px"
+        android:background="@drawable/bt_shape">
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="495px"
+        android:layout_height="99px"
+        android:layout_gravity="top|left"
+        android:layout_marginLeft="900px"
+        android:layout_marginTop="333px"
+        android:background="@drawable/bt_shape">
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="300px"
+        android:layout_height="150px"
+        android:layout_gravity="top|left"
+        android:layout_marginLeft="1425px"
+        android:layout_marginTop="283px"
+        android:background="@drawable/bt_shape">
+
+        <TextView
+            android:id="@+id/coin_price"
+            android:textSize="55sp"
+            android:textColor="@android:color/black"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="133px"
+        android:layout_height="50px"
+        android:layout_gravity="top|left"
+        android:layout_marginLeft="1747px"
+        android:layout_marginTop="363px"
+        android:background="@drawable/bt_shape">
+
+    </FrameLayout>
+
+</FrameLayout>

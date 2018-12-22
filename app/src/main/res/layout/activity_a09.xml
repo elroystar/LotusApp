@@ -1,0 +1,509 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="1920px"
+    android:layout_height="1080px"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="698px"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:layout_width="180px"
+            android:layout_height="180px"
+            android:layout_gravity="top|left"
+            android:layout_marginLeft="870px"
+            android:layout_marginTop="300px"
+            android:background="@drawable/bt_shape">
+
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="400px"
+            android:layout_height="50px"
+            android:layout_gravity="top|left"
+            android:layout_marginLeft="1505px"
+            android:layout_marginTop="50px"
+            android:background="@drawable/bt_shape">
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="100px"
+            android:layout_height="100px"
+            android:layout_gravity="top|left"
+            android:layout_marginLeft="1505px"
+            android:layout_marginTop="100px"
+            android:background="@drawable/bt_shape">
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="100px"
+            android:layout_height="100px"
+            android:layout_gravity="top|left"
+            android:layout_marginLeft="1605px"
+            android:layout_marginTop="100px"
+            android:background="@drawable/bt_shape">
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="100px"
+            android:layout_height="100px"
+            android:layout_gravity="top|left"
+            android:layout_marginLeft="1705px"
+            android:layout_marginTop="100px"
+            android:background="@drawable/bt_shape">
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="100px"
+            android:layout_height="100px"
+            android:layout_gravity="top|left"
+            android:layout_marginLeft="1805px"
+            android:layout_marginTop="100px"
+            android:background="@drawable/bt_shape">
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="100px"
+            android:layout_height="100px"
+            android:layout_gravity="top|left"
+            android:layout_marginLeft="1505px"
+            android:layout_marginTop="200px"
+            android:background="@drawable/bt_shape">
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="100px"
+            android:layout_height="100px"
+            android:layout_gravity="top|left"
+            android:layout_marginLeft="1605px"
+            android:layout_marginTop="200px"
+            android:background="@drawable/bt_shape">
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="100px"
+            android:layout_height="100px"
+            android:layout_gravity="top|left"
+            android:layout_marginLeft="1705px"
+            android:layout_marginTop="200px"
+            android:background="@drawable/bt_shape">
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="100px"
+            android:layout_height="100px"
+            android:layout_gravity="top|left"
+            android:layout_marginLeft="1805px"
+            android:layout_marginTop="200px"
+            android:background="@drawable/bt_shape">
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="100px"
+            android:layout_height="100px"
+            android:layout_gravity="top|left"
+            android:layout_marginLeft="1505px"
+            android:layout_marginTop="300px"
+            android:background="@drawable/bt_shape">
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="100px"
+            android:layout_height="100px"
+            android:layout_gravity="top|left"
+            android:layout_marginLeft="1605px"
+            android:layout_marginTop="300px"
+            android:background="@drawable/bt_shape">
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="100px"
+            android:layout_height="100px"
+            android:layout_gravity="top|left"
+            android:layout_marginLeft="1705px"
+            android:layout_marginTop="300px"
+            android:background="@drawable/bt_shape">
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="100px"
+            android:layout_height="100px"
+            android:layout_gravity="top|left"
+            android:layout_marginLeft="1805px"
+            android:layout_marginTop="300px"
+            android:background="@drawable/bt_shape">
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="265px"
+            android:layout_height="83px"
+            android:layout_gravity="top|left"
+            android:layout_marginLeft="1538px"
+            android:layout_marginTop="407px"
+            android:background="@drawable/bt_shape">
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="102px"
+            android:layout_height="83px"
+            android:layout_gravity="top|left"
+            android:layout_marginLeft="1803px"
+            android:layout_marginTop="407px"
+            android:background="@drawable/bt_shape">
+
+        </FrameLayout>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:visibility="invisible"
+            android:id="@+id/frame_machine_a"
+            android:layout_width="210px"
+            android:layout_height="210px"
+            android:layout_gravity="top|left"
+            android:layout_marginLeft="15px"
+            android:background="@drawable/bt_shape">
+
+            <ImageView
+                android:layout_width="130px"
+                android:layout_height="130px"
+                android:layout_gravity="center"
+                android:background="@drawable/bt_shape"/>
+
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:visibility="invisible"
+            android:id="@+id/frame_machine_b"
+            android:layout_width="210px"
+            android:layout_height="210px"
+            android:layout_gravity="top|left"
+            android:layout_marginLeft="225px"
+            android:background="@drawable/bt_shape">
+
+            <ImageView
+                android:layout_width="130px"
+                android:layout_height="130px"
+                android:layout_gravity="center"
+                android:background="@drawable/bt_shape"/>
+
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:visibility="invisible"
+            android:id="@+id/frame_machine_c"
+            android:layout_width="210px"
+            android:layout_height="210px"
+            android:layout_gravity="top|left"
+            android:layout_marginLeft="435px"
+            android:background="@drawable/bt_shape">
+
+            <ImageView
+                android:layout_width="130px"
+                android:layout_height="130px"
+                android:layout_gravity="center"
+                android:background="@drawable/bt_shape"/>
+
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:visibility="invisible"
+            android:id="@+id/frame_machine_d"
+            android:layout_width="210px"
+            android:layout_height="210px"
+            android:layout_gravity="top|left"
+            android:layout_marginLeft="645px"
+            android:background="@drawable/bt_shape">
+
+            <ImageView
+                android:layout_width="130px"
+                android:layout_height="130px"
+                android:layout_gravity="center"
+                android:background="@drawable/bt_shape"/>
+
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:visibility="invisible"
+            android:id="@+id/frame_machine_e"
+            android:layout_width="210px"
+            android:layout_height="210px"
+            android:layout_gravity="top|left"
+            android:layout_marginLeft="855px"
+            android:background="@drawable/bt_shape">
+
+            <ImageView
+                android:layout_width="130px"
+                android:layout_height="130px"
+                android:layout_gravity="center"
+                android:background="@drawable/bt_shape"/>
+
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:visibility="invisible"
+            android:id="@+id/frame_machine_f"
+            android:layout_width="210px"
+            android:layout_height="210px"
+            android:layout_gravity="top|left"
+            android:layout_marginLeft="1065px"
+            android:background="@drawable/bt_shape">
+
+            <ImageView
+                android:layout_width="130px"
+                android:layout_height="130px"
+                android:layout_gravity="center"
+                android:background="@drawable/bt_shape"/>
+
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:visibility="invisible"
+            android:id="@+id/frame_machine_g"
+            android:layout_width="210px"
+            android:layout_height="210px"
+            android:layout_gravity="top|left"
+            android:layout_marginLeft="1275px"
+            android:background="@drawable/bt_shape">
+
+            <ImageView
+                android:layout_width="130px"
+                android:layout_height="130px"
+                android:layout_gravity="center"
+                android:background="@drawable/bt_shape"/>
+
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:visibility="invisible"
+            android:id="@+id/frame_machine_h"
+            android:layout_width="210px"
+            android:layout_height="210px"
+            android:layout_gravity="top|left"
+            android:layout_marginLeft="1485px"
+            android:background="@drawable/bt_shape">
+
+            <ImageView
+                android:layout_width="130px"
+                android:layout_height="130px"
+                android:layout_gravity="center"
+                android:background="@drawable/bt_shape"/>
+
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:visibility="invisible"
+            android:id="@+id/frame_machine_i"
+            android:layout_width="210px"
+            android:layout_height="210px"
+            android:layout_gravity="top|left"
+            android:layout_marginLeft="1695px"
+            android:background="@drawable/bt_shape">
+
+            <ImageView
+                android:layout_width="130px"
+                android:layout_height="130px"
+                android:layout_gravity="center"
+                android:background="@drawable/bt_shape"/>
+
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:visibility="invisible"
+            android:id="@+id/frame_machine_j"
+            android:layout_width="210px"
+            android:layout_height="210px"
+            android:layout_gravity="bottom|left"
+            android:layout_marginLeft="120px"
+            android:background="@drawable/bt_shape">
+
+            <ImageView
+                android:layout_width="130px"
+                android:layout_height="130px"
+                android:layout_gravity="center"
+                android:background="@drawable/bt_shape"/>
+
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:visibility="invisible"
+            android:id="@+id/frame_machine_k"
+            android:layout_width="210px"
+            android:layout_height="210px"
+            android:layout_gravity="bottom|left"
+            android:layout_marginLeft="330px"
+            android:background="@drawable/bt_shape">
+
+            <ImageView
+                android:layout_width="130px"
+                android:layout_height="130px"
+                android:layout_gravity="center"
+                android:background="@drawable/bt_shape"/>
+
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:visibility="invisible"
+            android:id="@+id/frame_machine_l"
+            android:layout_width="210px"
+            android:layout_height="210px"
+            android:layout_gravity="bottom|left"
+            android:layout_marginLeft="540px"
+            android:background="@drawable/bt_shape">
+
+            <ImageView
+                android:layout_width="130px"
+                android:layout_height="130px"
+                android:layout_gravity="center"
+                android:background="@drawable/bt_shape"/>
+
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:visibility="invisible"
+            android:id="@+id/frame_machine_m"
+            android:layout_width="210px"
+            android:layout_height="210px"
+            android:layout_gravity="bottom|left"
+            android:layout_marginLeft="750px"
+            android:background="@drawable/bt_shape">
+
+            <ImageView
+                android:layout_width="130px"
+                android:layout_height="130px"
+                android:layout_gravity="center"
+                android:background="@drawable/bt_shape"/>
+
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:visibility="invisible"
+            android:id="@+id/frame_machine_n"
+            android:layout_width="210px"
+            android:layout_height="210px"
+            android:layout_gravity="bottom|left"
+            android:layout_marginLeft="960px"
+            android:background="@drawable/bt_shape">
+
+            <ImageView
+                android:layout_width="130px"
+                android:layout_height="130px"
+                android:layout_gravity="center"
+                android:background="@drawable/bt_shape"/>
+
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:visibility="invisible"
+            android:id="@+id/frame_machine_o"
+            android:layout_width="210px"
+            android:layout_height="210px"
+            android:layout_gravity="bottom|left"
+            android:layout_marginLeft="1170px"
+            android:background="@drawable/bt_shape">
+
+            <ImageView
+                android:layout_width="130px"
+                android:layout_height="130px"
+                android:layout_gravity="center"
+                android:background="@drawable/bt_shape"/>
+
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:visibility="invisible"
+            android:id="@+id/frame_machine_p"
+            android:layout_width="210px"
+            android:layout_height="210px"
+            android:layout_gravity="bottom|left"
+            android:layout_marginLeft="1380px"
+            android:background="@drawable/bt_shape">
+
+            <ImageView
+                android:layout_width="130px"
+                android:layout_height="130px"
+                android:layout_gravity="center"
+                android:background="@drawable/bt_shape"/>
+
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:visibility="invisible"
+            android:id="@+id/frame_machine_q"
+            android:layout_width="210px"
+            android:layout_height="210px"
+            android:layout_gravity="bottom|left"
+            android:layout_marginLeft="1590px"
+            android:background="@drawable/bt_shape">
+
+            <ImageView
+                android:layout_width="130px"
+                android:layout_height="130px"
+                android:layout_gravity="center"
+                android:background="@drawable/bt_shape"/>
+
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="100px"
+            android:layout_height="100px"
+            android:layout_gravity="bottom|right"
+            android:layout_marginLeft="1820px"
+            android:background="@drawable/bt_shape">
+
+            <ImageView
+                android:layout_width="100px"
+                android:layout_height="100px"
+                android:layout_gravity="center"
+                android:background="@drawable/bt_shape"/>
+
+
+        </FrameLayout>
+
+    </FrameLayout>
+
+</LinearLayout>
