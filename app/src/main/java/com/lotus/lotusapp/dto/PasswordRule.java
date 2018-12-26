@@ -16,13 +16,15 @@ public class PasswordRule implements Parcelable {
 
     private String state;
 
+    private String type;
+
     private Date createTime;
 
     public PasswordRule() {
 
     }
 
-    public PasswordRule(Parcel in) {
+    protected PasswordRule(Parcel in) {
         if (in.readByte() == 0) {
             id = null;
         } else {
@@ -30,6 +32,7 @@ public class PasswordRule implements Parcelable {
         }
         rule = in.readString();
         state = in.readString();
+        type = in.readString();
     }
 
     public static final Creator<PasswordRule> CREATOR = new Creator<PasswordRule>() {
@@ -68,6 +71,14 @@ public class PasswordRule implements Parcelable {
         this.state = state;
     }
 
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
     public Date getCreateTime() {
         return createTime;
     }
@@ -91,5 +102,6 @@ public class PasswordRule implements Parcelable {
         }
         dest.writeString(rule);
         dest.writeString(state);
+        dest.writeString(type);
     }
 }

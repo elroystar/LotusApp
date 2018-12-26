@@ -38,6 +38,7 @@ public class SQLiteDbHelper extends SQLiteOpenHelper {
             + "id integer primary key autoincrement,"
             + "rule varchar(6) not null,"
             + "state varchar(2) not null default '0',"
+            + "type varchar(2) not null,"
             + "create_time timestamp default (datetime('now','localtime'))"
             + ");";
     // 创建 password_rule 表的 sql 语句
@@ -77,7 +78,8 @@ public class SQLiteDbHelper extends SQLiteOpenHelper {
             + "update_time timestamp default (datetime('now','localtime'))"
             + ");";
     // 密码规则库默认规则333333
-    private static final String PASSWORD_RULE_INSERT_DEFAULT_SQL = "insert into password_rule(rule, state) values ('333333', '1')";
+    private static final String PASSWORD_RULE_INSERT_DEFAULT_SQL_C = "insert into password_rule(rule, state, type) values ('333333', '0', 'C')";
+    private static final String PASSWORD_RULE_INSERT_DEFAULT_SQL_D = "insert into password_rule(rule, state, type) values ('333333', '1', 'D')";
     // 测试数据
     private static final String WASHING_MACHINE_INSERT_TEST_SQL = "insert into washing_machine(num," +
             "cowboy_price_coin," +
@@ -113,9 +115,11 @@ public class SQLiteDbHelper extends SQLiteOpenHelper {
         // 创建 user 表
 //        db.execSQL(USER_CREATE_TABLE_SQL);
         // 创建 password_bank 表
-//        db.execSQL(PASSWORD_BANK_CREATE_TABLE_SQL);
+        db.execSQL(PASSWORD_BANK_CREATE_TABLE_SQL);
         // 创建 password_rule 表
-//        db.execSQL(PASSWORD_RULE_CREATE_TABLE_SQL);
+        db.execSQL(PASSWORD_RULE_CREATE_TABLE_SQL);
+        db.execSQL(PASSWORD_RULE_INSERT_DEFAULT_SQL_C);
+        db.execSQL(PASSWORD_RULE_INSERT_DEFAULT_SQL_D);
         // 添加默认密码规则
 //        db.execSQL(PASSWORD_RULE_INSERT_DEFAULT_SQL);
         // 创建 washing_machine 表
@@ -140,7 +144,7 @@ public class SQLiteDbHelper extends SQLiteOpenHelper {
         // 创建 password_rule 表
         db.execSQL(PASSWORD_RULE_CREATE_TABLE_SQL);
         // 添加默认密码规则
-        db.execSQL(PASSWORD_RULE_INSERT_DEFAULT_SQL);
+//        db.execSQL(PASSWORD_RULE_INSERT_DEFAULT_SQL);
         // 创建 washing_machine 表
         db.execSQL(WASHING_MACHINE_CREATE_TABLE_SQL);
         // 创建 coin_box表
