@@ -15,6 +15,17 @@
         android:layout_marginTop="214px"
         android:background="@drawable/bt_shape">
 
+        <TextView
+            android:id="@+id/tv_c"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bt_c_royal_blue_shape"
+            android:gravity="center"
+            android:text="C"
+            android:textColor="@android:color/white"
+            android:textSize="100sp" />
+
 
     </FrameLayout>
 
@@ -26,16 +37,58 @@
         android:layout_marginTop="548px"
         android:background="@drawable/bt_shape">
 
+        <TextView
+            android:id="@+id/tv_d"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bt_d_dark_voilet_shape"
+            android:gravity="center"
+            android:text="D"
+            android:textColor="@android:color/white"
+            android:textSize="100sp" />
+
 
     </FrameLayout>
 
     <FrameLayout
-        android:layout_width="400px"
+        android:layout_width="200px"
         android:layout_height="167px"
         android:layout_gravity="top|left"
         android:layout_marginLeft="603px"
         android:layout_marginTop="214px"
         android:background="@drawable/bt_shape">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bt_tv_royal_blue_shape"
+            android:gravity="center"
+            android:text="新密码"
+            android:textColor="@android:color/white"
+            android:textSize="25sp" />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="200px"
+        android:layout_height="167px"
+        android:layout_gravity="top|left"
+        android:layout_marginLeft="803px"
+        android:layout_marginTop="214px"
+        android:background="@drawable/bt_shape">
+
+        <TextView
+            android:id="@+id/tv_c_password_one"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bt_tv_royal_blue_shape"
+            android:gravity="center"
+            android:text="333333"
+            android:textColor="@android:color/white"
+            android:textSize="25sp" />
 
 
     </FrameLayout>
@@ -48,6 +101,15 @@
         android:layout_marginTop="381px"
         android:background="@drawable/bt_shape">
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bt_tv_royal_blue_shape"
+            android:gravity="center"
+            android:text="确认密码"
+            android:textColor="@android:color/white"
+            android:textSize="25sp" />
 
     </FrameLayout>
 
@@ -59,16 +121,58 @@
         android:layout_marginTop="381px"
         android:background="@drawable/bt_shape">
 
+        <TextView
+            android:id="@+id/tv_c_password_two"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bt_tv_royal_blue_shape"
+            android:gravity="center"
+            android:text="333333"
+            android:textColor="@android:color/white"
+            android:textSize="25sp" />
 
     </FrameLayout>
 
     <FrameLayout
-        android:layout_width="400px"
+        android:layout_width="200px"
         android:layout_height="167px"
         android:layout_gravity="top|left"
         android:layout_marginLeft="603px"
         android:layout_marginTop="548px"
         android:background="@drawable/bt_shape">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bt_tv_dark_voilet_shape"
+            android:gravity="center"
+            android:text="新密码"
+            android:textColor="@android:color/white"
+            android:textSize="25sp" />
+
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="200px"
+        android:layout_height="167px"
+        android:layout_gravity="top|left"
+        android:layout_marginLeft="803px"
+        android:layout_marginTop="548px"
+        android:background="@drawable/bt_shape">
+
+        <TextView
+            android:id="@+id/tv_d_password_one"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bt_tv_dark_voilet_shape"
+            android:gravity="center"
+            android:text="333333"
+            android:textColor="@android:color/white"
+            android:textSize="25sp" />
 
 
     </FrameLayout>
@@ -80,6 +184,16 @@
         android:layout_marginLeft="603px"
         android:layout_marginTop="715px"
         android:background="@drawable/bt_shape">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bt_tv_dark_voilet_shape"
+            android:gravity="center"
+            android:text="确认密码"
+            android:textColor="@android:color/white"
+            android:textSize="25sp" />
 
 
     </FrameLayout>
@@ -92,6 +206,17 @@
         android:layout_marginTop="715px"
         android:background="@drawable/bt_shape">
 
+        <TextView
+            android:id="@+id/tv_d_password_two"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bt_tv_dark_voilet_shape"
+            android:gravity="center"
+            android:text="333333"
+            android:textColor="@android:color/white"
+            android:textSize="25sp" />
+
 
     </FrameLayout>
 
@@ -103,6 +228,15 @@
         android:layout_marginTop="214px"
         android:background="@drawable/bt_shape">
 
+        <Button
+            android:id="@+id/bt_num_1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bt_num_selector"
+            android:text="1"
+            android:textColor="@android:color/white"
+            android:textSize="55sp" />
 
     </FrameLayout>
 
@@ -114,6 +248,16 @@
         android:layout_marginTop="214px"
         android:background="@drawable/bt_shape">
 
+        <Button
+            android:id="@+id/bt_num_2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bt_num_selector"
+            android:text="2"
+            android:textColor="@android:color/white"
+            android:textSize="55sp" />
+
 
     </FrameLayout>
 
@@ -124,6 +268,16 @@
         android:layout_marginLeft="1337px"
         android:layout_marginTop="214px"
         android:background="@drawable/bt_shape">
+
+        <Button
+            android:id="@+id/bt_num_3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bt_num_selector"
+            android:text="3"
+            android:textColor="@android:color/white"
+            android:textSize="55sp" />
 
 
     </FrameLayout>
@@ -136,6 +290,16 @@
         android:layout_marginTop="381px"
         android:background="@drawable/bt_shape">
 
+        <Button
+            android:id="@+id/bt_num_4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bt_num_selector"
+            android:text="4"
+            android:textColor="@android:color/white"
+            android:textSize="55sp" />
+
 
     </FrameLayout>
 
@@ -147,6 +311,16 @@
         android:layout_marginTop="381px"
         android:background="@drawable/bt_shape">
 
+        <Button
+            android:id="@+id/bt_num_5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bt_num_selector"
+            android:text="5"
+            android:textColor="@android:color/white"
+            android:textSize="55sp" />
+
 
     </FrameLayout>
 
@@ -157,6 +331,16 @@
         android:layout_marginLeft="1337px"
         android:layout_marginTop="381px"
         android:background="@drawable/bt_shape">
+
+        <Button
+            android:id="@+id/bt_num_6"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bt_num_selector"
+            android:text="6"
+            android:textColor="@android:color/white"
+            android:textSize="55sp" />
 
 
     </FrameLayout>
@@ -169,6 +353,16 @@
         android:layout_marginTop="548px"
         android:background="@drawable/bt_shape">
 
+        <Button
+            android:id="@+id/bt_num_7"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bt_num_selector"
+            android:text="7"
+            android:textColor="@android:color/white"
+            android:textSize="55sp" />
+
 
     </FrameLayout>
 
@@ -180,6 +374,16 @@
         android:layout_marginTop="548px"
         android:background="@drawable/bt_shape">
 
+        <Button
+            android:id="@+id/bt_num_8"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bt_num_selector"
+            android:text="8"
+            android:textColor="@android:color/white"
+            android:textSize="55sp" />
+
 
     </FrameLayout>
 
@@ -190,6 +394,16 @@
         android:layout_marginLeft="1337px"
         android:layout_marginTop="548px"
         android:background="@drawable/bt_shape">
+
+        <Button
+            android:id="@+id/bt_num_9"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bt_num_selector"
+            android:text="9"
+            android:textColor="@android:color/white"
+            android:textSize="55sp" />
 
 
     </FrameLayout>
@@ -202,6 +416,17 @@
         android:layout_marginTop="715px"
         android:background="@drawable/bt_shape">
 
+        <Button
+            android:id="@+id/bt_num_esc"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bt_num_selector"
+            android:text="Esc"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="35sp" />
+
 
     </FrameLayout>
 
@@ -213,6 +438,16 @@
         android:layout_marginTop="715px"
         android:background="@drawable/bt_shape">
 
+        <Button
+            android:id="@+id/bt_num_0"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bt_num_selector"
+            android:text="0"
+            android:textColor="@android:color/white"
+            android:textSize="55sp" />
+
 
     </FrameLayout>
 
@@ -223,6 +458,16 @@
         android:layout_marginLeft="1337px"
         android:layout_marginTop="715px"
         android:background="@drawable/bt_shape">
+
+        <Button
+            android:id="@+id/bt_num_ok"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bt_num_selector"
+            android:text="OK"
+            android:textColor="@android:color/white"
+            android:textSize="35sp" />
 
 
     </FrameLayout>
@@ -235,6 +480,15 @@
         android:layout_marginTop="214px"
         android:background="@drawable/bt_shape">
 
+        <Button
+            android:id="@+id/bt_exit"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bt_sys_shape"
+            android:text="退出"
+            android:textColor="@android:color/white"
+            android:textSize="65sp" />
+
 
     </FrameLayout>
 
@@ -245,6 +499,15 @@
         android:layout_marginLeft="1504px"
         android:layout_marginTop="548px"
         android:background="@drawable/bt_shape">
+
+        <Button
+            android:id="@+id/bt_android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bt_sys_shape"
+            android:text="安卓"
+            android:textColor="@android:color/white"
+            android:textSize="65sp" />
 
 
     </FrameLayout>

@@ -19,4 +19,8 @@
     <color name="transparent">#00000000</color>
     <color name="yellow">#ffffff00</color>
     <color name="accessories">#C3D699</color>
+    <color name="royalBlue">#4169E1</color>
+    <color name="mediumBlue">#0000CD</color>
+    <color name="darkVoilet">#9400D3</color>
+    <color name="indigo">#4B0082</color>
 </resources>

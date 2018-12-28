@@ -48,6 +48,16 @@
         android:layout_marginTop="267px"
         android:background="@drawable/bt_shape">
 
+        <Button
+            android:id="@+id/bt_update_password"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bt_update_password_selector"
+            android:text="密码变更"
+            android:textColor="@android:color/black"
+            android:textSize="35sp" />
+
 
     </FrameLayout>
 
