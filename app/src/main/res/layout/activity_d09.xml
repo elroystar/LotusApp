@@ -15,6 +15,14 @@
         android:layout_marginTop="17px"
         android:background="@drawable/bt_shape">
 
+        <Button
+            android:id="@+id/bt_exit"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bt_sys_shape"
+            android:text="退出"
+            android:textColor="@android:color/white"
+            android:textSize="65sp" />
 
     </FrameLayout>
 
@@ -26,6 +34,14 @@
         android:layout_marginTop="353px"
         android:background="@drawable/bt_shape">
 
+        <Button
+            android:id="@+id/bt_android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bt_sys_shape"
+            android:text="安卓"
+            android:textColor="@android:color/white"
+            android:textSize="65sp" />
 
     </FrameLayout>
 
@@ -37,6 +53,15 @@
         android:layout_marginTop="17px"
         android:background="@drawable/bt_shape">
 
+        <Button
+            android:id="@+id/bt_coin"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bt_d_dark_voilet_shape"
+            android:text="出币"
+            android:textColor="@android:color/white"
+            android:textSize="55sp" />
 
     </FrameLayout>
 
@@ -69,6 +94,15 @@
         android:layout_marginTop="439px"
         android:background="@drawable/bt_shape">
 
+        <Button
+            android:id="@+id/bt_price"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bt_num_up_shape"
+            android:text="定价"
+            android:textColor="@android:color/white"
+            android:textSize="55sp" />
 
     </FrameLayout>
 
@@ -80,6 +114,15 @@
         android:layout_marginTop="17px"
         android:background="@drawable/bt_shape">
 
+        <Button
+            android:id="@+id/bt_coin_open"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bt_d_dark_voilet_shape"
+            android:text="开"
+            android:textColor="@android:color/white"
+            android:textSize="55sp" />
 
     </FrameLayout>
 
@@ -91,6 +134,15 @@
         android:layout_marginTop="17px"
         android:background="@drawable/bt_shape">
 
+        <Button
+            android:id="@+id/bt_coin_close"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bt_d_dark_voilet_shape"
+            android:text="关"
+            android:textColor="@android:color/white"
+            android:textSize="55sp" />
 
     </FrameLayout>
 
@@ -102,6 +154,15 @@
         android:layout_marginTop="17px"
         android:background="@drawable/bt_shape">
 
+        <TextView
+            android:id="@+id/tv_drying"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bt_num_up_shape"
+            android:gravity="center"
+            android:text="甩干"
+            android:textSize="27sp" />
 
     </FrameLayout>
 
@@ -113,6 +174,14 @@
         android:layout_marginTop="17px"
         android:background="@drawable/bt_shape">
 
+        <TextView
+            android:id="@+id/tv_drying_coin"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="88.8"
+            android:textSize="27sp" />
 
     </FrameLayout>
 
@@ -124,6 +193,14 @@
         android:layout_marginTop="84px"
         android:background="@drawable/bt_shape">
 
+        <TextView
+            android:id="@+id/tv_drying_mobile"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="88.8"
+            android:textSize="27sp" />
 
     </FrameLayout>
 
@@ -135,6 +212,15 @@
         android:layout_marginTop="151px"
         android:background="@drawable/bt_shape">
 
+        <TextView
+            android:id="@+id/tv_washing_liquid"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bt_num_up_shape"
+            android:gravity="center"
+            android:text="洗液"
+            android:textSize="27sp" />
 
     </FrameLayout>
 
@@ -146,6 +232,14 @@
         android:layout_marginTop="151px"
         android:background="@drawable/bt_shape">
 
+        <TextView
+            android:id="@+id/tv_washing_liquid_coin"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="88.8"
+            android:textSize="27sp" />
 
     </FrameLayout>
 
@@ -157,6 +251,14 @@
         android:layout_marginTop="215px"
         android:background="@drawable/bt_shape">
 
+        <TextView
+            android:id="@+id/tv_washing_liquid_mobile"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="88.8"
+            android:textSize="27sp" />
 
     </FrameLayout>
 
@@ -168,6 +270,15 @@
         android:layout_marginTop="151px"
         android:background="@drawable/bt_shape">
 
+        <TextView
+            android:id="@+id/tv_rinse"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bt_num_up_shape"
+            android:gravity="center"
+            android:text="漂洗"
+            android:textSize="27sp" />
 
     </FrameLayout>
 
@@ -179,6 +290,14 @@
         android:layout_marginTop="151px"
         android:background="@drawable/bt_shape">
 
+        <TextView
+            android:id="@+id/tv_rinse_coin"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="88.8"
+            android:textSize="27sp" />
 
     </FrameLayout>
 
@@ -190,6 +309,14 @@
         android:layout_marginTop="215px"
         android:background="@drawable/bt_shape">
 
+        <TextView
+            android:id="@+id/tv_rinse_mobile"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="88.8"
+            android:textSize="27sp" />
 
     </FrameLayout>
 
@@ -201,6 +328,15 @@
         android:layout_marginTop="285px"
         android:background="@drawable/bt_shape">
 
+        <TextView
+            android:id="@+id/tv_softening"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bt_num_up_shape"
+            android:gravity="center"
+            android:text="漂洗"
+            android:textSize="27sp" />
 
     </FrameLayout>
 
@@ -212,6 +348,14 @@
         android:layout_marginTop="285px"
         android:background="@drawable/bt_shape">
 
+        <TextView
+            android:id="@+id/tv_softening_coin"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="88.8"
+            android:textSize="27sp" />
 
     </FrameLayout>
 
@@ -223,6 +367,14 @@
         android:layout_marginTop="352px"
         android:background="@drawable/bt_shape">
 
+        <TextView
+            android:id="@+id/tv_softening_mobile"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="88.8"
+            android:textSize="27sp" />
 
     </FrameLayout>
 
@@ -234,6 +386,15 @@
         android:layout_marginTop="285px"
         android:background="@drawable/bt_shape">
 
+        <TextView
+            android:id="@+id/tv_cowboy"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bt_num_up_shape"
+            android:gravity="center"
+            android:text="牛仔"
+            android:textSize="27sp" />
 
     </FrameLayout>
 
@@ -245,6 +406,14 @@
         android:layout_marginTop="285px"
         android:background="@drawable/bt_shape">
 
+        <TextView
+            android:id="@+id/tv_cowboy_coin"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="88.8"
+            android:textSize="27sp" />
 
     </FrameLayout>
 
@@ -256,6 +425,14 @@
         android:layout_marginTop="352px"
         android:background="@drawable/bt_shape">
 
+        <TextView
+            android:id="@+id/tv_cowboy_mobile"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="88.8"
+            android:textSize="27sp" />
 
     </FrameLayout>
 
@@ -267,6 +444,15 @@
         android:layout_marginTop="419px"
         android:background="@drawable/bt_shape">
 
+        <TextView
+            android:id="@+id/tv_disinfection_ing"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bt_num_up_shape"
+            android:gravity="center"
+            android:text="中消"
+            android:textSize="27sp" />
 
     </FrameLayout>
 
@@ -278,6 +464,14 @@
         android:layout_marginTop="419px"
         android:background="@drawable/bt_shape">
 
+        <TextView
+            android:id="@+id/tv_disinfection_ing_coin"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="88.8"
+            android:textSize="27sp" />
 
     </FrameLayout>
 
@@ -289,6 +483,14 @@
         android:layout_marginTop="486px"
         android:background="@drawable/bt_shape">
 
+        <TextView
+            android:id="@+id/tv_disinfection_ing_mobile"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="88.8"
+            android:textSize="27sp" />
 
     </FrameLayout>
 
@@ -300,6 +502,15 @@
         android:layout_marginTop="419px"
         android:background="@drawable/bt_shape">
 
+        <TextView
+            android:id="@+id/tv_sheets"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bt_num_up_shape"
+            android:gravity="center"
+            android:text="被单"
+            android:textSize="27sp" />
 
     </FrameLayout>
 
@@ -311,6 +522,14 @@
         android:layout_marginTop="419px"
         android:background="@drawable/bt_shape">
 
+        <TextView
+            android:id="@+id/tv_sheets_coin"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="88.8"
+            android:textSize="27sp" />
 
     </FrameLayout>
 
@@ -322,6 +541,14 @@
         android:layout_marginTop="486px"
         android:background="@drawable/bt_shape">
 
+        <TextView
+            android:id="@+id/tv_sheets_mobile"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="88.8"
+            android:textSize="27sp" />
 
     </FrameLayout>
 
@@ -333,6 +560,15 @@
         android:layout_marginTop="553px"
         android:background="@drawable/bt_shape">
 
+        <TextView
+            android:id="@+id/tv_disinfection_before"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bt_num_up_shape"
+            android:gravity="center"
+            android:text="前消"
+            android:textSize="27sp" />
 
     </FrameLayout>
 
@@ -344,6 +580,14 @@
         android:layout_marginTop="553px"
         android:background="@drawable/bt_shape">
 
+        <TextView
+            android:id="@+id/tv_disinfection_before_coin"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="88.8"
+            android:textSize="27sp" />
 
     </FrameLayout>
 
@@ -355,6 +599,14 @@
         android:layout_marginTop="620px"
         android:background="@drawable/bt_shape">
 
+        <TextView
+            android:id="@+id/tv_disinfection_before_mobile"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="88.8"
+            android:textSize="27sp" />
 
     </FrameLayout>
 
@@ -366,6 +618,15 @@
         android:layout_marginTop="553px"
         android:background="@drawable/bt_shape">
 
+        <TextView
+            android:id="@+id/tv_standard"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bt_num_up_shape"
+            android:gravity="center"
+            android:text="标准"
+            android:textSize="27sp" />
 
     </FrameLayout>
 
@@ -377,6 +638,14 @@
         android:layout_marginTop="553px"
         android:background="@drawable/bt_shape">
 
+        <TextView
+            android:id="@+id/tv_standard_coin"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="88.8"
+            android:textSize="27sp" />
 
     </FrameLayout>
 
@@ -388,6 +657,14 @@
         android:layout_marginTop="620px"
         android:background="@drawable/bt_shape">
 
+        <TextView
+            android:id="@+id/tv_standard_mobile"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="88.8"
+            android:textSize="27sp" />
 
     </FrameLayout>
 
@@ -399,6 +676,15 @@
         android:layout_marginTop="17px"
         android:background="@drawable/bt_shape">
 
+        <Button
+            android:id="@+id/bt_num_1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bt_num_selector"
+            android:text="1"
+            android:textColor="@android:color/white"
+            android:textSize="55sp" />
 
     </FrameLayout>
 
@@ -410,6 +696,15 @@
         android:layout_marginTop="17px"
         android:background="@drawable/bt_shape">
 
+        <Button
+            android:id="@+id/bt_num_2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bt_num_selector"
+            android:text="2"
+            android:textColor="@android:color/white"
+            android:textSize="55sp" />
 
     </FrameLayout>
 
@@ -421,6 +716,15 @@
         android:layout_marginTop="17px"
         android:background="@drawable/bt_shape">
 
+        <Button
+            android:id="@+id/bt_num_3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bt_num_selector"
+            android:text="3"
+            android:textColor="@android:color/white"
+            android:textSize="55sp" />
 
     </FrameLayout>
 
@@ -432,6 +736,15 @@
         android:layout_marginTop="184px"
         android:background="@drawable/bt_shape">
 
+        <Button
+            android:id="@+id/bt_num_4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bt_num_selector"
+            android:text="4"
+            android:textColor="@android:color/white"
+            android:textSize="55sp" />
 
     </FrameLayout>
 
@@ -443,6 +756,15 @@
         android:layout_marginTop="184px"
         android:background="@drawable/bt_shape">
 
+        <Button
+            android:id="@+id/bt_num_5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bt_num_selector"
+            android:text="5"
+            android:textColor="@android:color/white"
+            android:textSize="55sp" />
 
     </FrameLayout>
 
@@ -454,6 +776,15 @@
         android:layout_marginTop="184px"
         android:background="@drawable/bt_shape">
 
+        <Button
+            android:id="@+id/bt_num_6"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bt_num_selector"
+            android:text="6"
+            android:textColor="@android:color/white"
+            android:textSize="55sp" />
 
     </FrameLayout>
 
@@ -465,6 +796,15 @@
         android:layout_marginTop="351px"
         android:background="@drawable/bt_shape">
 
+        <Button
+            android:id="@+id/bt_num_7"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bt_num_selector"
+            android:text="7"
+            android:textColor="@android:color/white"
+            android:textSize="55sp" />
 
     </FrameLayout>
 
@@ -476,6 +816,15 @@
         android:layout_marginTop="351px"
         android:background="@drawable/bt_shape">
 
+        <Button
+            android:id="@+id/bt_num_8"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bt_num_selector"
+            android:text="8"
+            android:textColor="@android:color/white"
+            android:textSize="55sp" />
 
     </FrameLayout>
 
@@ -487,6 +836,15 @@
         android:layout_marginTop="351px"
         android:background="@drawable/bt_shape">
 
+        <Button
+            android:id="@+id/bt_num_9"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bt_num_selector"
+            android:text="9"
+            android:textColor="@android:color/white"
+            android:textSize="55sp" />
 
     </FrameLayout>
 
@@ -498,6 +856,16 @@
         android:layout_marginTop="518px"
         android:background="@drawable/bt_shape">
 
+        <Button
+            android:id="@+id/bt_num_esc"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bt_num_selector"
+            android:text="Esc"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="35sp" />
 
     </FrameLayout>
 
@@ -509,6 +877,15 @@
         android:layout_marginTop="518px"
         android:background="@drawable/bt_shape">
 
+        <Button
+            android:id="@+id/bt_num_0"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bt_num_selector"
+            android:text="0"
+            android:textColor="@android:color/white"
+            android:textSize="55sp" />
 
     </FrameLayout>
 
@@ -520,6 +897,15 @@
         android:layout_marginTop="518px"
         android:background="@drawable/bt_shape">
 
+        <Button
+            android:id="@+id/bt_num_ok"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/bt_num_selector"
+            android:text="OK"
+            android:textColor="@android:color/white"
+            android:textSize="35sp" />
 
     </FrameLayout>
 
@@ -531,6 +917,14 @@
         android:layout_marginTop="698px"
         android:background="@drawable/bt_shape">
 
+        <Button
+            android:id="@+id/bt_machine1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bt_c_royal_blue_shape"
+            android:text="1"
+            android:textSize="55sp" />
+
 
     </FrameLayout>
 
@@ -542,6 +936,13 @@
         android:layout_marginTop="887px"
         android:background="@drawable/bt_shape">
 
+        <Button
+            android:id="@+id/bt_machine2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bt_c_royal_blue_shape"
+            android:text="2"
+            android:textSize="55sp" />
 
     </FrameLayout>
 
@@ -553,6 +954,13 @@
         android:layout_marginTop="698px"
         android:background="@drawable/bt_shape">
 
+        <Button
+            android:id="@+id/bt_machine3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bt_c_royal_blue_shape"
+            android:text="3"
+            android:textSize="55sp" />
 
     </FrameLayout>
 
@@ -564,6 +972,13 @@
         android:layout_marginTop="887px"
         android:background="@drawable/bt_shape">
 
+        <Button
+            android:id="@+id/bt_machine4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bt_c_royal_blue_shape"
+            android:text="4"
+            android:textSize="55sp" />
 
     </FrameLayout>
 
@@ -575,6 +990,13 @@
         android:layout_marginTop="698px"
         android:background="@drawable/bt_shape">
 
+        <Button
+            android:id="@+id/bt_machine5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bt_c_royal_blue_shape"
+            android:text="5"
+            android:textSize="55sp" />
 
     </FrameLayout>
 
@@ -586,6 +1008,13 @@
         android:layout_marginTop="887px"
         android:background="@drawable/bt_shape">
 
+        <Button
+            android:id="@+id/bt_machine6"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bt_c_royal_blue_shape"
+            android:text="6"
+            android:textSize="55sp" />
 
     </FrameLayout>
 
@@ -597,6 +1026,13 @@
         android:layout_marginTop="698px"
         android:background="@drawable/bt_shape">
 
+        <Button
+            android:id="@+id/bt_machine7"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bt_c_royal_blue_shape"
+            android:text="7"
+            android:textSize="55sp" />
 
     </FrameLayout>
 
@@ -608,6 +1044,13 @@
         android:layout_marginTop="887px"
         android:background="@drawable/bt_shape">
 
+        <Button
+            android:id="@+id/bt_machine8"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bt_c_royal_blue_shape"
+            android:text="8"
+            android:textSize="55sp" />
 
     </FrameLayout>
 
@@ -619,6 +1062,13 @@
         android:layout_marginTop="698px"
         android:background="@drawable/bt_shape">
 
+        <Button
+            android:id="@+id/bt_machine9"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bt_c_royal_blue_shape"
+            android:text="9"
+            android:textSize="55sp" />
 
     </FrameLayout>
 
@@ -630,6 +1080,13 @@
         android:layout_marginTop="887px"
         android:background="@drawable/bt_shape">
 
+        <Button
+            android:id="@+id/bt_machine10"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bt_c_royal_blue_shape"
+            android:text="10"
+            android:textSize="55sp" />
 
     </FrameLayout>
 
@@ -641,6 +1098,13 @@
         android:layout_marginTop="698px"
         android:background="@drawable/bt_shape">
 
+        <Button
+            android:id="@+id/bt_machine11"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bt_c_royal_blue_shape"
+            android:text="11"
+            android:textSize="55sp" />
 
     </FrameLayout>
 
@@ -652,6 +1116,13 @@
         android:layout_marginTop="887px"
         android:background="@drawable/bt_shape">
 
+        <Button
+            android:id="@+id/bt_machine12"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bt_c_royal_blue_shape"
+            android:text="12"
+            android:textSize="55sp" />
 
     </FrameLayout>
 
@@ -663,6 +1134,13 @@
         android:layout_marginTop="698px"
         android:background="@drawable/bt_shape">
 
+        <Button
+            android:id="@+id/bt_machine13"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bt_c_royal_blue_shape"
+            android:text="13"
+            android:textSize="55sp" />
 
     </FrameLayout>
 
@@ -674,6 +1152,13 @@
         android:layout_marginTop="887px"
         android:background="@drawable/bt_shape">
 
+        <Button
+            android:id="@+id/bt_machine14"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bt_c_royal_blue_shape"
+            android:text="14"
+            android:textSize="55sp" />
 
     </FrameLayout>
 
@@ -685,6 +1170,13 @@
         android:layout_marginTop="698px"
         android:background="@drawable/bt_shape">
 
+        <Button
+            android:id="@+id/bt_machine15"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bt_c_royal_blue_shape"
+            android:text="15"
+            android:textSize="55sp" />
 
     </FrameLayout>
 
@@ -696,6 +1188,13 @@
         android:layout_marginTop="887px"
         android:background="@drawable/bt_shape">
 
+        <Button
+            android:id="@+id/bt_machine16"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bt_c_royal_blue_shape"
+            android:text="16"
+            android:textSize="55sp" />
 
     </FrameLayout>
 
@@ -707,6 +1206,13 @@
         android:layout_marginTop="698px"
         android:background="@drawable/bt_shape">
 
+        <Button
+            android:id="@+id/bt_machine17"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bt_c_royal_blue_shape"
+            android:text="17"
+            android:textSize="55sp" />
 
     </FrameLayout>
 
@@ -718,6 +1224,13 @@
         android:layout_marginTop="887px"
         android:background="@drawable/bt_shape">
 
+        <Button
+            android:id="@+id/bt_coin_bb"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bt_c_royal_blue_shape"
+            android:text="BB"
+            android:textSize="55sp" />
 
     </FrameLayout>
 
@@ -729,6 +1242,13 @@
         android:layout_marginTop="698px"
         android:background="@drawable/bt_shape">
 
+        <Button
+            android:id="@+id/bt_coin_ba"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bt_c_royal_blue_shape"
+            android:text="BA"
+            android:textSize="55sp" />
 
     </FrameLayout>
 
@@ -740,6 +1260,13 @@
         android:layout_marginTop="887px"
         android:background="@drawable/bt_shape">
 
+        <Button
+            android:id="@+id/bt_coin_bc"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bt_c_royal_blue_shape"
+            android:text="BC"
+            android:textSize="55sp" />
 
     </FrameLayout>
 

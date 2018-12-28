@@ -20,6 +20,8 @@ public class D09Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_d09);
+        // 加载声音
+        initSound();
         // 密码变更
         findViewById(R.id.bt_update_password).setOnTouchListener(new View.OnTouchListener() {
             @Override

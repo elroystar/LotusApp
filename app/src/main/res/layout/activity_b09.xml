@@ -45,14 +45,16 @@
         android:background="@drawable/bt_shape">
 
         <TextView
-            android:id="@+id/bt_drying"
+            android:id="@+id/bt_standard"
             android:layout_width="100px"
             android:layout_height="100px"
-            android:text="甩干"
+            android:text="标准"
             android:textSize="25sp"
             android:textColor="@android:color/white"
             android:layout_gravity="center"
             android:background="@color/green"/>
+
+
 
     </FrameLayout>
 
@@ -65,14 +67,16 @@
         android:background="@drawable/bt_shape">
 
         <TextView
-            android:id="@+id/bt_rinse"
+            android:id="@+id/bt_sheets"
             android:layout_width="100px"
             android:layout_height="100px"
-            android:text="漂洗"
+            android:text="被单"
             android:textSize="25sp"
             android:textColor="@android:color/white"
             android:layout_gravity="center"
             android:background="@color/green"/>
+
+
 
     </FrameLayout>
 
@@ -105,10 +109,10 @@
         android:background="@drawable/bt_shape">
 
         <TextView
-            android:id="@+id/bt_sheets"
+            android:id="@+id/bt_rinse"
             android:layout_width="100px"
             android:layout_height="100px"
-            android:text="被单"
+            android:text="漂洗"
             android:textSize="25sp"
             android:textColor="@android:color/white"
             android:layout_gravity="center"
@@ -125,10 +129,10 @@
         android:background="@drawable/bt_shape">
 
         <TextView
-            android:id="@+id/bt_standard"
+            android:id="@+id/bt_drying"
             android:layout_width="100px"
             android:layout_height="100px"
-            android:text="标准"
+            android:text="甩干"
             android:textSize="25sp"
             android:textColor="@android:color/white"
             android:layout_gravity="center"
@@ -148,7 +152,7 @@
             android:id="@+id/bt_water"
             android:layout_width="100px"
             android:layout_height="100px"
-            android:text="加水"
+            android:text="送"
             android:textSize="25sp"
             android:textColor="@android:color/white"
             android:layout_gravity="center"
@@ -165,14 +169,16 @@
         android:background="@drawable/bt_shape">
 
         <TextView
-            android:id="@+id/bt_washing_liquid"
+            android:id="@+id/bt_disinfection_before"
             android:layout_width="100px"
             android:layout_height="100px"
-            android:text="洗液"
+            android:text="前消"
             android:textSize="25sp"
             android:textColor="@android:color/white"
             android:layout_gravity="center"
             android:background="@color/green"/>
+
+
 
     </FrameLayout>
 
@@ -181,6 +187,27 @@
         android:layout_height="210px"
         android:layout_gravity="top|left"
         android:layout_marginLeft="1170px"
+        android:layout_marginTop="855px"
+        android:background="@drawable/bt_shape">
+
+        <TextView
+            android:id="@+id/bt_disinfection_ing"
+            android:layout_width="100px"
+            android:layout_height="100px"
+            android:text="中消"
+            android:textSize="25sp"
+            android:textColor="@android:color/white"
+            android:layout_gravity="center"
+            android:background="@color/green"/>
+
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="210px"
+        android:layout_height="210px"
+        android:layout_gravity="top|left"
+        android:layout_marginLeft="1380px"
         android:layout_marginTop="855px"
         android:background="@drawable/bt_shape">
 
@@ -200,35 +227,15 @@
         android:layout_width="210px"
         android:layout_height="210px"
         android:layout_gravity="top|left"
-        android:layout_marginLeft="1380px"
-        android:layout_marginTop="855px"
-        android:background="@drawable/bt_shape">
-
-        <TextView
-            android:id="@+id/bt_disinfection_ing"
-            android:layout_width="100px"
-            android:layout_height="100px"
-            android:text="中消"
-            android:textSize="25sp"
-            android:textColor="@android:color/white"
-            android:layout_gravity="center"
-            android:background="@color/green"/>
-
-    </FrameLayout>
-
-    <FrameLayout
-        android:layout_width="210px"
-        android:layout_height="210px"
-        android:layout_gravity="top|left"
         android:layout_marginLeft="1590px"
         android:layout_marginTop="855px"
         android:background="@drawable/bt_shape">
 
         <TextView
-            android:id="@+id/bt_disinfection_before"
+            android:id="@+id/bt_washing_liquid"
             android:layout_width="100px"
             android:layout_height="100px"
-            android:text="前消"
+            android:text="洗液"
             android:textSize="25sp"
             android:textColor="@android:color/white"
             android:layout_gravity="center"
