@@ -175,7 +175,7 @@
         android:background="@drawable/bt_shape">
 
         <TextView
-            android:id="@+id/tv_drying_coin"
+            android:id="@+id/tv_drying_price_coin"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -194,7 +194,7 @@
         android:background="@drawable/bt_shape">
 
         <TextView
-            android:id="@+id/tv_drying_mobile"
+            android:id="@+id/tv_drying_price_mobile"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -233,7 +233,7 @@
         android:background="@drawable/bt_shape">
 
         <TextView
-            android:id="@+id/tv_washing_liquid_coin"
+            android:id="@+id/tv_washing_liquid_price_coin"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -252,7 +252,7 @@
         android:background="@drawable/bt_shape">
 
         <TextView
-            android:id="@+id/tv_washing_liquid_mobile"
+            android:id="@+id/tv_washing_liquid_price_mobile"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -291,7 +291,7 @@
         android:background="@drawable/bt_shape">
 
         <TextView
-            android:id="@+id/tv_rinse_coin"
+            android:id="@+id/tv_rinse_price_coin"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -310,7 +310,7 @@
         android:background="@drawable/bt_shape">
 
         <TextView
-            android:id="@+id/tv_rinse_mobile"
+            android:id="@+id/tv_rinse_price_mobile"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -335,7 +335,7 @@
             android:layout_weight="1"
             android:background="@drawable/bt_num_up_shape"
             android:gravity="center"
-            android:text="漂洗"
+            android:text="柔顺"
             android:textSize="27sp" />
 
     </FrameLayout>
@@ -349,7 +349,7 @@
         android:background="@drawable/bt_shape">
 
         <TextView
-            android:id="@+id/tv_softening_coin"
+            android:id="@+id/tv_softening_price_coin"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -368,7 +368,7 @@
         android:background="@drawable/bt_shape">
 
         <TextView
-            android:id="@+id/tv_softening_mobile"
+            android:id="@+id/tv_softening_price_mobile"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -407,7 +407,7 @@
         android:background="@drawable/bt_shape">
 
         <TextView
-            android:id="@+id/tv_cowboy_coin"
+            android:id="@+id/tv_cowboy_price_coin"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -426,7 +426,7 @@
         android:background="@drawable/bt_shape">
 
         <TextView
-            android:id="@+id/tv_cowboy_mobile"
+            android:id="@+id/tv_cowboy_price_mobile"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -465,7 +465,7 @@
         android:background="@drawable/bt_shape">
 
         <TextView
-            android:id="@+id/tv_disinfection_ing_coin"
+            android:id="@+id/tv_disinfection_ing_price_coin"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -484,7 +484,7 @@
         android:background="@drawable/bt_shape">
 
         <TextView
-            android:id="@+id/tv_disinfection_ing_mobile"
+            android:id="@+id/tv_disinfection_ing_price_mobile"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -523,7 +523,7 @@
         android:background="@drawable/bt_shape">
 
         <TextView
-            android:id="@+id/tv_sheets_coin"
+            android:id="@+id/tv_sheets_price_coin"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -542,7 +542,7 @@
         android:background="@drawable/bt_shape">
 
         <TextView
-            android:id="@+id/tv_sheets_mobile"
+            android:id="@+id/tv_sheets_price_mobile"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -581,7 +581,7 @@
         android:background="@drawable/bt_shape">
 
         <TextView
-            android:id="@+id/tv_disinfection_before_coin"
+            android:id="@+id/tv_disinfection_before_price_coin"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -600,7 +600,7 @@
         android:background="@drawable/bt_shape">
 
         <TextView
-            android:id="@+id/tv_disinfection_before_mobile"
+            android:id="@+id/tv_disinfection_before_price_mobile"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -639,7 +639,7 @@
         android:background="@drawable/bt_shape">
 
         <TextView
-            android:id="@+id/tv_standard_coin"
+            android:id="@+id/tv_standard_price_coin"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -658,7 +658,7 @@
         android:background="@drawable/bt_shape">
 
         <TextView
-            android:id="@+id/tv_standard_mobile"
+            android:id="@+id/tv_standard_price_mobile"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
