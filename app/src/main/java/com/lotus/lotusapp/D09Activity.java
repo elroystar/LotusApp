@@ -1288,7 +1288,7 @@ public class D09Activity extends AppCompatActivity {
      */
     private void ashCoinBoxButton(CoinBox coinBox, Boolean buttonLight) {
         if (null != coinBox) {
-            int bt_coin_box = getResources().getIdentifier("bt_coin_box_" + coinBox.getNum(), "id", getPackageName());
+            int bt_coin_box = getResources().getIdentifier("bt_coin_" + coinBox.getNum(), "id", getPackageName());
             if (buttonLight) {
                 ashButton(bt_coin_box, R.drawable.bt_c_royal_blue_shape, true);
             } else {
@@ -1297,7 +1297,7 @@ public class D09Activity extends AppCompatActivity {
         } else {
             for (int i = 1; i <= 4; i++) {
                 // 获取textView id
-                int bt_coin_box = getResources().getIdentifier("bt_coin_box_" + i, "id", getPackageName());
+                int bt_coin_box = getResources().getIdentifier("bt_coin_" + i, "id", getPackageName());
                 if (buttonLight) {
                     ashButton(bt_coin_box, R.drawable.bt_c_royal_blue_shape, true);
                 } else {
@@ -1318,7 +1318,7 @@ public class D09Activity extends AppCompatActivity {
             // 置灰所有
             for (int i = 1; i <= 16; i++) {
                 // 获取textView id
-                int bt_washing_machine = getResources().getIdentifier("bt_washing_machine_" + i, "id", getPackageName());
+                int bt_washing_machine = getResources().getIdentifier("bt_machine" + i, "id", getPackageName());
                 if (buttonLight) {
                     ashButton(bt_washing_machine, R.drawable.bt_c_royal_blue_shape, true);
                 } else {
@@ -1329,7 +1329,7 @@ public class D09Activity extends AppCompatActivity {
             // 置灰选择的
             for (WashingMachine washingMachine : washingMachines) {
                 // 获取textView id
-                int bt_washing_machine = getResources().getIdentifier("bt_washing_machine_" + washingMachine.getNum(), "id", getPackageName());
+                int bt_washing_machine = getResources().getIdentifier("bt_machine" + washingMachine.getNum(), "id", getPackageName());
                 if (buttonLight) {
                     ashButton(bt_washing_machine, R.drawable.bt_c_royal_blue_shape, true);
                 } else {

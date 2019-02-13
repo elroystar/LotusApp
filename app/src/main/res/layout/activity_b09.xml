@@ -15,6 +15,16 @@
         android:layout_marginTop="748px"
         android:background="@drawable/bt_shape">
 
+        <TextView
+            android:id="@+id/b09_sure"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:background="@color/green"
+            android:text="确定"
+            android:textColor="@android:color/white"
+            android:textSize="80sp" />
+
     </FrameLayout>
 
     <FrameLayout

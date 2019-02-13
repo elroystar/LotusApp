@@ -489,7 +489,7 @@
         android:background="@drawable/bt_shape">
 
         <Button
-            android:id="@+id/bt_Coin_bb"
+            android:id="@+id/bt_coin_2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/bt_c_royal_blue_shape"
@@ -507,7 +507,7 @@
         android:background="@drawable/bt_shape">
 
         <Button
-            android:id="@+id/bt_Coin_ba"
+            android:id="@+id/bt_coin_1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/bt_c_royal_blue_shape"
@@ -525,7 +525,7 @@
         android:background="@drawable/bt_shape">
 
         <Button
-            android:id="@+id/bt_Coin_bc"
+            android:id="@+id/bt_coin_3"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/bt_c_royal_blue_shape"

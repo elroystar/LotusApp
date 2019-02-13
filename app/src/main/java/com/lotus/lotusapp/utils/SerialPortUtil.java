@@ -33,12 +33,12 @@ public class SerialPortUtil {
             //调用对象SerialPort方法，获取串口中"读和写"的数据流
             inputStream = serialPort.getInputStream();
             outputStream = serialPort.getOutputStream();
-//            isStart = true;
+            isStart = true;
 
         } catch (IOException e) {
             e.printStackTrace();
         }
-//        getSerialPort();
+        getSerialPort();
     }
 
     /**
@@ -69,7 +69,8 @@ public class SerialPortUtil {
      */
     public void sendSerialPort(String data) {
         try {
-            byte[] sendData = data.getBytes();
+//            byte[] sendData = data.getBytes();
+            byte[] sendData = DataUtils.HexToByteArr(data);
             outputStream.write(sendData);
             outputStream.flush();
         } catch (IOException e) {
@@ -101,8 +102,8 @@ public class SerialPortUtil {
                 try {
                     int size = inputStream.read(readData);
                     if (size > 0) {
-//                        String readString = DataUtils.ByteArrToHex(readData, 0, size);
-                        String readString = new String(readData, 0, size);
+                        String readString = DataUtils.ByteArrToHex(readData, 0, size);
+//                        String readString = new String(readData, 0, size);
                         Log.i("SerialPortUtil", readString);
                         EventBus.getDefault().post(readString);
                     }

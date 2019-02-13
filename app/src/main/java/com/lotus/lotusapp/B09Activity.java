@@ -6,6 +6,7 @@ import android.media.AudioManager;
 import android.media.SoundPool;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -13,8 +14,14 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.bumptech.glide.request.RequestOptions;
+import com.lotus.lotusapp.constance.CmdConstance;
 import com.lotus.lotusapp.db.SQLiteDbHelper;
 import com.lotus.lotusapp.dto.WashingMachine;
+import com.lotus.lotusapp.utils.SerialPortUtil;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 import java.math.BigDecimal;
 import java.util.HashSet;
@@ -33,6 +40,8 @@ public class B09Activity extends AppCompatActivity {
     public static final String SOFTENING = "softening";
     public static final String DISINFECTION_BEFORE = "disinfectionBefore";
     public static final String DISINFECTION_ING = "disinfectionIng";
+    // 串口工具类
+    private SerialPortUtil serialPortUtil;
     // 数据库连接工具
     private SQLiteDbHelper sqLiteDbHelper;
     // 声明soundPool
@@ -55,14 +64,20 @@ public class B09Activity extends AppCompatActivity {
     private BigDecimal coinPrice;
     // 价格继续数组
     private Set<String> priceSet = new HashSet<>();
-    // 定义RequestOptions
-    private RequestOptions requestOptions = new RequestOptions()
-            .error(R.drawable.ic_launcher_background);
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        serialPortUtil.closeSerialPort();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_b09);
+
+        //注册EventBus
+        EventBus.getDefault().register(this);
 
         // 加载声音
         initSound();
@@ -74,14 +89,14 @@ public class B09Activity extends AppCompatActivity {
         En = i.getStringExtra("En");
 
         // 返回键
-        textView = findViewById(R.id.b09_machine_num);
-        textView.setText(Integer.toString(machine.getNum()));
-        textView.setOnTouchListener(new View.OnTouchListener() {
+        TextView numView = findViewById(R.id.b09_machine_num);
+        numView.setText(Integer.toString(machine.getNum()));
+        numView.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 switch (event.getAction()) {
+                    //按下
                     case MotionEvent.ACTION_DOWN:
-                        //按下
                         // 播放按键声音
                         playSound();
                         // 进入B界面
@@ -93,12 +108,35 @@ public class B09Activity extends AppCompatActivity {
             }
         });
 
+        // 确定键
+        findViewById(R.id.b09_sure).setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()) {
+                    //按下
+                    case MotionEvent.ACTION_DOWN:
+                        // 播放按键声音
+                        playSound();
+                        // 置灰所有按键
+                        ashAllButton();
+                        // 随机位置显示付款二维码
+
+                        // 打开串口，启动投币箱
+                        serialPortUtil = new SerialPortUtil();
+                        serialPortUtil.openSerialPort();
+                        serialPortUtil.sendSerialPort(CmdConstance.START_COIN);
+                        break;
+                }
+                return false;
+            }
+        });
+
         findViewById(R.id.bt_drying).setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 switch (event.getAction()) {
+                    //按下
                     case MotionEvent.ACTION_DOWN:
-                        //按下
                         // 播放按键声音
                         playSound();
                         // 置灰辅料
@@ -123,8 +161,8 @@ public class B09Activity extends AppCompatActivity {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 switch (event.getAction()) {
+                    //按下
                     case MotionEvent.ACTION_DOWN:
-                        //按下
                         // 播放按键声音
                         playSound();
                         // 置灰辅料
@@ -151,8 +189,8 @@ public class B09Activity extends AppCompatActivity {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 switch (event.getAction()) {
+                    //按下
                     case MotionEvent.ACTION_DOWN:
-                        //按下
                         // 播放按键声音
                         playSound();
                         // 置灰辅料
@@ -181,8 +219,8 @@ public class B09Activity extends AppCompatActivity {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 switch (event.getAction()) {
+                    //按下
                     case MotionEvent.ACTION_DOWN:
-                        //按下
                         // 播放按键声音
                         playSound();
                         // 置灰辅料
@@ -211,8 +249,8 @@ public class B09Activity extends AppCompatActivity {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 switch (event.getAction()) {
+                    //按下
                     case MotionEvent.ACTION_DOWN:
-                        //按下
                         // 播放按键声音
                         playSound();
                         // 置灰辅料
@@ -241,8 +279,8 @@ public class B09Activity extends AppCompatActivity {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 switch (event.getAction()) {
+                    //按下
                     case MotionEvent.ACTION_DOWN:
-                        //按下
                         // 播放按键声音
                         playSound();
                         String isPress = "on";
@@ -275,8 +313,8 @@ public class B09Activity extends AppCompatActivity {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 switch (event.getAction()) {
+                    //按下
                     case MotionEvent.ACTION_DOWN:
-                        //按下
                         // 播放按键声音
                         playSound();
                         String isPress = "on";
@@ -309,8 +347,8 @@ public class B09Activity extends AppCompatActivity {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 switch (event.getAction()) {
+                    //按下
                     case MotionEvent.ACTION_DOWN:
-                        //按下
                         // 播放按键声音
                         playSound();
                         String isPress = "on";
@@ -343,8 +381,8 @@ public class B09Activity extends AppCompatActivity {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 switch (event.getAction()) {
+                    //按下
                     case MotionEvent.ACTION_DOWN:
-                        //按下
                         // 播放按键声音
                         playSound();
                         String isPress = "on";
@@ -377,8 +415,8 @@ public class B09Activity extends AppCompatActivity {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 switch (event.getAction()) {
+                    //按下
                     case MotionEvent.ACTION_DOWN:
-                        //按下
                         // 播放按键声音
                         playSound();
                         String isPress = "on";
@@ -408,6 +446,24 @@ public class B09Activity extends AppCompatActivity {
         });
     }
 
+    /**
+     * 置灰所有按钮
+     */
+    private void ashAllButton() {
+        // 置灰辅料键
+        ashAccessories();
+        // 置灰洗衣模式
+        ashButton(R.id.bt_standard, getResources().getColor(R.color.accessories), false);
+        ashButton(R.id.bt_sheets, getResources().getColor(R.color.accessories), false);
+        ashButton(R.id.bt_cowboy, getResources().getColor(R.color.accessories), false);
+        ashButton(R.id.bt_rinse, getResources().getColor(R.color.accessories), false);
+        ashButton(R.id.bt_drying, getResources().getColor(R.color.accessories), false);
+        ashButton(R.id.b09_machine_num, getResources().getColor(R.color.accessories), false);
+    }
+
+    /**
+     * 置灰辅料键
+     */
     private void ashAccessories() {
         // 置灰辅料键
         ashButton(R.id.bt_water, getResources().getColor(R.color.accessories), false);
@@ -559,5 +615,53 @@ public class B09Activity extends AppCompatActivity {
      */
     private void playSound() {
         soundPool.play(music, 1, 1, 1, 0, 1);
+    }
+
+    /**
+     * 用EventBus进行线程间通信，也可以使用Handler
+     *
+     * @param string
+     */
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onEventMainThread(String string) {
+        Log.d("B09Activity", "获取到了从传感器发送到Android主板的串口数据");
+        BigDecimal price = new BigDecimal("0");
+        switch (string) {
+            case CmdConstance.FIVE_THAI_BAHT:
+                calculatedPrice(price, "5");
+                break;
+            case CmdConstance.TEN_THAI_BAHT:
+                calculatedPrice(price, "10");
+                break;
+            case CmdConstance.ONE_EURO:
+                calculatedPrice(price, "30");
+                break;
+            case CmdConstance.ONE_DOLLAR:
+                calculatedPrice(price, "30");
+                break;
+        }
+    }
+
+    /**
+     * 接收投币箱币值命令，计算显示价格
+     * @param price
+     * @param coinPrice
+     */
+    private void calculatedPrice(BigDecimal price, String coinPrice) {
+        String showPrice;
+        price = price.add(new BigDecimal(coinPrice));
+        this.coinPrice = this.coinPrice.subtract(price);
+        if (this.coinPrice.compareTo(new BigDecimal("0")) == 1) {
+            showPrice = this.coinPrice.toString();
+        } else {
+            showPrice = "0";
+        }
+        textView = findViewById(R.id.coin_price);
+        textView.setText(showPrice);
+        if (price.compareTo(this.coinPrice) == -1) {
+            serialPortUtil.sendSerialPort(CmdConstance.CONTINUE_COIN);
+        } else {
+            serialPortUtil.sendSerialPort(CmdConstance.STOP_COIN);
+        }
     }
 }
