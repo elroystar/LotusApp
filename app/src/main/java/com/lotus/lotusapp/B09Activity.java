@@ -624,7 +624,7 @@ public class B09Activity extends AppCompatActivity {
      */
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onEventMainThread(String string) {
-        Log.d("B09Activity", "获取到了从传感器发送到Android主板的串口数据");
+        Log.d("B09Activity", "获取到了从传感器发送到Android主板的串口数据：" + string);
         BigDecimal price = new BigDecimal("0");
         switch (string) {
             case CmdConstance.FIVE_THAI_BAHT:
@@ -644,6 +644,7 @@ public class B09Activity extends AppCompatActivity {
 
     /**
      * 接收投币箱币值命令，计算显示价格
+     *
      * @param price
      * @param coinPrice
      */
