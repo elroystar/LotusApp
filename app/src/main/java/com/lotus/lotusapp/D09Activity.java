@@ -921,10 +921,10 @@ public class D09Activity extends AppCompatActivity {
         });
 
         // 甩干按钮
-        findViewById(R.id.bt_drying).setOnTouchListener(new View.OnTouchListener() {
+        findViewById(R.id.tv_drying).setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                return onTouchPrice(v, event, R.id.bt_drying, PRICE_DRYING);
+                return onTouchPrice(v, event, R.id.tv_drying, PRICE_DRYING);
             }
         });
         // 甩干移动支付
@@ -942,10 +942,10 @@ public class D09Activity extends AppCompatActivity {
             }
         });
         // 漂洗按钮
-        findViewById(R.id.bt_rinse).setOnTouchListener(new View.OnTouchListener() {
+        findViewById(R.id.tv_rinse).setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                return onTouchPrice(v, event, R.id.bt_rinse, PRICE_RINSE);
+                return onTouchPrice(v, event, R.id.tv_rinse, PRICE_RINSE);
             }
         });
         // 漂洗移动支付
@@ -963,10 +963,10 @@ public class D09Activity extends AppCompatActivity {
             }
         });
         // 牛仔按钮
-        findViewById(R.id.bt_cowboy).setOnTouchListener(new View.OnTouchListener() {
+        findViewById(R.id.tv_drying).setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                return onTouchPrice(v, event, R.id.bt_cowboy, PRICE_COWBOY);
+                return onTouchPrice(v, event, R.id.tv_drying, PRICE_COWBOY);
             }
         });
         // 牛仔移动支付
@@ -984,10 +984,10 @@ public class D09Activity extends AppCompatActivity {
             }
         });
         // 被单按钮
-        findViewById(R.id.bt_sheets).setOnTouchListener(new View.OnTouchListener() {
+        findViewById(R.id.tv_sheets).setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                return onTouchPrice(v, event, R.id.bt_sheets, PRICE_SHEETS);
+                return onTouchPrice(v, event, R.id.tv_sheets, PRICE_SHEETS);
             }
         });
         // 被单移动支付
@@ -1005,10 +1005,10 @@ public class D09Activity extends AppCompatActivity {
             }
         });
         // 标准按钮
-        findViewById(R.id.bt_standard).setOnTouchListener(new View.OnTouchListener() {
+        findViewById(R.id.tv_standard).setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                return onTouchPrice(v, event, R.id.bt_standard, PRICE_STANDARD);
+                return onTouchPrice(v, event, R.id.tv_standard, PRICE_STANDARD);
             }
         });
         // 标准移动支付
@@ -1026,10 +1026,10 @@ public class D09Activity extends AppCompatActivity {
             }
         });
         // 洗液按钮
-        findViewById(R.id.bt_washing_liquid).setOnTouchListener(new View.OnTouchListener() {
+        findViewById(R.id.tv_washing_liquid).setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                return onTouchPrice(v, event, R.id.bt_washing_liquid, PRICE_WASHING_LIQUID);
+                return onTouchPrice(v, event, R.id.tv_washing_liquid, PRICE_WASHING_LIQUID);
             }
         });
         // 洗液移动支付
@@ -1047,10 +1047,10 @@ public class D09Activity extends AppCompatActivity {
             }
         });
         // 柔顺按钮
-        findViewById(R.id.bt_softening).setOnTouchListener(new View.OnTouchListener() {
+        findViewById(R.id.tv_softening).setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                return onTouchPrice(v, event, R.id.bt_softening, PRICE_SOFTENING);
+                return onTouchPrice(v, event, R.id.tv_softening, PRICE_SOFTENING);
             }
         });
         // 柔顺移动支付
@@ -1068,10 +1068,10 @@ public class D09Activity extends AppCompatActivity {
             }
         });
         // 中消按钮
-        findViewById(R.id.bt_disinfection_ing).setOnTouchListener(new View.OnTouchListener() {
+        findViewById(R.id.tv_disinfection_ing).setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                return onTouchPrice(v, event, R.id.bt_disinfection_ing, PRICE_DISINFECTION_ING);
+                return onTouchPrice(v, event, R.id.tv_disinfection_ing, PRICE_DISINFECTION_ING);
             }
         });
         // 中消移动支付
@@ -1089,10 +1089,10 @@ public class D09Activity extends AppCompatActivity {
             }
         });
         // 前消按钮
-        findViewById(R.id.bt_disinfection_before).setOnTouchListener(new View.OnTouchListener() {
+        findViewById(R.id.tv_disinfection_before).setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                return onTouchPrice(v, event, R.id.bt_disinfection_before, PRICE_DISINFECTION_BEFORE);
+                return onTouchPrice(v, event, R.id.tv_disinfection_before, PRICE_DISINFECTION_BEFORE);
             }
         });
         // 前消移动支付
@@ -1201,15 +1201,15 @@ public class D09Activity extends AppCompatActivity {
      * @param btId
      */
     private void restorePriceButton(int btId) {
-        int[] ints = {R.id.bt_drying,
-                R.id.bt_rinse,
-                R.id.bt_cowboy,
-                R.id.bt_sheets,
-                R.id.bt_standard,
-                R.id.bt_washing_liquid,
-                R.id.bt_softening,
-                R.id.bt_disinfection_ing,
-                R.id.bt_disinfection_before};
+        int[] ints = {R.id.tv_drying,
+                R.id.tv_rinse,
+                R.id.tv_drying,
+                R.id.tv_sheets,
+                R.id.tv_standard,
+                R.id.tv_washing_liquid,
+                R.id.tv_softening,
+                R.id.tv_disinfection_ing,
+                R.id.tv_disinfection_before};
         for (int i : ints) {
             if (i != btId) {
                 findViewById(i).setBackgroundResource(R.drawable.bt_num_up_shape);

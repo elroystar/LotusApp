@@ -75,7 +75,7 @@ public class M09Activity extends AppCompatActivity {
                                     null,
                                     null);
 //                            if (cursor.getCount() > 0) {
-//                                alertMsg("Tips", "密码" + stringTx + "已存在，请重新输入！");
+//                                alertMsg("Tips", "密码" + stringTx + "密码无效，请重新输入！");
 //                            } else {
 //                            }
                             // 校验密码，优先校验D界面
