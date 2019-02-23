@@ -113,7 +113,7 @@ public class SQLiteDbHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         // 在这里通过 db.execSQL 函数执行 SQL 语句创建所需要的表
         // 创建 user 表
-//        db.execSQL(USER_CREATE_TABLE_SQL);
+        db.execSQL(USER_CREATE_TABLE_SQL);
         // 创建 password_bank 表
         db.execSQL(PASSWORD_BANK_CREATE_TABLE_SQL);
         // 创建 password_rule 表
@@ -124,9 +124,9 @@ public class SQLiteDbHelper extends SQLiteOpenHelper {
 //        db.execSQL(PASSWORD_RULE_INSERT_DEFAULT_SQL);
         // 创建 washing_machine 表
         db.execSQL(WASHING_MACHINE_CREATE_TABLE_SQL);
-        db.execSQL(WASHING_MACHINE_INSERT_TEST_SQL);
+//        db.execSQL(WASHING_MACHINE_INSERT_TEST_SQL);
         // 创建 coin_box表
-//        db.execSQL(COIN_BOX_CREATE_TABLE_SQL);
+        db.execSQL(COIN_BOX_CREATE_TABLE_SQL);
 
     }
 
