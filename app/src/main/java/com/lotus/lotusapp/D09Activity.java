@@ -1258,25 +1258,25 @@ public class D09Activity extends AppCompatActivity {
      */
     private void ashPriceButton(Boolean buttonLight) {
         if (buttonLight) {
-            ashButton(R.id.bt_drying, R.drawable.bt_num_up_shape, true);
-            ashButton(R.id.bt_rinse, R.drawable.bt_num_up_shape, true);
-            ashButton(R.id.bt_cowboy, R.drawable.bt_num_up_shape, true);
-            ashButton(R.id.bt_sheets, R.drawable.bt_num_up_shape, true);
-            ashButton(R.id.bt_standard, R.drawable.bt_num_up_shape, true);
-            ashButton(R.id.bt_washing_liquid, R.drawable.bt_num_up_shape, true);
-            ashButton(R.id.bt_softening, R.drawable.bt_num_up_shape, true);
-            ashButton(R.id.bt_disinfection_ing, R.drawable.bt_num_up_shape, true);
-            ashButton(R.id.bt_disinfection_before, R.drawable.bt_num_up_shape, true);
+            ashButton(R.id.tv_drying, R.drawable.bt_num_up_shape, true);
+            ashButton(R.id.tv_rinse, R.drawable.bt_num_up_shape, true);
+            ashButton(R.id.tv_cowboy, R.drawable.bt_num_up_shape, true);
+            ashButton(R.id.tv_sheets, R.drawable.bt_num_up_shape, true);
+            ashButton(R.id.tv_standard, R.drawable.bt_num_up_shape, true);
+            ashButton(R.id.tv_washing_liquid, R.drawable.bt_num_up_shape, true);
+            ashButton(R.id.tv_softening, R.drawable.bt_num_up_shape, true);
+            ashButton(R.id.tv_disinfection_ing, R.drawable.bt_num_up_shape, true);
+            ashButton(R.id.tv_disinfection_before, R.drawable.bt_num_up_shape, true);
         } else {
-            ashButton(R.id.bt_drying, R.drawable.bt_ash_shape, false);
-            ashButton(R.id.bt_rinse, R.drawable.bt_ash_shape, false);
-            ashButton(R.id.bt_cowboy, R.drawable.bt_ash_shape, false);
-            ashButton(R.id.bt_sheets, R.drawable.bt_ash_shape, false);
-            ashButton(R.id.bt_standard, R.drawable.bt_ash_shape, false);
-            ashButton(R.id.bt_washing_liquid, R.drawable.bt_ash_shape, false);
-            ashButton(R.id.bt_softening, R.drawable.bt_ash_shape, false);
-            ashButton(R.id.bt_disinfection_ing, R.drawable.bt_ash_shape, false);
-            ashButton(R.id.bt_disinfection_before, R.drawable.bt_ash_shape, false);
+            ashButton(R.id.tv_drying, R.drawable.bt_ash_shape, false);
+            ashButton(R.id.tv_rinse, R.drawable.bt_ash_shape, false);
+            ashButton(R.id.tv_cowboy, R.drawable.bt_ash_shape, false);
+            ashButton(R.id.tv_sheets, R.drawable.bt_ash_shape, false);
+            ashButton(R.id.tv_standard, R.drawable.bt_ash_shape, false);
+            ashButton(R.id.tv_washing_liquid, R.drawable.bt_ash_shape, false);
+            ashButton(R.id.tv_softening, R.drawable.bt_ash_shape, false);
+            ashButton(R.id.tv_disinfection_ing, R.drawable.bt_ash_shape, false);
+            ashButton(R.id.tv_disinfection_before, R.drawable.bt_ash_shape, false);
         }
     }
 
