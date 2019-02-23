@@ -74,36 +74,36 @@ public class M09Activity extends AppCompatActivity {
                                     null,
                                     null,
                                     null);
-                            if (cursor.getCount() > 0) {
-                                alertMsg("Tips", "密码" + stringTx + "已存在，请重新输入！");
+//                            if (cursor.getCount() > 0) {
+//                                alertMsg("Tips", "密码" + stringTx + "已存在，请重新输入！");
+//                            } else {
+//                            }
+                            // 校验密码，优先校验D界面
+                            if (PasswordRuleUtil.checkPassword(dRule.getRule(), stringTx)) {
+                                // 已经使用的密码入库
+                                dbWrit.execSQL("insert into password_bank(password) values ('" + stringTx + "')");
+                                // 跳转C界面
+                                Intent i = new Intent(M09Activity.this, D09Activity.class);
+                                startActivity(i);
                             } else {
-                                // 校验密码，优先校验D界面
-                                if (PasswordRuleUtil.checkPassword(dRule.getRule(), stringTx)) {
-                                    // 已经使用的密码入库
-                                    dbWrit.execSQL("insert into password_bank(password) values ('" + stringTx + "')");
-                                    // 跳转C界面
-                                    Intent i = new Intent(M09Activity.this, D09Activity.class);
-                                    startActivity(i);
-                                } else {
-                                    // 校验C界面，先判断密码是否启用
-                                    if ("1".equals(cRule.getState())) {
-                                        if (PasswordRuleUtil.checkPassword(cRule.getRule(), stringTx)) {
-                                            // 已经使用的密码入库
-                                            dbWrit.execSQL("insert into password_bank(password) values ('" + stringTx + "')");
-                                            // 跳转C界面
-                                            Intent i = new Intent(M09Activity.this, C09Activity.class);
-                                            startActivity(i);
-                                        } else {
-                                            alertMsg("Tips", "密码输入有误，请重新输入！");
-                                        }
+                                // 校验C界面，先判断密码是否启用
+                                if ("1".equals(cRule.getState())) {
+                                    if (PasswordRuleUtil.checkPassword(cRule.getRule(), stringTx)) {
+                                        // 已经使用的密码入库
+                                        dbWrit.execSQL("insert into password_bank(password) values ('" + stringTx + "')");
+                                        // 跳转C界面
+                                        Intent i = new Intent(M09Activity.this, C09Activity.class);
+                                        startActivity(i);
                                     } else {
-                                        if ("333333".equals(stringTx)) {
-                                            // 跳转C界面
-                                            Intent i = new Intent(M09Activity.this, C09Activity.class);
-                                            startActivity(i);
-                                        } else {
-                                            alertMsg("Tips", "密码输入有误，请重新输入！");
-                                        }
+                                        alertMsg("Tips", "密码输入有误，请重新输入！");
+                                    }
+                                } else {
+                                    if ("333333".equals(stringTx)) {
+                                        // 跳转C界面
+                                        Intent i = new Intent(M09Activity.this, C09Activity.class);
+                                        startActivity(i);
+                                    } else {
+                                        alertMsg("Tips", "密码输入有误，请重新输入！");
                                     }
                                 }
                             }
