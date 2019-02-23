@@ -68,7 +68,7 @@ public class B09Activity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        serialPortUtil.closeSerialPort();
+//        serialPortUtil.closeSerialPort();
     }
 
     @Override

@@ -1295,7 +1295,7 @@ public class D09Activity extends AppCompatActivity {
                 ashButton(bt_coin_box, R.drawable.bt_ash_shape, false);
             }
         } else {
-            for (int i = 1; i <= 4; i++) {
+            for (int i = 1; i <= 3; i++) {
                 // 获取textView id
                 int bt_coin_box = getResources().getIdentifier("bt_coin_" + i, "id", getPackageName());
                 if (buttonLight) {

@@ -314,122 +314,122 @@ public class C09Activity extends AppCompatActivity {
             }
         });
         // 洗衣机选择
-        findViewById(R.id.machine_1).setOnTouchListener(new View.OnTouchListener() {
+        findViewById(R.id.bt_machine1).setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                selectWashMachine(event, CmdConstance.MACHINE_1, R.id.machine_1);
+                selectWashMachine(event, CmdConstance.MACHINE_1, R.id.bt_machine1);
                 return false;
             }
         });
-        findViewById(R.id.machine_2).setOnTouchListener(new View.OnTouchListener() {
+        findViewById(R.id.bt_machine2).setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                selectWashMachine(event, CmdConstance.MACHINE_2, R.id.machine_2);
+                selectWashMachine(event, CmdConstance.MACHINE_2, R.id.bt_machine2);
                 return false;
             }
         });
-        findViewById(R.id.machine_3).setOnTouchListener(new View.OnTouchListener() {
+        findViewById(R.id.bt_machine3).setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                selectWashMachine(event, CmdConstance.MACHINE_3, R.id.machine_3);
+                selectWashMachine(event, CmdConstance.MACHINE_3, R.id.bt_machine3);
                 return false;
             }
         });
-        findViewById(R.id.machine_4).setOnTouchListener(new View.OnTouchListener() {
+        findViewById(R.id.bt_machine4).setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                selectWashMachine(event, CmdConstance.MACHINE_4, R.id.machine_4);
+                selectWashMachine(event, CmdConstance.MACHINE_4, R.id.bt_machine4);
                 return false;
             }
         });
-        findViewById(R.id.machine_5).setOnTouchListener(new View.OnTouchListener() {
+        findViewById(R.id.bt_machine5).setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                selectWashMachine(event, CmdConstance.MACHINE_5, R.id.machine_5);
+                selectWashMachine(event, CmdConstance.MACHINE_5, R.id.bt_machine5);
                 return false;
             }
         });
-        findViewById(R.id.machine_6).setOnTouchListener(new View.OnTouchListener() {
+        findViewById(R.id.bt_machine6).setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                selectWashMachine(event, CmdConstance.MACHINE_6, R.id.machine_6);
+                selectWashMachine(event, CmdConstance.MACHINE_6, R.id.bt_machine6);
                 return false;
             }
         });
-        findViewById(R.id.machine_7).setOnTouchListener(new View.OnTouchListener() {
+        findViewById(R.id.bt_machine7).setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                selectWashMachine(event, CmdConstance.MACHINE_7, R.id.machine_7);
+                selectWashMachine(event, CmdConstance.MACHINE_7, R.id.bt_machine7);
                 return false;
             }
         });
-        findViewById(R.id.machine_8).setOnTouchListener(new View.OnTouchListener() {
+        findViewById(R.id.bt_machine8).setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                selectWashMachine(event, CmdConstance.MACHINE_8, R.id.machine_8);
+                selectWashMachine(event, CmdConstance.MACHINE_8, R.id.bt_machine8);
                 return false;
             }
         });
-        findViewById(R.id.machine_9).setOnTouchListener(new View.OnTouchListener() {
+        findViewById(R.id.bt_machine9).setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                selectWashMachine(event, CmdConstance.MACHINE_9, R.id.machine_9);
+                selectWashMachine(event, CmdConstance.MACHINE_9, R.id.bt_machine9);
                 return false;
             }
         });
-        findViewById(R.id.machine_10).setOnTouchListener(new View.OnTouchListener() {
+        findViewById(R.id.bt_machine10).setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                selectWashMachine(event, CmdConstance.MACHINE_10, R.id.machine_10);
+                selectWashMachine(event, CmdConstance.MACHINE_10, R.id.bt_machine10);
                 return false;
             }
         });
-        findViewById(R.id.machine_11).setOnTouchListener(new View.OnTouchListener() {
+        findViewById(R.id.bt_machine11).setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                selectWashMachine(event, CmdConstance.MACHINE_11, R.id.machine_11);
+                selectWashMachine(event, CmdConstance.MACHINE_11, R.id.bt_machine11);
                 return false;
             }
         });
-        findViewById(R.id.machine_12).setOnTouchListener(new View.OnTouchListener() {
+        findViewById(R.id.bt_machine12).setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                selectWashMachine(event, CmdConstance.MACHINE_12, R.id.machine_12);
+                selectWashMachine(event, CmdConstance.MACHINE_12, R.id.bt_machine12);
                 return false;
             }
         });
-        findViewById(R.id.machine_13).setOnTouchListener(new View.OnTouchListener() {
+        findViewById(R.id.bt_machine13).setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                selectWashMachine(event, CmdConstance.MACHINE_13, R.id.machine_13);
+                selectWashMachine(event, CmdConstance.MACHINE_13, R.id.bt_machine13);
                 return false;
             }
         });
-        findViewById(R.id.machine_14).setOnTouchListener(new View.OnTouchListener() {
+        findViewById(R.id.bt_machine14).setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                selectWashMachine(event, CmdConstance.MACHINE_14, R.id.machine_14);
+                selectWashMachine(event, CmdConstance.MACHINE_14, R.id.bt_machine14);
                 return false;
             }
         });
-        findViewById(R.id.machine_15).setOnTouchListener(new View.OnTouchListener() {
+        findViewById(R.id.bt_machine15).setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                selectWashMachine(event, CmdConstance.MACHINE_15, R.id.machine_15);
+                selectWashMachine(event, CmdConstance.MACHINE_15, R.id.bt_machine15);
                 return false;
             }
         });
-        findViewById(R.id.machine_16).setOnTouchListener(new View.OnTouchListener() {
+        findViewById(R.id.bt_machine16).setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                selectWashMachine(event, CmdConstance.MACHINE_16, R.id.machine_16);
+                selectWashMachine(event, CmdConstance.MACHINE_16, R.id.bt_machine16);
                 return false;
             }
         });
-        findViewById(R.id.machine_17).setOnTouchListener(new View.OnTouchListener() {
+        findViewById(R.id.bt_machine17).setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                selectWashMachine(event, CmdConstance.MACHINE_17, R.id.machine_17);
+                selectWashMachine(event, CmdConstance.MACHINE_17, R.id.bt_machine17);
                 return false;
             }
         });
@@ -529,7 +529,7 @@ public class C09Activity extends AppCompatActivity {
                 ashButton(bt_coin_box, R.drawable.bt_ash_shape, false);
             }
         } else {
-            for (int i = 1; i <= 4; i++) {
+            for (int i = 1; i <= 3; i++) {
                 // 获取textView id
                 int bt_coin_box = getResources().getIdentifier("bt_coin_" + i, "id", getPackageName());
                 if (buttonLight) {
