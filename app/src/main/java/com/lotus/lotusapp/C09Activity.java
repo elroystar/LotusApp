@@ -550,7 +550,7 @@ public class C09Activity extends AppCompatActivity {
     private void ashWashingMachineButton(List<WashingMachine> washingMachines, boolean buttonLight) {
         if (washingMachines == null) {
             // 置灰所有
-            for (int i = 1; i <= 16; i++) {
+            for (int i = 1; i <= 17; i++) {
                 // 获取textView id
                 int bt_washing_machine = getResources().getIdentifier("bt_machine" + i, "id", getPackageName());
                 if (buttonLight) {
