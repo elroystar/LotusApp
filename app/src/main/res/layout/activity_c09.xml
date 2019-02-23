@@ -162,7 +162,7 @@
         android:background="@drawable/bt_shape">
 
         <Button
-            android:id="@+id/bt_exit"
+            android:id="@+id/bt_exit_c09"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/bt_sys_shape"

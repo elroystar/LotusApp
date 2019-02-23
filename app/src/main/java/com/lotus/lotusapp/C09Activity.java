@@ -58,14 +58,14 @@ public class C09Activity extends AppCompatActivity {
         // 置灰按钮
         ashNoChoiceButton();
         // 退出
-        findViewById(R.id.bt_exit).setOnTouchListener(new View.OnTouchListener() {
+        findViewById(R.id.bt_exit_c09).setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 switch (event.getAction()) {
                     case MotionEvent.ACTION_DOWN:
                         // 播放按键声音
                         playSound();
-                        Intent i = new Intent(C09Activity.this, D09Activity.class);
+                        Intent i = new Intent(C09Activity.this, A09Activity.class);
                         startActivity(i);
                         break;
                 }
