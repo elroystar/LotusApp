@@ -485,7 +485,7 @@ public class C09Activity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        serialPortUtil.closeSerialPort();
+//        serialPortUtil.closeSerialPort();
     }
 
     /**
