@@ -1,6 +1,7 @@
 package com.lotus.lotusapp;
 
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.media.AudioManager;
 import android.media.SoundPool;
@@ -56,6 +57,21 @@ public class C09Activity extends AppCompatActivity {
         initSound();
         // 置灰按钮
         ashNoChoiceButton();
+        // 退出
+        findViewById(R.id.bt_exit).setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()) {
+                    case MotionEvent.ACTION_DOWN:
+                        // 播放按键声音
+                        playSound();
+                        Intent i = new Intent(C09Activity.this, D09Activity.class);
+                        startActivity(i);
+                        break;
+                }
+                return false;
+            }
+        });
         // 设置键
         findViewById(R.id.bt_set).setOnTouchListener(new View.OnTouchListener() {
             @Override
