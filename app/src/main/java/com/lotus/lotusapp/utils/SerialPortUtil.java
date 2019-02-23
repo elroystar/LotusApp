@@ -2,7 +2,7 @@ package com.lotus.lotusapp.utils;
 
 import android.util.Log;
 
-import com.lotus.lotusapp.api.SerialPort;
+import android_serialport_api.SerialPort;
 
 import org.greenrobot.eventbus.EventBus;
 
