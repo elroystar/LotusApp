@@ -295,6 +295,7 @@ public class A09Activity extends AppCompatActivity {
      * 加载有效洗衣机
      */
     private void initEffectiveWash() {
+        washingMachines = new ArrayList<>();
         // 查询有效洗衣机
         sqLiteDbHelper = new SQLiteDbHelper(getApplicationContext());
         SQLiteDatabase dbRead = sqLiteDbHelper.getReadableDatabase();
