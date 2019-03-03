@@ -20,6 +20,8 @@ public class CmdConstance {
     public final static String ONE_DOLLAR = "0X04";
     // 注册询问指令
     public final static String REGISTER_ASK = "0X51";
+    // 设置已注册状态指令
+    public final static String REGISTERED = "0X01";
     // 消毒水泵开
     public final static String TEST_DISINFECTION_OPEN = "0X71";
     // 消毒水泵关
@@ -44,23 +46,5 @@ public class CmdConstance {
     public final static String TEST_SHORT_PROGRAM_OPEN = "0X7D";
     // 短程序关
     public final static String TEST_SHORT_PROGRAM_CLOSE = "0X8F";
-    // 洗衣机回复指令
-    public final static String MACHINE_1 = "0X01";
-    public final static String MACHINE_2 = "0X02";
-    public final static String MACHINE_3 = "0X03";
-    public final static String MACHINE_4 = "0X04";
-    public final static String MACHINE_5 = "0X05";
-    public final static String MACHINE_6 = "0X06";
-    public final static String MACHINE_7 = "0X07";
-    public final static String MACHINE_8 = "0X08";
-    public final static String MACHINE_9 = "0X09";
-    public final static String MACHINE_10 = "0X10";
-    public final static String MACHINE_11 = "0X11";
-    public final static String MACHINE_12 = "0X12";
-    public final static String MACHINE_13 = "0X13";
-    public final static String MACHINE_14 = "0X14";
-    public final static String MACHINE_15 = "0X15";
-    public final static String MACHINE_16 = "0X16";
-    public final static String MACHINE_17 = "0X17";
 
 }

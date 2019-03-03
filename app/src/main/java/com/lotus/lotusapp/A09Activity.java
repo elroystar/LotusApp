@@ -66,62 +66,68 @@ public class A09Activity extends AppCompatActivity {
             }
         });
 
-        findViewById(R.id.machine_1).setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                switch (event.getAction()) {
-                    case MotionEvent.ACTION_DOWN:
-                        //按下
-                        // 播放按键声音
-                        playSound();
-                        // 进入B界面
-                        Intent i = new Intent(A09Activity.this, B09Activity.class);
-                        i.putExtra("WashingMachine", washingMachines.get(0));
-                        i.putExtra("En", En);
-                        startActivity(i);
-                        break;
+        if (findViewById(R.id.machine_1) != null) {
+            findViewById(R.id.machine_1).setOnTouchListener(new View.OnTouchListener() {
+                @Override
+                public boolean onTouch(View v, MotionEvent event) {
+                    switch (event.getAction()) {
+                        case MotionEvent.ACTION_DOWN:
+                            //按下
+                            // 播放按键声音
+                            playSound();
+                            // 进入B界面
+                            Intent i = new Intent(A09Activity.this, B09Activity.class);
+                            i.putExtra("WashingMachine", washingMachines.get(0));
+                            i.putExtra("En", En);
+                            startActivity(i);
+                            break;
+                    }
+                    return false;
                 }
-                return false;
-            }
-        });
+            });
+        }
 
-        findViewById(R.id.machine_2).setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                switch (event.getAction()) {
-                    case MotionEvent.ACTION_DOWN:
-                        //按下
-                        // 播放按键声音
-                        playSound();
-                        // 进入B界面
-                        Intent i = new Intent(A09Activity.this, B09Activity.class);
-                        i.putExtra("WashingMachine", washingMachines.get(1));
-                        i.putExtra("En", En);
-                        startActivity(i);
-                        break;
+        if (findViewById(R.id.machine_2) != null) {
+            findViewById(R.id.machine_2).setOnTouchListener(new View.OnTouchListener() {
+                @Override
+                public boolean onTouch(View v, MotionEvent event) {
+                    switch (event.getAction()) {
+                        case MotionEvent.ACTION_DOWN:
+                            //按下
+                            // 播放按键声音
+                            playSound();
+                            // 进入B界面
+                            Intent i = new Intent(A09Activity.this, B09Activity.class);
+                            i.putExtra("WashingMachine", washingMachines.get(1));
+                            i.putExtra("En", En);
+                            startActivity(i);
+                            break;
+                    }
+                    return false;
                 }
-                return false;
-            }
-        });
+            });
+        }
 
-        findViewById(R.id.machine_3).setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                switch (event.getAction()) {
-                    case MotionEvent.ACTION_DOWN:
-                        //按下
-                        // 播放按键声音
-                        playSound();
-                        // 进入B界面
-                        Intent i = new Intent(A09Activity.this, B09Activity.class);
-                        i.putExtra("WashingMachine", washingMachines.get(2));
-                        i.putExtra("En", En);
-                        startActivity(i);
-                        break;
+        if (findViewById(R.id.machine_3) != null) {
+            findViewById(R.id.machine_3).setOnTouchListener(new View.OnTouchListener() {
+                @Override
+                public boolean onTouch(View v, MotionEvent event) {
+                    switch (event.getAction()) {
+                        case MotionEvent.ACTION_DOWN:
+                            //按下
+                            // 播放按键声音
+                            playSound();
+                            // 进入B界面
+                            Intent i = new Intent(A09Activity.this, B09Activity.class);
+                            i.putExtra("WashingMachine", washingMachines.get(2));
+                            i.putExtra("En", En);
+                            startActivity(i);
+                            break;
+                    }
+                    return false;
                 }
-                return false;
-            }
-        });
+            });
+        }
 
     }
 

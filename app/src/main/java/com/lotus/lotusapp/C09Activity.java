@@ -2,6 +2,7 @@ package com.lotus.lotusapp;
 
 import android.app.AlertDialog;
 import android.content.Intent;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.media.AudioManager;
 import android.media.SoundPool;
@@ -37,6 +38,8 @@ public class C09Activity extends AppCompatActivity {
     private int music;
     // 有效洗衣机集合
     private List<String> washList = new ArrayList<>();
+    // 有效洗衣机集合
+    private List<WashingMachine> washingMachines = new ArrayList<>();
     // 模式选择
     private String model = "";
     // 测试模式选择
@@ -55,8 +58,13 @@ public class C09Activity extends AppCompatActivity {
         EventBus.getDefault().register(this);
         // 加载声音
         initSound();
+        // 打开串口
+        serialPortUtil = new SerialPortUtil();
+        serialPortUtil.openSerialPort();
         // 置灰按钮
         ashNoChoiceButton();
+        // 加载游戏洗衣机
+        initEffectiveWash();
         // 退出
         findViewById(R.id.bt_exit_c09).setOnTouchListener(new View.OnTouchListener() {
             @Override
@@ -83,12 +91,12 @@ public class C09Activity extends AppCompatActivity {
                         playSound();
                         model = "set";
                         // 置灰测试键
-                        ashButton(R.id.bt_test, R.drawable.bt_ash_shape, false);
-                        // 打开串口，发送设置指令
-                        serialPortUtil = new SerialPortUtil();
-                        serialPortUtil.openSerialPort();
-                        // 新厂安装发送询问指令
-                        serialPortUtil.sendSerialPort(CmdConstance.REGISTER_ASK);
+                        ashButton(R.id.bt_test, R.drawable.bt_ash_shape, true);
+                        ashButton(R.id.bt_set, R.drawable.bt_c_royal_blue_shape, true);
+                        // 置灰测试模式键
+                        ashTestButton(0, false);
+                        // 点亮洗衣机
+                        ashWashingMachineButton(null, true);
                         break;
                 }
                 return false;
@@ -105,9 +113,16 @@ public class C09Activity extends AppCompatActivity {
                         playSound();
                         model = "test";
                         // 置灰设置键
-                        ashButton(R.id.bt_set, R.drawable.bt_ash_shape, false);
+                        ashButton(R.id.bt_set, R.drawable.bt_ash_shape, true);
+                        ashButton(R.id.bt_test, R.drawable.bt_c_navajo_white_shape, true);
                         // 点亮测试模式键
                         ashTestButton(1, true);
+                        // 置灰所有洗衣机
+                        ashWashingMachineButton(null, false);
+                        // 加载游戏洗衣机
+                        initEffectiveWash();
+                        // 点亮有效洗衣机
+                        ashWashingMachineButton(washingMachines, true);
                         break;
                 }
                 return false;
@@ -333,119 +348,119 @@ public class C09Activity extends AppCompatActivity {
         findViewById(R.id.bt_machine1).setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                selectWashMachine(event, CmdConstance.MACHINE_1, R.id.bt_machine1);
+                selectWashMachine(event, "1", R.id.bt_machine1);
                 return false;
             }
         });
         findViewById(R.id.bt_machine2).setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                selectWashMachine(event, CmdConstance.MACHINE_2, R.id.bt_machine2);
+                selectWashMachine(event, "2", R.id.bt_machine2);
                 return false;
             }
         });
         findViewById(R.id.bt_machine3).setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                selectWashMachine(event, CmdConstance.MACHINE_3, R.id.bt_machine3);
+                selectWashMachine(event, "3", R.id.bt_machine3);
                 return false;
             }
         });
         findViewById(R.id.bt_machine4).setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                selectWashMachine(event, CmdConstance.MACHINE_4, R.id.bt_machine4);
+                selectWashMachine(event, "4", R.id.bt_machine4);
                 return false;
             }
         });
         findViewById(R.id.bt_machine5).setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                selectWashMachine(event, CmdConstance.MACHINE_5, R.id.bt_machine5);
+                selectWashMachine(event, "5", R.id.bt_machine5);
                 return false;
             }
         });
         findViewById(R.id.bt_machine6).setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                selectWashMachine(event, CmdConstance.MACHINE_6, R.id.bt_machine6);
+                selectWashMachine(event, "6", R.id.bt_machine6);
                 return false;
             }
         });
         findViewById(R.id.bt_machine7).setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                selectWashMachine(event, CmdConstance.MACHINE_7, R.id.bt_machine7);
+                selectWashMachine(event, "7", R.id.bt_machine7);
                 return false;
             }
         });
         findViewById(R.id.bt_machine8).setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                selectWashMachine(event, CmdConstance.MACHINE_8, R.id.bt_machine8);
+                selectWashMachine(event, "8", R.id.bt_machine8);
                 return false;
             }
         });
         findViewById(R.id.bt_machine9).setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                selectWashMachine(event, CmdConstance.MACHINE_9, R.id.bt_machine9);
+                selectWashMachine(event, "9", R.id.bt_machine9);
                 return false;
             }
         });
         findViewById(R.id.bt_machine10).setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                selectWashMachine(event, CmdConstance.MACHINE_10, R.id.bt_machine10);
+                selectWashMachine(event, "10", R.id.bt_machine10);
                 return false;
             }
         });
         findViewById(R.id.bt_machine11).setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                selectWashMachine(event, CmdConstance.MACHINE_11, R.id.bt_machine11);
+                selectWashMachine(event, "11", R.id.bt_machine11);
                 return false;
             }
         });
         findViewById(R.id.bt_machine12).setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                selectWashMachine(event, CmdConstance.MACHINE_12, R.id.bt_machine12);
+                selectWashMachine(event, "12", R.id.bt_machine12);
                 return false;
             }
         });
         findViewById(R.id.bt_machine13).setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                selectWashMachine(event, CmdConstance.MACHINE_13, R.id.bt_machine13);
+                selectWashMachine(event, "13", R.id.bt_machine13);
                 return false;
             }
         });
         findViewById(R.id.bt_machine14).setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                selectWashMachine(event, CmdConstance.MACHINE_14, R.id.bt_machine14);
+                selectWashMachine(event, "14", R.id.bt_machine14);
                 return false;
             }
         });
         findViewById(R.id.bt_machine15).setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                selectWashMachine(event, CmdConstance.MACHINE_15, R.id.bt_machine15);
+                selectWashMachine(event, "15", R.id.bt_machine15);
                 return false;
             }
         });
         findViewById(R.id.bt_machine16).setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                selectWashMachine(event, CmdConstance.MACHINE_16, R.id.bt_machine16);
+                selectWashMachine(event, "16", R.id.bt_machine16);
                 return false;
             }
         });
         findViewById(R.id.bt_machine17).setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                selectWashMachine(event, CmdConstance.MACHINE_17, R.id.bt_machine17);
+                selectWashMachine(event, "17", R.id.bt_machine17);
                 return false;
             }
         });
@@ -453,6 +468,7 @@ public class C09Activity extends AppCompatActivity {
 
     /**
      * 选择洗衣机
+     *
      * @param event
      * @param machineId
      * @param btId
@@ -463,20 +479,36 @@ public class C09Activity extends AppCompatActivity {
             case MotionEvent.ACTION_DOWN:
                 // 播放按键声音
                 playSound();
-                if (washList.contains(machineId)) {
-                    Iterator<String> it = washList.iterator();
-                    while (it.hasNext()) {
-                        String x = it.next();
-                        if (x.equals(machineId)) {
-                            it.remove();
+                if ("set".equals(model)) {
+                    washingMachines = new ArrayList<>();
+                    WashingMachine machine = new WashingMachine();
+                    machine.setNum(Integer.parseInt(machineId));
+                    washingMachines.add(machine);
+                    // 置灰所有洗衣机
+                    ashWashingMachineButton(null, false);
+                    // 点亮选择的洗衣机
+                    ashWashingMachineButton(washingMachines, true);
+                    // 打开串口，等待接收指令
+                    serialPortUtil = new SerialPortUtil();
+                    serialPortUtil.openSerialPort();
+                } else if ("test".equals(model)) {
+                    if (washList.contains(machineId)) {
+                        Iterator<String> it = washList.iterator();
+                        while (it.hasNext()) {
+                            String x = it.next();
+                            if (x.equals(machineId)) {
+                                it.remove();
+                            }
                         }
+                        // 还原洗衣机按钮
+                        ashButton(btId, R.drawable.bt_c_royal_blue_shape, true);
+                    } else {
+                        washList.add(machineId);
+                        // 选择洗衣机按钮
+                        ashButton(btId, R.drawable.bt_c_select_shape, true);
                     }
-                    // 还原洗衣机按钮
-                    ashButton(btId, R.drawable.bt_c_royal_blue_shape, true);
                 } else {
-                    washList.add(CmdConstance.MACHINE_1);
-                    // 选择洗衣机按钮
-                    ashButton(btId, R.drawable.bt_c_select_shape, true);
+                    alertMsg("tips", "请先选择模式！");
                 }
                 break;
         }
@@ -485,7 +517,7 @@ public class C09Activity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-//        serialPortUtil.closeSerialPort();
+        serialPortUtil.closeSerialPort();
     }
 
     /**
@@ -602,6 +634,60 @@ public class C09Activity extends AppCompatActivity {
     }
 
     /**
+     * 加载有效洗衣机
+     */
+    private void initEffectiveWash() {
+        // 查询有效洗衣机
+        sqLiteDbHelper = new SQLiteDbHelper(getApplicationContext());
+        SQLiteDatabase dbRead = sqLiteDbHelper.getReadableDatabase();
+        try {
+            // select * from washer where state = '1'
+            Cursor cursor = dbRead.query(SQLiteDbHelper.TABLE_WASHING_MACHINE,
+                    null,
+                    "state = ?",
+                    new String[]{"1"},
+                    null,
+                    null,
+                    null);
+            if (cursor.getCount() > 0) {
+                while (cursor.moveToNext()) {
+                    WashingMachine washingMachine = new WashingMachine();
+                    washingMachine.setId(cursor.getInt(cursor.getColumnIndex("id")));
+                    washingMachine.setNum(cursor.getInt(cursor.getColumnIndex("num")));
+                    washingMachine.setCowboyPriceCoin(cursor.getString(cursor.getColumnIndex("cowboy_price_coin")));
+                    washingMachine.setCowboyPriceMobile(cursor.getString(cursor.getColumnIndex("cowboy_price_mobile")));
+                    washingMachine.setDisinfectionBeforePriceCoin(cursor.getString(cursor.getColumnIndex("disinfection_before_price_coin")));
+                    washingMachine.setDisinfectionBeforePriceMobile(cursor.getString(cursor.getColumnIndex("disinfection_before_price_mobile")));
+                    washingMachine.setDisinfectionIngPriceCoin(cursor.getString(cursor.getColumnIndex("disinfection_ing_price_coin")));
+                    washingMachine.setDisinfectionIngPriceMobile(cursor.getString(cursor.getColumnIndex("disinfection_ing_price_mobile")));
+                    washingMachine.setDryingPriceCoin(cursor.getString(cursor.getColumnIndex("drying_price_coin")));
+                    washingMachine.setDryingPriceMobile(cursor.getString(cursor.getColumnIndex("drying_price_mobile")));
+                    washingMachine.setRinsePriceCoin(cursor.getString(cursor.getColumnIndex("rinse_price_coin")));
+                    washingMachine.setRinsePriceMobile(cursor.getString(cursor.getColumnIndex("rinse_price_mobile")));
+                    washingMachine.setSheetsPriceCoin(cursor.getString(cursor.getColumnIndex("sheets_price_coin")));
+                    washingMachine.setSheetsPriceMobile(cursor.getString(cursor.getColumnIndex("sheets_price_mobile")));
+                    washingMachine.setSofteningPriceCoin(cursor.getString(cursor.getColumnIndex("softening_price_coin")));
+                    washingMachine.setSofteningPriceMobile(cursor.getString(cursor.getColumnIndex("softening_price_mobile")));
+                    washingMachine.setStandardPriceCoin(cursor.getString(cursor.getColumnIndex("standard_price_coin")));
+                    washingMachine.setStandardPriceMobile(cursor.getString(cursor.getColumnIndex("standard_price_mobile")));
+                    washingMachine.setWashingLiquidPriceCoin(cursor.getString(cursor.getColumnIndex("washing_liquid_price_coin")));
+                    washingMachine.setWashingLiquidPriceMobile(cursor.getString(cursor.getColumnIndex("washing_liquid_price_mobile")));
+                    washingMachine.setDisinfectionState(cursor.getString(cursor.getColumnIndex("disinfection_state")));
+                    washingMachine.setRinseState(cursor.getString(cursor.getColumnIndex("rinse_state")));
+                    washingMachine.setWashingLiquidState(cursor.getString(cursor.getColumnIndex("washing_liquid_state")));
+                    washingMachine.setState(cursor.getString(cursor.getColumnIndex("state")));
+                    washingMachines.add(washingMachine);
+                }
+            } else {
+                alertMsg("Error", "没有找到可以用的洗衣机！");
+            }
+        } finally {
+            // 关闭数据库连接
+            dbRead.close();
+        }
+    }
+
+    /**
      * 弹框提示
      *
      * @param tips
@@ -640,81 +726,22 @@ public class C09Activity extends AppCompatActivity {
         Log.d("C09Activity", "获取到了从传感器发送到Android主板的串口数据：" + string);
         sqLiteDbHelper = new SQLiteDbHelper(getApplicationContext());
         SQLiteDatabase dbWrit = sqLiteDbHelper.getWritableDatabase();
-        WashingMachine machine = new WashingMachine();
         try {
             switch (string) {
-                case CmdConstance.MACHINE_1:
-                    setWashingMachines(dbWrit, CmdConstance.MACHINE_1, "insert into washing_machine(num) values(1);", R.id.bt_machine1);
-                    break;
-                case CmdConstance.MACHINE_2:
-                    setWashingMachines(dbWrit, CmdConstance.MACHINE_2, "insert into washing_machine(num) values(2);", R.id.bt_machine2);
-                    break;
-                case CmdConstance.MACHINE_3:
-                    setWashingMachines(dbWrit, CmdConstance.MACHINE_3, "insert into washing_machine(num) values(3);", R.id.bt_machine3);
-                    break;
-                case CmdConstance.MACHINE_4:
-                    setWashingMachines(dbWrit, CmdConstance.MACHINE_4, "insert into washing_machine(num) values(4);", R.id.bt_machine4);
-                    break;
-                case CmdConstance.MACHINE_5:
-                    setWashingMachines(dbWrit, CmdConstance.MACHINE_5, "insert into washing_machine(num) values(5);", R.id.bt_machine5);
-                    break;
-                case CmdConstance.MACHINE_6:
-                    setWashingMachines(dbWrit, CmdConstance.MACHINE_6, "insert into washing_machine(num) values(6);", R.id.bt_machine6);
-                    break;
-                case CmdConstance.MACHINE_7:
-                    setWashingMachines(dbWrit, CmdConstance.MACHINE_7, "insert into washing_machine(num) values(7);", R.id.bt_machine7);
-                    break;
-                case CmdConstance.MACHINE_8:
-                    setWashingMachines(dbWrit, CmdConstance.MACHINE_8, "insert into washing_machine(num) values(8);", R.id.bt_machine8);
-                    break;
-                case CmdConstance.MACHINE_9:
-                    setWashingMachines(dbWrit, CmdConstance.MACHINE_9, "insert into washing_machine(num) values(9);", R.id.bt_machine9);
-                    break;
-                case CmdConstance.MACHINE_10:
-                    setWashingMachines(dbWrit, CmdConstance.MACHINE_10, "insert into washing_machine(num) values(10);", R.id.bt_machine10);
-                    break;
-                case CmdConstance.MACHINE_11:
-                    setWashingMachines(dbWrit, CmdConstance.MACHINE_11, "insert into washing_machine(num) values(11);", R.id.bt_machine11);
-                    break;
-                case CmdConstance.MACHINE_12:
-                    setWashingMachines(dbWrit, CmdConstance.MACHINE_12, "insert into washing_machine(num) values(12);", R.id.bt_machine12);
-                    break;
-                case CmdConstance.MACHINE_13:
-                    setWashingMachines(dbWrit, CmdConstance.MACHINE_13, "insert into washing_machine(num) values(13);", R.id.bt_machine13);
-                    break;
-                case CmdConstance.MACHINE_14:
-                    setWashingMachines(dbWrit, CmdConstance.MACHINE_14, "insert into washing_machine(num) values(14);", R.id.bt_machine14);
-                    break;
-                case CmdConstance.MACHINE_15:
-                    setWashingMachines(dbWrit, CmdConstance.MACHINE_15, "insert into washing_machine(num) values(15);", R.id.bt_machine15);
-                    break;
-                case CmdConstance.MACHINE_16:
-                    setWashingMachines(dbWrit, CmdConstance.MACHINE_16, "insert into washing_machine(num) values(16);", R.id.bt_machine16);
-                    break;
-                case CmdConstance.MACHINE_17:
-                    setWashingMachines(dbWrit, CmdConstance.MACHINE_17, "insert into washing_machine(num) values(17);", R.id.bt_machine17);
+                case CmdConstance.REGISTER_ASK:
+                    dbWrit.execSQL("insert into washing_machine(num) values('" + washingMachines.get(0).getNum() + "');");
+                    // 还原按钮状态
+                    ashWashingMachineButton(null, true);
+                    // 发送设置已注册状态指令
+                    serialPortUtil.sendSerialPort(CmdConstance.REGISTERED);
                     break;
                 default:
-                    serialPortUtil.sendSerialPort(CmdConstance.REGISTER_ASK);
+//                    serialPortUtil.sendSerialPort(CmdConstance.REGISTER_ASK);
                     break;
             }
         } finally {
             dbWrit.close();
         }
-    }
-
-    /**
-     * 设置洗衣机
-     *
-     * @param dbWrit
-     * @param cmd
-     * @param sql
-     * @param num
-     */
-    private void setWashingMachines(SQLiteDatabase dbWrit, String cmd, String sql, int num) {
-        serialPortUtil.sendSerialPort(cmd);
-        dbWrit.execSQL(sql);
-        ashButton(num, R.drawable.bt_c_royal_blue_shape, true);
     }
 
 }
