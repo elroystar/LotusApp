@@ -312,6 +312,7 @@ public class A09Activity extends AppCompatActivity {
                     WashingMachine washingMachine = new WashingMachine();
                     washingMachine.setId(cursor.getInt(cursor.getColumnIndex("id")));
                     washingMachine.setNum(cursor.getInt(cursor.getColumnIndex("num")));
+                    washingMachine.setCommand(cursor.getString(cursor.getColumnIndex("command")));
                     washingMachine.setCowboyPriceCoin(cursor.getString(cursor.getColumnIndex("cowboy_price_coin")));
                     washingMachine.setCowboyPriceMobile(cursor.getString(cursor.getColumnIndex("cowboy_price_mobile")));
                     washingMachine.setDisinfectionBeforePriceCoin(cursor.getString(cursor.getColumnIndex("disinfection_before_price_coin")));

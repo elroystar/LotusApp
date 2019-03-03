@@ -52,6 +52,7 @@ public class SQLiteDbHelper extends SQLiteOpenHelper {
     private static final String WASHING_MACHINE_CREATE_TABLE_SQL = "create table " + TABLE_WASHING_MACHINE + "("
             + "id integer primary key autoincrement,"
             + "num integer not null,"
+            + "command varchar(10) not null,"
             + "state varchar(2) not null default '1',"
             + "washing_liquid_state varchar(2) not null default '1',"
             + "rinse_state varchar(2) not null default '1',"

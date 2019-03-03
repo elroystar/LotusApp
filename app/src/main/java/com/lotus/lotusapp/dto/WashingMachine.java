@@ -14,6 +14,8 @@ public class WashingMachine implements Parcelable {
 
     private Integer num;
 
+    private String command;
+
     private String state;
 
     private String dryingPriceCoin;
@@ -62,56 +64,6 @@ public class WashingMachine implements Parcelable {
 
     private Date updateTime;
 
-    public WashingMachine() {
-    }
-
-    protected WashingMachine(Parcel in) {
-        if (in.readByte() == 0) {
-            id = null;
-        } else {
-            id = in.readInt();
-        }
-        if (in.readByte() == 0) {
-            num = null;
-        } else {
-            num = in.readInt();
-        }
-        state = in.readString();
-        dryingPriceCoin = in.readString();
-        dryingPriceMobile = in.readString();
-        rinsePriceCoin = in.readString();
-        rinsePriceMobile = in.readString();
-        cowboyPriceCoin = in.readString();
-        cowboyPriceMobile = in.readString();
-        sheetsPriceCoin = in.readString();
-        sheetsPriceMobile = in.readString();
-        standardPriceCoin = in.readString();
-        standardPriceMobile = in.readString();
-        washingLiquidPriceCoin = in.readString();
-        washingLiquidPriceMobile = in.readString();
-        softeningPriceCoin = in.readString();
-        softeningPriceMobile = in.readString();
-        disinfectionIngPriceCoin = in.readString();
-        disinfectionIngPriceMobile = in.readString();
-        disinfectionBeforePriceCoin = in.readString();
-        disinfectionBeforePriceMobile = in.readString();
-        washingLiquidState = in.readString();
-        disinfectionState = in.readString();
-        rinseState = in.readString();
-    }
-
-    public static final Creator<WashingMachine> CREATOR = new Creator<WashingMachine>() {
-        @Override
-        public WashingMachine createFromParcel(Parcel in) {
-            return new WashingMachine(in);
-        }
-
-        @Override
-        public WashingMachine[] newArray(int size) {
-            return new WashingMachine[size];
-        }
-    };
-
     public Integer getId() {
         return id;
     }
@@ -126,6 +78,14 @@ public class WashingMachine implements Parcelable {
 
     public void setNum(Integer num) {
         this.num = num;
+    }
+
+    public String getCommand() {
+        return command;
+    }
+
+    public void setCommand(String command) {
+        this.command = command;
     }
 
     public String getState() {
@@ -320,6 +280,57 @@ public class WashingMachine implements Parcelable {
         this.updateTime = updateTime;
     }
 
+    public WashingMachine() {
+    }
+
+    protected WashingMachine(Parcel in) {
+        if (in.readByte() == 0) {
+            id = null;
+        } else {
+            id = in.readInt();
+        }
+        if (in.readByte() == 0) {
+            num = null;
+        } else {
+            num = in.readInt();
+        }
+        command = in.readString();
+        state = in.readString();
+        dryingPriceCoin = in.readString();
+        dryingPriceMobile = in.readString();
+        rinsePriceCoin = in.readString();
+        rinsePriceMobile = in.readString();
+        cowboyPriceCoin = in.readString();
+        cowboyPriceMobile = in.readString();
+        sheetsPriceCoin = in.readString();
+        sheetsPriceMobile = in.readString();
+        standardPriceCoin = in.readString();
+        standardPriceMobile = in.readString();
+        washingLiquidPriceCoin = in.readString();
+        washingLiquidPriceMobile = in.readString();
+        softeningPriceCoin = in.readString();
+        softeningPriceMobile = in.readString();
+        disinfectionIngPriceCoin = in.readString();
+        disinfectionIngPriceMobile = in.readString();
+        disinfectionBeforePriceCoin = in.readString();
+        disinfectionBeforePriceMobile = in.readString();
+        washingLiquidState = in.readString();
+        disinfectionState = in.readString();
+        rinseState = in.readString();
+    }
+
+    public static final Creator<WashingMachine> CREATOR = new Creator<WashingMachine>() {
+        @Override
+        public WashingMachine createFromParcel(Parcel in) {
+            return new WashingMachine(in);
+        }
+
+        @Override
+        public WashingMachine[] newArray(int size) {
+            return new WashingMachine[size];
+        }
+    };
+
     @Override
     public int describeContents() {
         return 0;
@@ -339,6 +350,7 @@ public class WashingMachine implements Parcelable {
             dest.writeByte((byte) 1);
             dest.writeInt(num);
         }
+        dest.writeString(command);
         dest.writeString(state);
         dest.writeString(dryingPriceCoin);
         dest.writeString(dryingPriceMobile);

@@ -21,7 +21,7 @@ public class CmdConstance {
     // 注册询问指令
     public final static String REGISTER_ASK = "0X51";
     // 设置已注册状态指令
-    public final static String REGISTERED = "0X01";
+    public final static String REGISTERED = "0X0A";
     // 消毒水泵开
     public final static String TEST_DISINFECTION_OPEN = "0X71";
     // 消毒水泵关

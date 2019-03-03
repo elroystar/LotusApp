@@ -40,6 +40,9 @@ public class C09Activity extends AppCompatActivity {
     private List<String> washList = new ArrayList<>();
     // 有效洗衣机集合
     private List<WashingMachine> washingMachines = new ArrayList<>();
+    // 循环发送控制
+    private boolean asked = true;
+    private boolean registered = true;
     // 模式选择
     private String model = "";
     // 测试模式选择
@@ -95,8 +98,22 @@ public class C09Activity extends AppCompatActivity {
                         ashButton(R.id.bt_set, R.drawable.bt_c_royal_blue_shape, true);
                         // 置灰测试模式键
                         ashTestButton(0, false);
+                        // 置灰所有洗衣机
+                        ashWashingMachineButton(null, false);
                         // 点亮洗衣机
                         ashWashingMachineButton(null, true);
+                        // 加载游戏洗衣机
+                        initEffectiveWash();
+                        if (washingMachines.size() > 0) {
+                            // 设置已注册洗衣机按钮颜色
+                            for (WashingMachine washingMachine : washingMachines) {
+                                // 获取textView id
+                                int bt_washing_machine = getResources().getIdentifier("bt_machine" + washingMachine.getNum(), "id", getPackageName());
+                                ashButton(bt_washing_machine, R.drawable.bt_registered_shape, false);
+                            }
+                        }
+                        // 点亮投币箱
+                        ashCoinBoxButton(null, true);
                         break;
                 }
                 return false;
@@ -119,6 +136,8 @@ public class C09Activity extends AppCompatActivity {
                         ashTestButton(1, true);
                         // 置灰所有洗衣机
                         ashWashingMachineButton(null, false);
+                        // 置灰投币箱
+                        ashCoinBoxButton(null, false);
                         // 加载游戏洗衣机
                         initEffectiveWash();
                         // 点亮有效洗衣机
@@ -488,9 +507,14 @@ public class C09Activity extends AppCompatActivity {
                     ashWashingMachineButton(null, false);
                     // 点亮选择的洗衣机
                     ashWashingMachineButton(washingMachines, true);
-                    // 打开串口，等待接收指令
-                    serialPortUtil = new SerialPortUtil();
-                    serialPortUtil.openSerialPort();
+                    while (asked) {
+                        try {
+                            Thread.sleep(600);
+                        } catch (InterruptedException e) {
+                            Log.d("C09Activity", "循环发送询问指令间隔时间异常，e=" + e.getMessage());
+                        }
+                        serialPortUtil.sendSerialPort(CmdConstance.REGISTER_ASK);
+                    }
                 } else if ("test".equals(model)) {
                     if (washList.contains(machineId)) {
                         Iterator<String> it = washList.iterator();
@@ -637,6 +661,7 @@ public class C09Activity extends AppCompatActivity {
      * 加载有效洗衣机
      */
     private void initEffectiveWash() {
+        washingMachines = new ArrayList<>();
         // 查询有效洗衣机
         sqLiteDbHelper = new SQLiteDbHelper(getApplicationContext());
         SQLiteDatabase dbRead = sqLiteDbHelper.getReadableDatabase();
@@ -654,6 +679,7 @@ public class C09Activity extends AppCompatActivity {
                     WashingMachine washingMachine = new WashingMachine();
                     washingMachine.setId(cursor.getInt(cursor.getColumnIndex("id")));
                     washingMachine.setNum(cursor.getInt(cursor.getColumnIndex("num")));
+                    washingMachine.setCommand(cursor.getString(cursor.getColumnIndex("command")));
                     washingMachine.setCowboyPriceCoin(cursor.getString(cursor.getColumnIndex("cowboy_price_coin")));
                     washingMachine.setCowboyPriceMobile(cursor.getString(cursor.getColumnIndex("cowboy_price_mobile")));
                     washingMachine.setDisinfectionBeforePriceCoin(cursor.getString(cursor.getColumnIndex("disinfection_before_price_coin")));
@@ -727,18 +753,40 @@ public class C09Activity extends AppCompatActivity {
         sqLiteDbHelper = new SQLiteDbHelper(getApplicationContext());
         SQLiteDatabase dbWrit = sqLiteDbHelper.getWritableDatabase();
         try {
-            switch (string) {
-                case CmdConstance.REGISTER_ASK:
-                    dbWrit.execSQL("insert into washing_machine(num) values('" + washingMachines.get(0).getNum() + "');");
-                    // 还原按钮状态
-                    ashWashingMachineButton(null, true);
-                    // 发送设置已注册状态指令
-                    serialPortUtil.sendSerialPort(CmdConstance.REGISTERED);
-                    break;
-                default:
-//                    serialPortUtil.sendSerialPort(CmdConstance.REGISTER_ASK);
-                    break;
+            // 加载游戏洗衣机
+            initEffectiveWash();
+            if (washingMachines.size() > 0) {
+                // 设置已注册洗衣机按钮颜色
+                for (WashingMachine washingMachine : washingMachines) {
+                    if (string.equals(washingMachine.getCommand())) {
+                        registered = false;
+                        return;
+                    }
+                }
             }
+            dbWrit.execSQL("insert into washing_machine(num,command) values('" + washingMachines.get(0).getNum() + "','" + string + "');");
+            // 置灰所有洗衣机
+            ashWashingMachineButton(null, false);
+            // 点亮洗衣机
+            ashWashingMachineButton(null, true);
+            // 加载游戏洗衣机
+            initEffectiveWash();
+            if (washingMachines.size() > 0) {
+                // 设置已注册洗衣机按钮颜色
+                for (WashingMachine washingMachine : washingMachines) {
+                    // 获取textView id
+                    int bt_washing_machine = getResources().getIdentifier("bt_machine" + washingMachine.getNum(), "id", getPackageName());
+                    ashButton(bt_washing_machine, R.drawable.bt_registered_shape, false);
+                }
+            }
+            asked = false;
+            while (registered) {
+                Thread.sleep(1000);
+                // 发送已注册指令
+                serialPortUtil.sendSerialPort(string + CmdConstance.REGISTERED);
+            }
+        } catch (InterruptedException e) {
+            Log.d("C09Activity", "发送已注册指令间隔时间异常，e=" + e.getMessage());
         } finally {
             dbWrit.close();
         }
