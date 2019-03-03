@@ -507,14 +507,14 @@ public class C09Activity extends AppCompatActivity {
                     ashWashingMachineButton(null, false);
                     // 点亮选择的洗衣机
                     ashWashingMachineButton(washingMachines, true);
-                    while (asked) {
+                    serialPortUtil.sendSerialPort(CmdConstance.REGISTER_ASK);
+                    /*while (asked) {
                         try {
                             Thread.sleep(600);
                         } catch (InterruptedException e) {
                             Log.d("C09Activity", "循环发送询问指令时间间隔异常，e=" + e.getMessage());
                         }
-                        serialPortUtil.sendSerialPort(CmdConstance.REGISTER_ASK);
-                    }
+                    }*/
                 } else if ("test".equals(model)) {
                     if (washList.contains(machineId)) {
                         Iterator<String> it = washList.iterator();
@@ -779,15 +779,17 @@ public class C09Activity extends AppCompatActivity {
                     ashButton(bt_washing_machine, R.drawable.bt_registered_shape, false);
                 }
             }
-            asked = false;
+            // 发送已注册指令
+            serialPortUtil.sendSerialPort(string + CmdConstance.REGISTERED);
+            /*asked = false;
             while (registered) {
                 Thread.sleep(1000);
-                // 发送已注册指令
-                serialPortUtil.sendSerialPort(string + CmdConstance.REGISTERED);
-            }
-        } catch (InterruptedException e) {
+            }*/
+        }
+        /*catch (InterruptedException e) {
             Log.d("C09Activity", "发送已注册指令时间间隔异常，e=" + e.getMessage());
-        } finally {
+        }*/
+        finally {
             dbWrit.close();
         }
     }
