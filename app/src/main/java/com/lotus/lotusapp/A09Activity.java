@@ -55,7 +55,7 @@ public class A09Activity extends AppCompatActivity {
         // 显示洗衣机按钮
         displayMachineBtn();
         // 长按logo进入M界面
-        LongClickUtils.setLongClick(new Handler(), findViewById(R.id.logo), 5000, new View.OnLongClickListener() {
+        LongClickUtils.setLongClick(new Handler(), findViewById(R.id.logo), 1000, new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
                 // 进入M界面
