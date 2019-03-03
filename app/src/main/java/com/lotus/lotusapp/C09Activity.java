@@ -499,6 +499,8 @@ public class C09Activity extends AppCompatActivity {
                 // 播放按键声音
                 playSound();
                 if ("set".equals(model)) {
+                    washList = new ArrayList<>();
+                    washList.add(machineId);
                     washingMachines = new ArrayList<>();
                     WashingMachine machine = new WashingMachine();
                     machine.setNum(Integer.parseInt(machineId));
