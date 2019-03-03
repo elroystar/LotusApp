@@ -511,7 +511,7 @@ public class C09Activity extends AppCompatActivity {
                         try {
                             Thread.sleep(600);
                         } catch (InterruptedException e) {
-                            Log.d("C09Activity", "循环发送询问指令间隔时间异常，e=" + e.getMessage());
+                            Log.d("C09Activity", "循环发送询问指令时间间隔异常，e=" + e.getMessage());
                         }
                         serialPortUtil.sendSerialPort(CmdConstance.REGISTER_ASK);
                     }
@@ -786,7 +786,7 @@ public class C09Activity extends AppCompatActivity {
                 serialPortUtil.sendSerialPort(string + CmdConstance.REGISTERED);
             }
         } catch (InterruptedException e) {
-            Log.d("C09Activity", "发送已注册指令间隔时间异常，e=" + e.getMessage());
+            Log.d("C09Activity", "发送已注册指令时间间隔异常，e=" + e.getMessage());
         } finally {
             dbWrit.close();
         }
