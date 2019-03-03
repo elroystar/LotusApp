@@ -766,7 +766,7 @@ public class C09Activity extends AppCompatActivity {
                     }
                 }
             }
-            dbWrit.execSQL("insert into washing_machine(num,command) values('" + washingMachines.get(0).getNum() + "','" + string + "');");
+            dbWrit.execSQL("insert into washing_machine(num,command) values('" + washList.get(0) + "','" + string + "');");
             // 置灰所有洗衣机
             ashWashingMachineButton(null, false);
             // 点亮洗衣机
