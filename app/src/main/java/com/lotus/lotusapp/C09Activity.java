@@ -799,7 +799,7 @@ public class C09Activity extends AppCompatActivity {
                 }
             } else {
                 serialPortUtil.sendSerialPort(CmdConstance.REGISTER_ASK);
-                handler.postDelayed(this, 650);
+                handler.postDelayed(this, 5000);
             }
         }
     };
