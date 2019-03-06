@@ -529,7 +529,7 @@ public class C09Activity extends AppCompatActivity {
                             }
                         }
                         // 还原洗衣机按钮
-                        ashButton(btId, R.drawable.bt_c_royal_blue_shape, true);
+                        ashButton(btId, R.drawable.bt_registered_shape, true);
                     } else {
                         washCommand.add(machineId);
                         // 选择洗衣机按钮
