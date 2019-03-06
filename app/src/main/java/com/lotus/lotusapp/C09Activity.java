@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.media.AudioManager;
 import android.media.SoundPool;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -37,7 +38,7 @@ public class C09Activity extends AppCompatActivity {
     // 定义一个整型用load(),来设置soundID
     private int music;
     // 有效洗衣机集合
-    private List<String> washList = new ArrayList<>();
+    private List<String> washCommand = new ArrayList<>();
     // 有效洗衣机集合
     private List<WashingMachine> washingMachines = new ArrayList<>();
     // 循环发送控制
@@ -94,8 +95,8 @@ public class C09Activity extends AppCompatActivity {
                         playSound();
                         model = "set";
                         // 置灰测试键
-                        ashButton(R.id.bt_test, R.drawable.bt_ash_shape, true);
-                        ashButton(R.id.bt_set, R.drawable.bt_c_royal_blue_shape, true);
+                        ashButton(R.id.bt_test, R.drawable.bt_c_navajo_white_shape, true);
+                        ashButton(R.id.bt_set, R.drawable.bt_selected_shape, true);
                         // 置灰测试模式键
                         ashTestButton(0, false);
                         // 置灰所有洗衣机
@@ -130,8 +131,8 @@ public class C09Activity extends AppCompatActivity {
                         playSound();
                         model = "test";
                         // 置灰设置键
-                        ashButton(R.id.bt_set, R.drawable.bt_ash_shape, true);
-                        ashButton(R.id.bt_test, R.drawable.bt_c_navajo_white_shape, true);
+                        ashButton(R.id.bt_set, R.drawable.bt_c_royal_blue_shape, true);
+                        ashButton(R.id.bt_test, R.drawable.bt_selected_shape, true);
                         // 点亮测试模式键
                         ashTestButton(1, true);
                         // 置灰所有洗衣机
@@ -155,20 +156,20 @@ public class C09Activity extends AppCompatActivity {
                     //按下
                     case MotionEvent.ACTION_DOWN:
                         if ("test".equals(model)) {
-                            if (!washList.isEmpty()) {
+                            if (!washCommand.isEmpty()) {
                                 // 播放按键声音
                                 playSound();
                                 // 发送串口命令
                                 if ("open".equals(testWaterIn)) {
                                     v.setBackgroundResource(R.drawable.bt_c_navajo_white_shape);
                                     testWaterIn = "close";
-                                    for (String cmdWashId : washList) {
+                                    for (String cmdWashId : washCommand) {
                                         serialPortUtil.sendSerialPort(cmdWashId + CmdConstance.TEST_WATER_IN_CLOSE);
                                     }
                                 } else if ("close".equals(testWaterIn)) {
                                     v.setBackgroundResource(R.drawable.bt_dark_orange_shape);
                                     testWaterIn = "open";
-                                    for (String cmdWashId : washList) {
+                                    for (String cmdWashId : washCommand) {
                                         serialPortUtil.sendSerialPort(cmdWashId + CmdConstance.TEST_WATER_IN_OPEN);
                                     }
                                 }
@@ -191,20 +192,20 @@ public class C09Activity extends AppCompatActivity {
                     //按下
                     case MotionEvent.ACTION_DOWN:
                         if ("test".equals(model)) {
-                            if (!washList.isEmpty()) {
+                            if (!washCommand.isEmpty()) {
                                 // 播放按键声音
                                 playSound();
                                 // 发送串口命令
                                 if ("open".equals(testWaterOut)) {
                                     v.setBackgroundResource(R.drawable.bt_c_navajo_white_shape);
                                     testWaterOut = "close";
-                                    for (String cmdWashId : washList) {
+                                    for (String cmdWashId : washCommand) {
                                         serialPortUtil.sendSerialPort(cmdWashId + CmdConstance.TEST_WATER_OUT_CLOSE);
                                     }
                                 } else if ("close".equals(testWaterOut)) {
                                     v.setBackgroundResource(R.drawable.bt_dark_orange_shape);
                                     testWaterOut = "open";
-                                    for (String cmdWashId : washList) {
+                                    for (String cmdWashId : washCommand) {
                                         serialPortUtil.sendSerialPort(cmdWashId + CmdConstance.TEST_WATER_OUT_OPEN);
                                     }
                                 }
@@ -227,20 +228,20 @@ public class C09Activity extends AppCompatActivity {
                     //按下
                     case MotionEvent.ACTION_DOWN:
                         if ("test".equals(model)) {
-                            if (!washList.isEmpty()) {
+                            if (!washCommand.isEmpty()) {
                                 // 播放按键声音
                                 playSound();
                                 // 发送串口命令
                                 if ("open".equals(testDisinfection)) {
                                     v.setBackgroundResource(R.drawable.bt_c_navajo_white_shape);
                                     testDisinfection = "close";
-                                    for (String cmdWashId : washList) {
+                                    for (String cmdWashId : washCommand) {
                                         serialPortUtil.sendSerialPort(cmdWashId + CmdConstance.TEST_DISINFECTION_CLOSE);
                                     }
                                 } else if ("close".equals(testDisinfection)) {
                                     v.setBackgroundResource(R.drawable.bt_dark_orange_shape);
                                     testDisinfection = "open";
-                                    for (String cmdWashId : washList) {
+                                    for (String cmdWashId : washCommand) {
                                         serialPortUtil.sendSerialPort(cmdWashId + CmdConstance.TEST_DISINFECTION_OPEN);
                                     }
                                 }
@@ -263,20 +264,20 @@ public class C09Activity extends AppCompatActivity {
                     //按下
                     case MotionEvent.ACTION_DOWN:
                         if ("test".equals(model)) {
-                            if (!washList.isEmpty()) {
+                            if (!washCommand.isEmpty()) {
                                 // 播放按键声音
                                 playSound();
                                 // 发送串口命令
                                 if ("open".equals(testSoftening)) {
                                     v.setBackgroundResource(R.drawable.bt_c_navajo_white_shape);
                                     testSoftening = "close";
-                                    for (String cmdWashId : washList) {
+                                    for (String cmdWashId : washCommand) {
                                         serialPortUtil.sendSerialPort(cmdWashId + CmdConstance.TEST_SOFTENING_CLOSE);
                                     }
                                 } else if ("close".equals(testSoftening)) {
                                     v.setBackgroundResource(R.drawable.bt_dark_orange_shape);
                                     testSoftening = "open";
-                                    for (String cmdWashId : washList) {
+                                    for (String cmdWashId : washCommand) {
                                         serialPortUtil.sendSerialPort(cmdWashId + CmdConstance.TEST_SOFTENING_OPEN);
                                     }
                                 }
@@ -299,20 +300,20 @@ public class C09Activity extends AppCompatActivity {
                     //按下
                     case MotionEvent.ACTION_DOWN:
                         if ("test".equals(model)) {
-                            if (!washList.isEmpty()) {
+                            if (!washCommand.isEmpty()) {
                                 // 播放按键声音
                                 playSound();
                                 // 发送串口命令
                                 if ("open".equals(testWashingLiquid)) {
                                     v.setBackgroundResource(R.drawable.bt_c_navajo_white_shape);
                                     testWashingLiquid = "close";
-                                    for (String cmdWashId : washList) {
+                                    for (String cmdWashId : washCommand) {
                                         serialPortUtil.sendSerialPort(cmdWashId + CmdConstance.TEST_WASHING_LIQUID_CLOSE);
                                     }
                                 } else if ("close".equals(testWashingLiquid)) {
                                     v.setBackgroundResource(R.drawable.bt_dark_orange_shape);
                                     testWashingLiquid = "open";
-                                    for (String cmdWashId : washList) {
+                                    for (String cmdWashId : washCommand) {
                                         serialPortUtil.sendSerialPort(cmdWashId + CmdConstance.TEST_WASHING_LIQUID_OPEN);
                                     }
                                 }
@@ -335,20 +336,20 @@ public class C09Activity extends AppCompatActivity {
                     //按下
                     case MotionEvent.ACTION_DOWN:
                         if ("test".equals(model)) {
-                            if (!washList.isEmpty()) {
+                            if (!washCommand.isEmpty()) {
                                 // 播放按键声音
                                 playSound();
                                 // 发送串口命令
                                 if ("open".equals(testShortProgram)) {
                                     v.setBackgroundResource(R.drawable.bt_c_navajo_white_shape);
                                     testShortProgram = "close";
-                                    for (String cmdWashId : washList) {
+                                    for (String cmdWashId : washCommand) {
                                         serialPortUtil.sendSerialPort(cmdWashId + CmdConstance.TEST_SHORT_PROGRAM_CLOSE);
                                     }
                                 } else if ("close".equals(testShortProgram)) {
                                     v.setBackgroundResource(R.drawable.bt_dark_orange_shape);
                                     testShortProgram = "open";
-                                    for (String cmdWashId : washList) {
+                                    for (String cmdWashId : washCommand) {
                                         serialPortUtil.sendSerialPort(cmdWashId + CmdConstance.TEST_SHORT_PROGRAM_OPEN);
                                     }
                                 }
@@ -499,8 +500,8 @@ public class C09Activity extends AppCompatActivity {
                 // 播放按键声音
                 playSound();
                 if ("set".equals(model)) {
-                    washList = new ArrayList<>();
-                    washList.add(machineId);
+                    washCommand = new ArrayList<>();
+                    washCommand.add(machineId);
                     washingMachines = new ArrayList<>();
                     WashingMachine machine = new WashingMachine();
                     machine.setNum(Integer.parseInt(machineId));
@@ -518,8 +519,9 @@ public class C09Activity extends AppCompatActivity {
                         }
                     }*/
                 } else if ("test".equals(model)) {
-                    if (washList.contains(machineId)) {
-                        Iterator<String> it = washList.iterator();
+                    WashingMachine washingMachine = getWashingMachine(machineId);
+                    if (washCommand.contains(washingMachine.getCommand())) {
+                        Iterator<String> it = washCommand.iterator();
                         while (it.hasNext()) {
                             String x = it.next();
                             if (x.equals(machineId)) {
@@ -529,9 +531,9 @@ public class C09Activity extends AppCompatActivity {
                         // 还原洗衣机按钮
                         ashButton(btId, R.drawable.bt_c_royal_blue_shape, true);
                     } else {
-                        washList.add(machineId);
+                        washCommand.add(machineId);
                         // 选择洗衣机按钮
-                        ashButton(btId, R.drawable.bt_c_select_shape, true);
+                        ashButton(btId, R.drawable.bt_selected_shape, true);
                     }
                 } else {
                     alertMsg("tips", "请先选择模式！");
@@ -544,6 +546,42 @@ public class C09Activity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         serialPortUtil.closeSerialPort();
+    }
+
+    /**
+     * 获取洗衣机
+     * @param num
+     * @return
+     */
+    @NonNull
+    private WashingMachine getWashingMachine(String num) {
+        // 获取洗衣机
+        sqLiteDbHelper = new SQLiteDbHelper(getApplicationContext());
+        SQLiteDatabase dbRead = sqLiteDbHelper.getReadableDatabase();
+        WashingMachine washingMachine = new WashingMachine();
+        try {
+            // select * from washer where state = '1' and num = 'num'
+            Cursor cursor = dbRead.query(SQLiteDbHelper.TABLE_WASHING_MACHINE,
+                    null,
+                    "state = ? and num = ?",
+                    new String[]{"1",num},
+                    null,
+                    null,
+                    null);
+            if (cursor.getCount() > 0) {
+                while (cursor.moveToNext()) {
+                    washingMachine.setId(cursor.getInt(cursor.getColumnIndex("id")));
+                    washingMachine.setNum(cursor.getInt(cursor.getColumnIndex("num")));
+                    washingMachine.setCommand(cursor.getString(cursor.getColumnIndex("command")));
+                }
+            } else {
+                alertMsg("tips", "没有查询到洗衣机！");
+            }
+        } finally {
+            // 关闭数据库连接
+            dbRead.close();
+        }
+        return washingMachine;
     }
 
     /**
@@ -706,8 +744,6 @@ public class C09Activity extends AppCompatActivity {
                     washingMachine.setState(cursor.getString(cursor.getColumnIndex("state")));
                     washingMachines.add(washingMachine);
                 }
-            } else {
-                alertMsg("Error", "没有找到可以用的洗衣机！");
             }
         } finally {
             // 关闭数据库连接
@@ -766,7 +802,7 @@ public class C09Activity extends AppCompatActivity {
                     }
                 }
             }
-            dbWrit.execSQL("insert into washing_machine(num,command) values('" + washList.get(0) + "','" + string + "');");
+            dbWrit.execSQL("insert into washing_machine(num,command) values('" + washCommand.get(0) + "','" + string + "');");
             // 置灰所有洗衣机
             ashWashingMachineButton(null, false);
             // 点亮洗衣机

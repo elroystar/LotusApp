@@ -129,6 +129,299 @@ public class A09Activity extends AppCompatActivity {
             });
         }
 
+        if (findViewById(R.id.machine_4) != null) {
+            findViewById(R.id.machine_4).setOnTouchListener(new View.OnTouchListener() {
+                @Override
+                public boolean onTouch(View v, MotionEvent event) {
+                    switch (event.getAction()) {
+                        case MotionEvent.ACTION_DOWN:
+                            //按下
+                            // 播放按键声音
+                            playSound();
+                            // 进入B界面
+                            Intent i = new Intent(A09Activity.this, B09Activity.class);
+                            i.putExtra("WashingMachine", washingMachines.get(3));
+                            i.putExtra("En", En);
+                            startActivity(i);
+                            break;
+                    }
+                    return false;
+                }
+            });
+        }
+
+        if (findViewById(R.id.machine_5) != null) {
+            findViewById(R.id.machine_5).setOnTouchListener(new View.OnTouchListener() {
+                @Override
+                public boolean onTouch(View v, MotionEvent event) {
+                    switch (event.getAction()) {
+                        case MotionEvent.ACTION_DOWN:
+                            //按下
+                            // 播放按键声音
+                            playSound();
+                            // 进入B界面
+                            Intent i = new Intent(A09Activity.this, B09Activity.class);
+                            i.putExtra("WashingMachine", washingMachines.get(4));
+                            i.putExtra("En", En);
+                            startActivity(i);
+                            break;
+                    }
+                    return false;
+                }
+            });
+        }
+
+        if (findViewById(R.id.machine_6) != null) {
+            findViewById(R.id.machine_6).setOnTouchListener(new View.OnTouchListener() {
+                @Override
+                public boolean onTouch(View v, MotionEvent event) {
+                    switch (event.getAction()) {
+                        case MotionEvent.ACTION_DOWN:
+                            //按下
+                            // 播放按键声音
+                            playSound();
+                            // 进入B界面
+                            Intent i = new Intent(A09Activity.this, B09Activity.class);
+                            i.putExtra("WashingMachine", washingMachines.get(5));
+                            i.putExtra("En", En);
+                            startActivity(i);
+                            break;
+                    }
+                    return false;
+                }
+            });
+        }
+
+        if (findViewById(R.id.machine_7) != null) {
+            findViewById(R.id.machine_7).setOnTouchListener(new View.OnTouchListener() {
+                @Override
+                public boolean onTouch(View v, MotionEvent event) {
+                    switch (event.getAction()) {
+                        case MotionEvent.ACTION_DOWN:
+                            //按下
+                            // 播放按键声音
+                            playSound();
+                            // 进入B界面
+                            Intent i = new Intent(A09Activity.this, B09Activity.class);
+                            i.putExtra("WashingMachine", washingMachines.get(6));
+                            i.putExtra("En", En);
+                            startActivity(i);
+                            break;
+                    }
+                    return false;
+                }
+            });
+        }
+
+        if (findViewById(R.id.machine_8) != null) {
+            findViewById(R.id.machine_8).setOnTouchListener(new View.OnTouchListener() {
+                @Override
+                public boolean onTouch(View v, MotionEvent event) {
+                    switch (event.getAction()) {
+                        case MotionEvent.ACTION_DOWN:
+                            //按下
+                            // 播放按键声音
+                            playSound();
+                            // 进入B界面
+                            Intent i = new Intent(A09Activity.this, B09Activity.class);
+                            i.putExtra("WashingMachine", washingMachines.get(7));
+                            i.putExtra("En", En);
+                            startActivity(i);
+                            break;
+                    }
+                    return false;
+                }
+            });
+        }
+
+        if (findViewById(R.id.machine_9) != null) {
+            findViewById(R.id.machine_9).setOnTouchListener(new View.OnTouchListener() {
+                @Override
+                public boolean onTouch(View v, MotionEvent event) {
+                    switch (event.getAction()) {
+                        case MotionEvent.ACTION_DOWN:
+                            //按下
+                            // 播放按键声音
+                            playSound();
+                            // 进入B界面
+                            Intent i = new Intent(A09Activity.this, B09Activity.class);
+                            i.putExtra("WashingMachine", washingMachines.get(8));
+                            i.putExtra("En", En);
+                            startActivity(i);
+                            break;
+                    }
+                    return false;
+                }
+            });
+        }
+
+        if (findViewById(R.id.machine_10) != null) {
+            findViewById(R.id.machine_10).setOnTouchListener(new View.OnTouchListener() {
+                @Override
+                public boolean onTouch(View v, MotionEvent event) {
+                    switch (event.getAction()) {
+                        case MotionEvent.ACTION_DOWN:
+                            //按下
+                            // 播放按键声音
+                            playSound();
+                            // 进入B界面
+                            Intent i = new Intent(A09Activity.this, B09Activity.class);
+                            i.putExtra("WashingMachine", washingMachines.get(9));
+                            i.putExtra("En", En);
+                            startActivity(i);
+                            break;
+                    }
+                    return false;
+                }
+            });
+        }
+
+        if (findViewById(R.id.machine_11) != null) {
+            findViewById(R.id.machine_11).setOnTouchListener(new View.OnTouchListener() {
+                @Override
+                public boolean onTouch(View v, MotionEvent event) {
+                    switch (event.getAction()) {
+                        case MotionEvent.ACTION_DOWN:
+                            //按下
+                            // 播放按键声音
+                            playSound();
+                            // 进入B界面
+                            Intent i = new Intent(A09Activity.this, B09Activity.class);
+                            i.putExtra("WashingMachine", washingMachines.get(10));
+                            i.putExtra("En", En);
+                            startActivity(i);
+                            break;
+                    }
+                    return false;
+                }
+            });
+        }
+
+        if (findViewById(R.id.machine_12) != null) {
+            findViewById(R.id.machine_12).setOnTouchListener(new View.OnTouchListener() {
+                @Override
+                public boolean onTouch(View v, MotionEvent event) {
+                    switch (event.getAction()) {
+                        case MotionEvent.ACTION_DOWN:
+                            //按下
+                            // 播放按键声音
+                            playSound();
+                            // 进入B界面
+                            Intent i = new Intent(A09Activity.this, B09Activity.class);
+                            i.putExtra("WashingMachine", washingMachines.get(11));
+                            i.putExtra("En", En);
+                            startActivity(i);
+                            break;
+                    }
+                    return false;
+                }
+            });
+        }
+
+        if (findViewById(R.id.machine_13) != null) {
+            findViewById(R.id.machine_13).setOnTouchListener(new View.OnTouchListener() {
+                @Override
+                public boolean onTouch(View v, MotionEvent event) {
+                    switch (event.getAction()) {
+                        case MotionEvent.ACTION_DOWN:
+                            //按下
+                            // 播放按键声音
+                            playSound();
+                            // 进入B界面
+                            Intent i = new Intent(A09Activity.this, B09Activity.class);
+                            i.putExtra("WashingMachine", washingMachines.get(12));
+                            i.putExtra("En", En);
+                            startActivity(i);
+                            break;
+                    }
+                    return false;
+                }
+            });
+        }
+
+        if (findViewById(R.id.machine_14) != null) {
+            findViewById(R.id.machine_14).setOnTouchListener(new View.OnTouchListener() {
+                @Override
+                public boolean onTouch(View v, MotionEvent event) {
+                    switch (event.getAction()) {
+                        case MotionEvent.ACTION_DOWN:
+                            //按下
+                            // 播放按键声音
+                            playSound();
+                            // 进入B界面
+                            Intent i = new Intent(A09Activity.this, B09Activity.class);
+                            i.putExtra("WashingMachine", washingMachines.get(13));
+                            i.putExtra("En", En);
+                            startActivity(i);
+                            break;
+                    }
+                    return false;
+                }
+            });
+        }
+
+        if (findViewById(R.id.machine_15) != null) {
+            findViewById(R.id.machine_15).setOnTouchListener(new View.OnTouchListener() {
+                @Override
+                public boolean onTouch(View v, MotionEvent event) {
+                    switch (event.getAction()) {
+                        case MotionEvent.ACTION_DOWN:
+                            //按下
+                            // 播放按键声音
+                            playSound();
+                            // 进入B界面
+                            Intent i = new Intent(A09Activity.this, B09Activity.class);
+                            i.putExtra("WashingMachine", washingMachines.get(14));
+                            i.putExtra("En", En);
+                            startActivity(i);
+                            break;
+                    }
+                    return false;
+                }
+            });
+        }
+
+        if (findViewById(R.id.machine_16) != null) {
+            findViewById(R.id.machine_16).setOnTouchListener(new View.OnTouchListener() {
+                @Override
+                public boolean onTouch(View v, MotionEvent event) {
+                    switch (event.getAction()) {
+                        case MotionEvent.ACTION_DOWN:
+                            //按下
+                            // 播放按键声音
+                            playSound();
+                            // 进入B界面
+                            Intent i = new Intent(A09Activity.this, B09Activity.class);
+                            i.putExtra("WashingMachine", washingMachines.get(15));
+                            i.putExtra("En", En);
+                            startActivity(i);
+                            break;
+                    }
+                    return false;
+                }
+            });
+        }
+
+        if (findViewById(R.id.machine_17) != null) {
+            findViewById(R.id.machine_17).setOnTouchListener(new View.OnTouchListener() {
+                @Override
+                public boolean onTouch(View v, MotionEvent event) {
+                    switch (event.getAction()) {
+                        case MotionEvent.ACTION_DOWN:
+                            //按下
+                            // 播放按键声音
+                            playSound();
+                            // 进入B界面
+                            Intent i = new Intent(A09Activity.this, B09Activity.class);
+                            i.putExtra("WashingMachine", washingMachines.get(16));
+                            i.putExtra("En", En);
+                            startActivity(i);
+                            break;
+                    }
+                    return false;
+                }
+            });
+        }
     }
 
     /**
@@ -286,6 +579,346 @@ public class A09Activity extends AppCompatActivity {
                     frameLayout = findViewById(R.id.frame_machine_i);
                     frameLayout.setVisibility(View.VISIBLE);
                     frameLayout.getChildAt(0).setId(R.id.machine_9);
+                    break;
+                case 10:
+                    frameLayout = findViewById(R.id.frame_machine_a);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_1);
+                    frameLayout = findViewById(R.id.frame_machine_j);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_2);
+                    frameLayout = findViewById(R.id.frame_machine_c);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_3);
+                    frameLayout = findViewById(R.id.frame_machine_l);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_4);
+                    frameLayout = findViewById(R.id.frame_machine_d);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_5);
+                    frameLayout = findViewById(R.id.frame_machine_f);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_6);
+                    frameLayout = findViewById(R.id.frame_machine_o);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_7);
+                    frameLayout = findViewById(R.id.frame_machine_g);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_8);
+                    frameLayout = findViewById(R.id.frame_machine_q);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_9);
+                    frameLayout = findViewById(R.id.frame_machine_i);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_10);
+                    break;
+                case 11:
+                    frameLayout = findViewById(R.id.frame_machine_a);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_1);
+                    frameLayout = findViewById(R.id.frame_machine_k);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_2);
+                    frameLayout = findViewById(R.id.frame_machine_c);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_3);
+                    frameLayout = findViewById(R.id.frame_machine_l);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_4);
+                    frameLayout = findViewById(R.id.frame_machine_m);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_5);
+                    frameLayout = findViewById(R.id.frame_machine_e);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_6);
+                    frameLayout = findViewById(R.id.frame_machine_n);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_7);
+                    frameLayout = findViewById(R.id.frame_machine_o);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_8);
+                    frameLayout = findViewById(R.id.frame_machine_g);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_9);
+                    frameLayout = findViewById(R.id.frame_machine_q);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_10);
+                    frameLayout = findViewById(R.id.frame_machine_i);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_11);
+                    break;
+                case 12:
+                    frameLayout = findViewById(R.id.frame_machine_a);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_1);
+                    frameLayout = findViewById(R.id.frame_machine_k);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_2);
+                    frameLayout = findViewById(R.id.frame_machine_c);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_3);
+                    frameLayout = findViewById(R.id.frame_machine_l);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_4);
+                    frameLayout = findViewById(R.id.frame_machine_d);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_5);
+                    frameLayout = findViewById(R.id.frame_machine_m);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_6);
+                    frameLayout = findViewById(R.id.frame_machine_n);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_7);
+                    frameLayout = findViewById(R.id.frame_machine_f);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_8);
+                    frameLayout = findViewById(R.id.frame_machine_o);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_9);
+                    frameLayout = findViewById(R.id.frame_machine_g);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_10);
+                    frameLayout = findViewById(R.id.frame_machine_p);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_11);
+                    frameLayout = findViewById(R.id.frame_machine_i);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_12);
+                    break;
+                case 13:
+                    frameLayout = findViewById(R.id.frame_machine_a);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_1);
+                    frameLayout = findViewById(R.id.frame_machine_k);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_2);
+                    frameLayout = findViewById(R.id.frame_machine_c);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_3);
+                    frameLayout = findViewById(R.id.frame_machine_l);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_4);
+                    frameLayout = findViewById(R.id.frame_machine_d);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_5);
+                    frameLayout = findViewById(R.id.frame_machine_m);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_6);
+                    frameLayout = findViewById(R.id.frame_machine_e);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_7);
+                    frameLayout = findViewById(R.id.frame_machine_n);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_8);
+                    frameLayout = findViewById(R.id.frame_machine_f);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_9);
+                    frameLayout = findViewById(R.id.frame_machine_o);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_10);
+                    frameLayout = findViewById(R.id.frame_machine_g);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_11);
+                    frameLayout = findViewById(R.id.frame_machine_p);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_12);
+                    frameLayout = findViewById(R.id.frame_machine_i);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_13);
+                    break;
+                case 14:
+                    frameLayout = findViewById(R.id.frame_machine_a);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_1);
+                    frameLayout = findViewById(R.id.frame_machine_j);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_2);
+                    frameLayout = findViewById(R.id.frame_machine_b);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_3);
+                    frameLayout = findViewById(R.id.frame_machine_k);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_4);
+                    frameLayout = findViewById(R.id.frame_machine_c);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_5);
+                    frameLayout = findViewById(R.id.frame_machine_l);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_6);
+                    frameLayout = findViewById(R.id.frame_machine_d);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_7);
+                    frameLayout = findViewById(R.id.frame_machine_f);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_8);
+                    frameLayout = findViewById(R.id.frame_machine_o);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_9);
+                    frameLayout = findViewById(R.id.frame_machine_g);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_10);
+                    frameLayout = findViewById(R.id.frame_machine_p);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_11);
+                    frameLayout = findViewById(R.id.frame_machine_h);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_12);
+                    frameLayout = findViewById(R.id.frame_machine_q);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_13);
+                    frameLayout = findViewById(R.id.frame_machine_i);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_14);
+                    break;
+                case 15:
+                    frameLayout = findViewById(R.id.frame_machine_a);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_1);
+                    frameLayout = findViewById(R.id.frame_machine_j);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_2);
+                    frameLayout = findViewById(R.id.frame_machine_b);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_3);
+                    frameLayout = findViewById(R.id.frame_machine_k);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_4);
+                    frameLayout = findViewById(R.id.frame_machine_c);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_5);
+                    frameLayout = findViewById(R.id.frame_machine_l);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_6);
+                    frameLayout = findViewById(R.id.frame_machine_d);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_7);
+                    frameLayout = findViewById(R.id.frame_machine_e);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_8);
+                    frameLayout = findViewById(R.id.frame_machine_f);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_9);
+                    frameLayout = findViewById(R.id.frame_machine_o);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_10);
+                    frameLayout = findViewById(R.id.frame_machine_g);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_11);
+                    frameLayout = findViewById(R.id.frame_machine_p);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_12);
+                    frameLayout = findViewById(R.id.frame_machine_h);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_13);
+                    frameLayout = findViewById(R.id.frame_machine_q);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_14);
+                    frameLayout = findViewById(R.id.frame_machine_i);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_15);
+                    break;
+                case 16:
+                    frameLayout = findViewById(R.id.frame_machine_a);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_1);
+                    frameLayout = findViewById(R.id.frame_machine_j);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_2);
+                    frameLayout = findViewById(R.id.frame_machine_b);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_3);
+                    frameLayout = findViewById(R.id.frame_machine_k);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_4);
+                    frameLayout = findViewById(R.id.frame_machine_c);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_5);
+                    frameLayout = findViewById(R.id.frame_machine_l);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_6);
+                    frameLayout = findViewById(R.id.frame_machine_d);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_7);
+                    frameLayout = findViewById(R.id.frame_machine_m);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_8);
+                    frameLayout = findViewById(R.id.frame_machine_n);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_9);
+                    frameLayout = findViewById(R.id.frame_machine_f);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_10);
+                    frameLayout = findViewById(R.id.frame_machine_o);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_11);
+                    frameLayout = findViewById(R.id.frame_machine_g);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_12);
+                    frameLayout = findViewById(R.id.frame_machine_p);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_13);
+                    frameLayout = findViewById(R.id.frame_machine_h);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_14);
+                    frameLayout = findViewById(R.id.frame_machine_q);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_15);
+                    frameLayout = findViewById(R.id.frame_machine_i);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_16);
+                    break;
+                case 17:
+                    frameLayout = findViewById(R.id.frame_machine_a);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_1);
+                    frameLayout = findViewById(R.id.frame_machine_j);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_2);
+                    frameLayout = findViewById(R.id.frame_machine_b);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_3);
+                    frameLayout = findViewById(R.id.frame_machine_k);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_4);
+                    frameLayout = findViewById(R.id.frame_machine_c);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_5);
+                    frameLayout = findViewById(R.id.frame_machine_l);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_6);
+                    frameLayout = findViewById(R.id.frame_machine_d);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_7);
+                    frameLayout = findViewById(R.id.frame_machine_m);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_8);
+                    frameLayout = findViewById(R.id.frame_machine_e);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_9);
+                    frameLayout = findViewById(R.id.frame_machine_n);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_10);
+                    frameLayout = findViewById(R.id.frame_machine_f);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_11);
+                    frameLayout = findViewById(R.id.frame_machine_o);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_12);
+                    frameLayout = findViewById(R.id.frame_machine_g);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_13);
+                    frameLayout = findViewById(R.id.frame_machine_p);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_14);
+                    frameLayout = findViewById(R.id.frame_machine_h);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_15);
+                    frameLayout = findViewById(R.id.frame_machine_q);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_16);
+                    frameLayout = findViewById(R.id.frame_machine_i);
+                    frameLayout.setVisibility(View.VISIBLE);
+                    frameLayout.getChildAt(0).setId(R.id.machine_17);
                     break;
             }
         }
