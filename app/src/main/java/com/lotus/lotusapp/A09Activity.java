@@ -972,7 +972,7 @@ public class A09Activity extends AppCompatActivity {
                     washingMachines.add(washingMachine);
                 }
             } else {
-                alertMsg("Error", "没有找到可以用的洗衣机！");
+//                alertMsg("Error", "没有找到可以用的洗衣机！");
             }
         } finally {
             // 关闭数据库连接
