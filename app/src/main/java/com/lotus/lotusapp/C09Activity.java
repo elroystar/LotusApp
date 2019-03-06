@@ -508,6 +508,7 @@ public class C09Activity extends AppCompatActivity {
                     // 获取textView id
                     int bt_washing_machine = getResources().getIdentifier("bt_machine" + machineId, "id", getPackageName());
                     ashButton(bt_washing_machine, R.drawable.bt_selected_shape, true);
+                    asked = 0;
                     handler.postDelayed(runnable, 100);
                 } else if ("test".equals(model)) {
                     WashingMachine washingMachine = getWashingMachine(machineId);
@@ -796,7 +797,6 @@ public class C09Activity extends AppCompatActivity {
                         ashButton(bt_washing_machine, R.drawable.bt_registered_shape, false);
                     }
                 }
-                asked = 0;
             } else {
                 serialPortUtil.sendSerialPort(CmdConstance.REGISTER_ASK);
                 handler.postDelayed(this, 650);
