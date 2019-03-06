@@ -780,7 +780,7 @@ public class C09Activity extends AppCompatActivity {
         @Override
         public void run() {
             asked++;
-            if (asked > 10) {
+            if (asked > 3) {
                 handler.removeCallbacks(this);
                 // 置灰所有洗衣机
                 ashWashingMachineButton(null, false);
