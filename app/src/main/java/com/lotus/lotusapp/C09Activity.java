@@ -502,6 +502,8 @@ public class C09Activity extends AppCompatActivity {
                 // 播放按键声音
                 playSound();
                 if ("set".equals(model)) {
+                    washCommand = new ArrayList<>();
+                    washCommand.add(machineId);
                     // 置灰所有洗衣机
                     ashWashingMachineButton(null, false);
                     // 置绿选择的洗衣机
@@ -509,7 +511,7 @@ public class C09Activity extends AppCompatActivity {
                     int bt_washing_machine = getResources().getIdentifier("bt_machine" + machineId, "id", getPackageName());
                     ashButton(bt_washing_machine, R.drawable.bt_selected_shape, true);
                     asked = 0;
-                    handler.postDelayed(runnable, 100);
+                    handler.postDelayed(runnable, 0);
                 } else if ("test".equals(model)) {
                     WashingMachine washingMachine = getWashingMachine(machineId);
                     if (washCommand.contains(washingMachine.getCommand())) {
@@ -821,11 +823,9 @@ public class C09Activity extends AppCompatActivity {
                 // 设置已注册洗衣机按钮颜色
                 for (WashingMachine washingMachine : washingMachines) {
                     if (string.equals(washingMachine.getCommand())) {
-                        handler.removeCallbacks(runnable);
                         return;
                     }
                 }
-                alertMsg("tips", "未接收到洗衣机回复指令！");
             }
             dbWrit.execSQL("insert into washing_machine(num,command) values('" + washCommand.get(0) + "','" + string + "');");
             // 置灰所有洗衣机
@@ -842,6 +842,7 @@ public class C09Activity extends AppCompatActivity {
                     ashButton(bt_washing_machine, R.drawable.bt_registered_shape, false);
                 }
             }
+            handler.removeCallbacks(runnable);
             // 发送已注册指令
             serialPortUtil.sendSerialPort(string + CmdConstance.REGISTERED);
         } finally {
