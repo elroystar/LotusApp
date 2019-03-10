@@ -99,7 +99,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/bt_num_up_shape"
+            android:background="@drawable/bt_price_shape"
             android:text="定价"
             android:textColor="@android:color/white"
             android:textSize="55sp" />
@@ -159,7 +159,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/bt_num_up_shape"
+            android:background="@drawable/bt_price_shape"
             android:gravity="center"
             android:text="甩干"
             android:textSize="27sp" />
@@ -217,7 +217,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/bt_num_up_shape"
+            android:background="@drawable/bt_price_shape"
             android:gravity="center"
             android:text="洗液"
             android:textSize="27sp" />
@@ -275,7 +275,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/bt_num_up_shape"
+            android:background="@drawable/bt_price_shape"
             android:gravity="center"
             android:text="漂洗"
             android:textSize="27sp" />
@@ -333,7 +333,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/bt_num_up_shape"
+            android:background="@drawable/bt_price_shape"
             android:gravity="center"
             android:text="柔顺"
             android:textSize="27sp" />
@@ -391,7 +391,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/bt_num_up_shape"
+            android:background="@drawable/bt_price_shape"
             android:gravity="center"
             android:text="牛仔"
             android:textSize="27sp" />
@@ -449,7 +449,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/bt_num_up_shape"
+            android:background="@drawable/bt_price_shape"
             android:gravity="center"
             android:text="中消"
             android:textSize="27sp" />
@@ -507,7 +507,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/bt_num_up_shape"
+            android:background="@drawable/bt_price_shape"
             android:gravity="center"
             android:text="被单"
             android:textSize="27sp" />
@@ -565,7 +565,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/bt_num_up_shape"
+            android:background="@drawable/bt_price_shape"
             android:gravity="center"
             android:text="前消"
             android:textSize="27sp" />
@@ -623,7 +623,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/bt_num_up_shape"
+            android:background="@drawable/bt_price_shape"
             android:gravity="center"
             android:text="标准"
             android:textSize="27sp" />

@@ -19,6 +19,7 @@ import com.lotus.lotusapp.dto.WashingMachine;
 import com.lotus.lotusapp.utils.DateUtil;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class D09Activity extends Activity {
@@ -252,12 +253,27 @@ public class D09Activity extends Activity {
         if (event.getAction() == MotionEvent.ACTION_DOWN) {
             // 播放按键声音
             playSound();
-            // 洗衣机按钮常亮
-            v.setBackgroundResource(R.drawable.bt_c_royal_blue_shape);
-            // 添加到选择洗衣机集合
-            for (WashingMachine machine : washingMachines) {
-                if (machinesId == machine.getNum()) {
-                    washingMachinesSelect.add(machine);
+            // 判断洗衣机是否已选择
+            boolean flag = false;
+            Iterator<WashingMachine> it = washingMachinesSelect.iterator();
+            while (it.hasNext()) {
+                if (machinesId == it.next().getNum()) {
+                    flag = true;
+                    it.remove();
+                }
+            }
+            if (flag) {
+                // 洗衣机按钮常亮
+                v.setBackgroundResource(R.drawable.bt_c_royal_blue_shape);
+            } else {
+                // 加载游戏洗衣机
+                initEffectiveWash();
+                for (WashingMachine mac : washingMachines) {
+                    if (machinesId == mac.getNum()) {
+                        // 洗衣机按钮选中
+                        v.setBackgroundResource(R.drawable.bt_selected_shape);
+                        washingMachinesSelect.add(mac);
+                    }
                 }
             }
         }
@@ -539,7 +555,7 @@ public class D09Activity extends Activity {
         disinfectionBeforePriceMobile = "";
         disinfectionBeforePriceCoin = "";
         // 洗衣机按钮置灰
-        ashWashingMachineButton(washingMachinesSelect, false);
+        ashWashingMachineButton(washingMachinesSelect, true);
         // 选中洗衣机集合置空
         washingMachinesSelect = new ArrayList<>();
     }
@@ -911,10 +927,25 @@ public class D09Activity extends Activity {
                     // 修改模式
                     model = PRICE;
                     // 定价按钮常亮
-                    v.setBackgroundResource(R.drawable.bt_num_on_shape);
+                    v.setBackgroundResource(R.drawable.bt_selected_shape);
                     // 其他两个按钮恢复
                     findViewById(R.id.bt_coin).setBackgroundResource(R.drawable.bt_d_dark_voilet_shape);
-
+                    // 置灰投币箱
+                    ashCoinBoxButton(null, false);
+                    // 置灰所有洗衣机
+                    ashWashingMachineButton(null, false);
+                    // 加载游戏洗衣机
+                    initEffectiveWash();
+                    if (washingMachines.size() > 0) {
+                        // 设置已注册洗衣机按钮颜色
+                        for (WashingMachine washingMachine : washingMachines) {
+                            // 获取textView id
+                            int bt_washing_machine = getResources().getIdentifier("bt_machine" + washingMachine.getNum(), "id", getPackageName());
+                            ashButton(bt_washing_machine, R.drawable.bt_c_royal_blue_shape, true);
+                        }
+                    }
+                    // 点亮定价项目
+                    ashPriceButton(true);
                 }
                 return false;
             }
@@ -963,7 +994,7 @@ public class D09Activity extends Activity {
             }
         });
         // 牛仔按钮
-        findViewById(R.id.tv_drying).setOnTouchListener(new View.OnTouchListener() {
+        findViewById(R.id.tv_cowboy).setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 return onTouchPrice(v, event, R.id.tv_drying, PRICE_COWBOY);
@@ -1129,7 +1160,7 @@ public class D09Activity extends Activity {
             } else {
                 if (!washingMachinesSelect.isEmpty()) {
                     // 甩干按钮选择状态
-                    v.setBackgroundResource(R.drawable.bt_num_on_shape);
+                    v.setBackgroundResource(R.drawable.bt_selected_shape);
                     // 还原其他定价按钮状态
                     restorePriceButton(btId);
                     modelPrice = priceModel;
@@ -1155,7 +1186,7 @@ public class D09Activity extends Activity {
         if (event.getAction() == MotionEvent.ACTION_DOWN) {
             if (model.equals(modelPrice)) {
                 // 甩干按钮选择状态
-                v.setBackgroundResource(R.drawable.bt_num_on_shape);
+                v.setBackgroundResource(R.drawable.bt_selected_shape);
                 // 还原其他定价按钮状态
                 restoreTvPriceButton(tvId);
                 getTvSelectModel = tvSelectModel;
@@ -1205,6 +1236,7 @@ public class D09Activity extends Activity {
                 R.id.tv_rinse,
                 R.id.tv_drying,
                 R.id.tv_sheets,
+                R.id.tv_cowboy,
                 R.id.tv_standard,
                 R.id.tv_washing_liquid,
                 R.id.tv_softening,
@@ -1258,15 +1290,15 @@ public class D09Activity extends Activity {
      */
     private void ashPriceButton(Boolean buttonLight) {
         if (buttonLight) {
-            ashButton(R.id.tv_drying, R.drawable.bt_num_up_shape, true);
-            ashButton(R.id.tv_rinse, R.drawable.bt_num_up_shape, true);
-            ashButton(R.id.tv_cowboy, R.drawable.bt_num_up_shape, true);
-            ashButton(R.id.tv_sheets, R.drawable.bt_num_up_shape, true);
-            ashButton(R.id.tv_standard, R.drawable.bt_num_up_shape, true);
-            ashButton(R.id.tv_washing_liquid, R.drawable.bt_num_up_shape, true);
-            ashButton(R.id.tv_softening, R.drawable.bt_num_up_shape, true);
-            ashButton(R.id.tv_disinfection_ing, R.drawable.bt_num_up_shape, true);
-            ashButton(R.id.tv_disinfection_before, R.drawable.bt_num_up_shape, true);
+            ashButton(R.id.tv_drying, R.drawable.bt_price_shape, true);
+            ashButton(R.id.tv_rinse, R.drawable.bt_price_shape, true);
+            ashButton(R.id.tv_cowboy, R.drawable.bt_price_shape, true);
+            ashButton(R.id.tv_sheets, R.drawable.bt_price_shape, true);
+            ashButton(R.id.tv_standard, R.drawable.bt_price_shape, true);
+            ashButton(R.id.tv_washing_liquid, R.drawable.bt_price_shape, true);
+            ashButton(R.id.tv_softening, R.drawable.bt_price_shape, true);
+            ashButton(R.id.tv_disinfection_ing, R.drawable.bt_price_shape, true);
+            ashButton(R.id.tv_disinfection_before, R.drawable.bt_price_shape, true);
         } else {
             ashButton(R.id.tv_drying, R.drawable.bt_ash_shape, false);
             ashButton(R.id.tv_rinse, R.drawable.bt_ash_shape, false);
@@ -1374,8 +1406,6 @@ public class D09Activity extends Activity {
                     coinBox.setNum(cursor.getInt(cursor.getColumnIndex("num")));
                     coinBox.setState(cursor.getString(cursor.getColumnIndex("state")));
                 }
-            } else {
-                alertMsg("Error", "没有找到投币箱！");
             }
         } finally {
             dbRead.close();
@@ -1386,6 +1416,7 @@ public class D09Activity extends Activity {
      * 加载有效洗衣机
      */
     private void initEffectiveWash() {
+        washingMachines = new ArrayList<>();
         // 查询有效洗衣机
         sqLiteDbHelper = new SQLiteDbHelper(getApplicationContext());
         SQLiteDatabase dbRead = sqLiteDbHelper.getReadableDatabase();

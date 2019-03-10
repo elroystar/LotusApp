@@ -83,6 +83,7 @@ public class SQLiteDbHelper extends SQLiteOpenHelper {
     private static final String PASSWORD_RULE_INSERT_DEFAULT_SQL_D = "insert into password_rule(rule, state, type) values ('333333', '1', 'D')";
     // 测试数据
     private static final String WASHING_MACHINE_INSERT_TEST_SQL = "insert into washing_machine(num," +
+            "command," +
             "cowboy_price_coin," +
             "cowboy_price_mobile," +
             "disinfection_before_price_coin," +
@@ -101,9 +102,9 @@ public class SQLiteDbHelper extends SQLiteOpenHelper {
             "standard_price_mobile," +
             "washing_liquid_price_coin," +
             "washing_liquid_price_mobile) values " +
-            "(1,'10.0','9.5','10.0','9.5','10.0','9.5','10.0','9.5','10.0','9.5','10.0','9.5','10.0','9.5','10.0','9.5','10.0','9.5')," +
-            "(2,'10.0','9.5','10.0','9.5','10.0','9.5','10.0','9.5','10.0','9.5','10.0','9.5','10.0','9.5','10.0','9.5','10.0','9.5')," +
-            "(3,'20.0','19.5','20.0','19.5','20.0','19.5','20.0','19.5','20.0','19.5','20.0','19.5','20.0','19.5','20.0','19.5','20.0','19.5')";
+            "(1,'10.0','10.0','9.5','10.0','9.5','10.0','9.5','10.0','9.5','10.0','9.5','10.0','9.5','10.0','9.5','10.0','9.5','10.0','9.5')," +
+            "(2,'10.0','10.0','9.5','10.0','9.5','10.0','9.5','10.0','9.5','10.0','9.5','10.0','9.5','10.0','9.5','10.0','9.5','10.0','9.5')," +
+            "(3,'10.0','20.0','19.5','20.0','19.5','20.0','19.5','20.0','19.5','20.0','19.5','20.0','19.5','20.0','19.5','20.0','19.5','20.0','19.5')";
     private static final String COIN_BOX_INSERT_TEST_SQL = "insert into coin_box(num) values (1)";
 
     public SQLiteDbHelper(Context context) {
@@ -125,7 +126,7 @@ public class SQLiteDbHelper extends SQLiteOpenHelper {
 //        db.execSQL(PASSWORD_RULE_INSERT_DEFAULT_SQL);
         // 创建 washing_machine 表
         db.execSQL(WASHING_MACHINE_CREATE_TABLE_SQL);
-//        db.execSQL(WASHING_MACHINE_INSERT_TEST_SQL);
+        db.execSQL(WASHING_MACHINE_INSERT_TEST_SQL);
         // 创建 coin_box表
         db.execSQL(COIN_BOX_CREATE_TABLE_SQL);
 
