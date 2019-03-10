@@ -496,7 +496,7 @@ public class C09Activity extends AppCompatActivity {
                 initEffectiveWash();
                 // 判断该洗衣机是否在集合中
                 for (WashingMachine machine : washingMachines) {
-                    if ("1".equals(machine.getNum())) {
+                    if (1 == machine.getNum()) {
                         // 还原洗衣机按钮
                         ashButton(v.getId(), R.drawable.bt_c_royal_blue_shape, true);
                         // 删除已注册的洗衣机
@@ -523,7 +523,7 @@ public class C09Activity extends AppCompatActivity {
                 initEffectiveWash();
                 // 判断该洗衣机是否在集合中
                 for (WashingMachine machine : washingMachines) {
-                    if ("2".equals(machine.getNum())) {
+                    if (2 == machine.getNum()) {
                         // 还原洗衣机按钮
                         ashButton(v.getId(), R.drawable.bt_c_royal_blue_shape, true);
                         // 删除已注册的洗衣机
@@ -545,12 +545,11 @@ public class C09Activity extends AppCompatActivity {
         LongClickUtils.setLongClick(new Handler(), findViewById(R.id.bt_machine3), 3000, new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
-                alertMsg("tips", "33333");
                 // 加载游戏洗衣机
                 initEffectiveWash();
                 // 判断该洗衣机是否在集合中
                 for (WashingMachine machine : washingMachines) {
-                    if ("3".equals(machine.getNum())) {
+                    if (3 == machine.getNum()) {
                         // 还原洗衣机按钮
                         ashButton(v.getId(), R.drawable.bt_c_royal_blue_shape, true);
                         // 删除已注册的洗衣机
@@ -577,7 +576,7 @@ public class C09Activity extends AppCompatActivity {
                 initEffectiveWash();
                 // 判断该洗衣机是否在集合中
                 for (WashingMachine machine : washingMachines) {
-                    if ("4".equals(machine.getNum())) {
+                    if (4 == machine.getNum()) {
                         // 还原洗衣机按钮
                         ashButton(v.getId(), R.drawable.bt_c_royal_blue_shape, true);
                         // 删除已注册的洗衣机
@@ -604,7 +603,7 @@ public class C09Activity extends AppCompatActivity {
                 initEffectiveWash();
                 // 判断该洗衣机是否在集合中
                 for (WashingMachine machine : washingMachines) {
-                    if ("5".equals(machine.getNum())) {
+                    if (5 == machine.getNum()) {
                         // 还原洗衣机按钮
                         ashButton(v.getId(), R.drawable.bt_c_royal_blue_shape, true);
                         // 删除已注册的洗衣机
@@ -631,7 +630,7 @@ public class C09Activity extends AppCompatActivity {
                 initEffectiveWash();
                 // 判断该洗衣机是否在集合中
                 for (WashingMachine machine : washingMachines) {
-                    if ("6".equals(machine.getNum())) {
+                    if (6 == machine.getNum()) {
                         // 还原洗衣机按钮
                         ashButton(v.getId(), R.drawable.bt_c_royal_blue_shape, true);
                         // 删除已注册的洗衣机
@@ -658,7 +657,7 @@ public class C09Activity extends AppCompatActivity {
                 initEffectiveWash();
                 // 判断该洗衣机是否在集合中
                 for (WashingMachine machine : washingMachines) {
-                    if ("7".equals(machine.getNum())) {
+                    if (7 == machine.getNum()) {
                         // 还原洗衣机按钮
                         ashButton(v.getId(), R.drawable.bt_c_royal_blue_shape, true);
                         // 删除已注册的洗衣机
@@ -685,7 +684,7 @@ public class C09Activity extends AppCompatActivity {
                 initEffectiveWash();
                 // 判断该洗衣机是否在集合中
                 for (WashingMachine machine : washingMachines) {
-                    if ("8".equals(machine.getNum())) {
+                    if (8 == machine.getNum()) {
                         // 还原洗衣机按钮
                         ashButton(v.getId(), R.drawable.bt_c_royal_blue_shape, true);
                         // 删除已注册的洗衣机
@@ -712,7 +711,7 @@ public class C09Activity extends AppCompatActivity {
                 initEffectiveWash();
                 // 判断该洗衣机是否在集合中
                 for (WashingMachine machine : washingMachines) {
-                    if ("9".equals(machine.getNum())) {
+                    if (9 == machine.getNum()) {
                         // 还原洗衣机按钮
                         ashButton(v.getId(), R.drawable.bt_c_royal_blue_shape, true);
                         // 删除已注册的洗衣机
@@ -739,7 +738,7 @@ public class C09Activity extends AppCompatActivity {
                 initEffectiveWash();
                 // 判断该洗衣机是否在集合中
                 for (WashingMachine machine : washingMachines) {
-                    if ("10".equals(machine.getNum())) {
+                    if (10 == machine.getNum()) {
                         // 还原洗衣机按钮
                         ashButton(v.getId(), R.drawable.bt_c_royal_blue_shape, true);
                         // 删除已注册的洗衣机
@@ -766,7 +765,7 @@ public class C09Activity extends AppCompatActivity {
                 initEffectiveWash();
                 // 判断该洗衣机是否在集合中
                 for (WashingMachine machine : washingMachines) {
-                    if ("11".equals(machine.getNum())) {
+                    if (11 == machine.getNum()) {
                         // 还原洗衣机按钮
                         ashButton(v.getId(), R.drawable.bt_c_royal_blue_shape, true);
                         // 删除已注册的洗衣机
@@ -793,7 +792,7 @@ public class C09Activity extends AppCompatActivity {
                 initEffectiveWash();
                 // 判断该洗衣机是否在集合中
                 for (WashingMachine machine : washingMachines) {
-                    if ("12".equals(machine.getNum())) {
+                    if (12 == machine.getNum()) {
                         // 还原洗衣机按钮
                         ashButton(v.getId(), R.drawable.bt_c_royal_blue_shape, true);
                         // 删除已注册的洗衣机
@@ -820,7 +819,7 @@ public class C09Activity extends AppCompatActivity {
                 initEffectiveWash();
                 // 判断该洗衣机是否在集合中
                 for (WashingMachine machine : washingMachines) {
-                    if ("13".equals(machine.getNum())) {
+                    if (13 == machine.getNum()) {
                         // 还原洗衣机按钮
                         ashButton(v.getId(), R.drawable.bt_c_royal_blue_shape, true);
                         // 删除已注册的洗衣机
@@ -847,7 +846,7 @@ public class C09Activity extends AppCompatActivity {
                 initEffectiveWash();
                 // 判断该洗衣机是否在集合中
                 for (WashingMachine machine : washingMachines) {
-                    if ("14".equals(machine.getNum())) {
+                    if (14 == machine.getNum()) {
                         // 还原洗衣机按钮
                         ashButton(v.getId(), R.drawable.bt_c_royal_blue_shape, true);
                         // 删除已注册的洗衣机
@@ -874,7 +873,7 @@ public class C09Activity extends AppCompatActivity {
                 initEffectiveWash();
                 // 判断该洗衣机是否在集合中
                 for (WashingMachine machine : washingMachines) {
-                    if ("15".equals(machine.getNum())) {
+                    if (15 == machine.getNum()) {
                         // 还原洗衣机按钮
                         ashButton(v.getId(), R.drawable.bt_c_royal_blue_shape, true);
                         // 删除已注册的洗衣机
@@ -900,7 +899,7 @@ public class C09Activity extends AppCompatActivity {
                 initEffectiveWash();
                 // 判断该洗衣机是否在集合中
                 for (WashingMachine machine : washingMachines) {
-                    if ("16".equals(machine.getNum())) {
+                    if (16 == machine.getNum()) {
                         // 还原洗衣机按钮
                         ashButton(v.getId(), R.drawable.bt_c_royal_blue_shape, true);
                         // 删除已注册的洗衣机
@@ -925,7 +924,7 @@ public class C09Activity extends AppCompatActivity {
                 initEffectiveWash();
                 // 判断该洗衣机是否在集合中
                 for (WashingMachine machine : washingMachines) {
-                    if ("17".equals(machine.getNum())) {
+                    if (17 == machine.getNum()) {
                         // 还原洗衣机按钮
                         ashButton(v.getId(), R.drawable.bt_c_royal_blue_shape, true);
                         // 删除已注册的洗衣机
