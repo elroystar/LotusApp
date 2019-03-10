@@ -18,6 +18,7 @@ import com.lotus.lotusapp.constance.CmdConstance;
 import com.lotus.lotusapp.db.SQLiteDbHelper;
 import com.lotus.lotusapp.dto.CoinBox;
 import com.lotus.lotusapp.dto.WashingMachine;
+import com.lotus.lotusapp.utils.LongClickUtils;
 import com.lotus.lotusapp.utils.SerialPortUtil;
 
 import org.greenrobot.eventbus.EventBus;
@@ -112,7 +113,7 @@ public class C09Activity extends AppCompatActivity {
                             for (WashingMachine washingMachine : washingMachines) {
                                 // 获取textView id
                                 int bt_washing_machine = getResources().getIdentifier("bt_machine" + washingMachine.getNum(), "id", getPackageName());
-                                ashButton(bt_washing_machine, R.drawable.bt_registered_shape, false);
+                                ashButton(bt_washing_machine, R.drawable.bt_registered_shape, true);
                             }
                         }
                         // 点亮投币箱
@@ -486,6 +487,469 @@ public class C09Activity extends AppCompatActivity {
                 return false;
             }
         });
+
+
+        LongClickUtils.setLongClick(new Handler(), findViewById(R.id.bt_machine1), 3000, new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                // 加载游戏洗衣机
+                initEffectiveWash();
+                // 判断该洗衣机是否在集合中
+                for (WashingMachine machine : washingMachines) {
+                    if ("1".equals(machine.getNum())) {
+                        // 还原洗衣机按钮
+                        ashButton(v.getId(), R.drawable.bt_c_royal_blue_shape, true);
+                        // 删除已注册的洗衣机
+                        sqLiteDbHelper = new SQLiteDbHelper(getApplicationContext());
+                        SQLiteDatabase dbWrit = sqLiteDbHelper.getWritableDatabase();
+                        try {
+                            dbWrit.execSQL("delete from washing_machine where id = '" + machine.getId() + "'");
+                        } finally {
+                            dbWrit.close();
+                        }
+                        // 发送复位指令
+                        serialPortUtil.sendSerialPort(machine.getCommand() + CmdConstance.RESET);
+                    }
+                }
+                return false;
+            }
+        });
+
+
+        LongClickUtils.setLongClick(new Handler(), findViewById(R.id.bt_machine2), 3000, new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                // 加载游戏洗衣机
+                initEffectiveWash();
+                // 判断该洗衣机是否在集合中
+                for (WashingMachine machine : washingMachines) {
+                    if ("2".equals(machine.getNum())) {
+                        // 还原洗衣机按钮
+                        ashButton(v.getId(), R.drawable.bt_c_royal_blue_shape, true);
+                        // 删除已注册的洗衣机
+                        sqLiteDbHelper = new SQLiteDbHelper(getApplicationContext());
+                        SQLiteDatabase dbWrit = sqLiteDbHelper.getWritableDatabase();
+                        try {
+                            dbWrit.execSQL("delete from washing_machine where id = '" + machine.getId() + "'");
+                        } finally {
+                            dbWrit.close();
+                        }
+                        // 发送复位指令
+                        serialPortUtil.sendSerialPort(machine.getCommand() + CmdConstance.RESET);
+                    }
+                }
+                return false;
+            }
+        });
+
+        LongClickUtils.setLongClick(new Handler(), findViewById(R.id.bt_machine3), 3000, new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                // 加载游戏洗衣机
+                initEffectiveWash();
+                // 判断该洗衣机是否在集合中
+                for (WashingMachine machine : washingMachines) {
+                    if ("3".equals(machine.getNum())) {
+                        // 还原洗衣机按钮
+                        ashButton(v.getId(), R.drawable.bt_c_royal_blue_shape, true);
+                        // 删除已注册的洗衣机
+                        sqLiteDbHelper = new SQLiteDbHelper(getApplicationContext());
+                        SQLiteDatabase dbWrit = sqLiteDbHelper.getWritableDatabase();
+                        try {
+                            dbWrit.execSQL("delete from washing_machine where id = '" + machine.getId() + "'");
+                        } finally {
+                            dbWrit.close();
+                        }
+                        // 发送复位指令
+                        serialPortUtil.sendSerialPort(machine.getCommand() + CmdConstance.RESET);
+                    }
+                }
+                return false;
+            }
+        });
+
+
+        LongClickUtils.setLongClick(new Handler(), findViewById(R.id.bt_machine4), 3000, new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                // 加载游戏洗衣机
+                initEffectiveWash();
+                // 判断该洗衣机是否在集合中
+                for (WashingMachine machine : washingMachines) {
+                    if ("4".equals(machine.getNum())) {
+                        // 还原洗衣机按钮
+                        ashButton(v.getId(), R.drawable.bt_c_royal_blue_shape, true);
+                        // 删除已注册的洗衣机
+                        sqLiteDbHelper = new SQLiteDbHelper(getApplicationContext());
+                        SQLiteDatabase dbWrit = sqLiteDbHelper.getWritableDatabase();
+                        try {
+                            dbWrit.execSQL("delete from washing_machine where id = '" + machine.getId() + "'");
+                        } finally {
+                            dbWrit.close();
+                        }
+                        // 发送复位指令
+                        serialPortUtil.sendSerialPort(machine.getCommand() + CmdConstance.RESET);
+                    }
+                }
+                return false;
+            }
+        });
+
+
+        LongClickUtils.setLongClick(new Handler(), findViewById(R.id.bt_machine5), 3000, new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                // 加载游戏洗衣机
+                initEffectiveWash();
+                // 判断该洗衣机是否在集合中
+                for (WashingMachine machine : washingMachines) {
+                    if ("5".equals(machine.getNum())) {
+                        // 还原洗衣机按钮
+                        ashButton(v.getId(), R.drawable.bt_c_royal_blue_shape, true);
+                        // 删除已注册的洗衣机
+                        sqLiteDbHelper = new SQLiteDbHelper(getApplicationContext());
+                        SQLiteDatabase dbWrit = sqLiteDbHelper.getWritableDatabase();
+                        try {
+                            dbWrit.execSQL("delete from washing_machine where id = '" + machine.getId() + "'");
+                        } finally {
+                            dbWrit.close();
+                        }
+                        // 发送复位指令
+                        serialPortUtil.sendSerialPort(machine.getCommand() + CmdConstance.RESET);
+                    }
+                }
+                return false;
+            }
+        });
+
+
+        LongClickUtils.setLongClick(new Handler(), findViewById(R.id.bt_machine6), 3000, new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                // 加载游戏洗衣机
+                initEffectiveWash();
+                // 判断该洗衣机是否在集合中
+                for (WashingMachine machine : washingMachines) {
+                    if ("6".equals(machine.getNum())) {
+                        // 还原洗衣机按钮
+                        ashButton(v.getId(), R.drawable.bt_c_royal_blue_shape, true);
+                        // 删除已注册的洗衣机
+                        sqLiteDbHelper = new SQLiteDbHelper(getApplicationContext());
+                        SQLiteDatabase dbWrit = sqLiteDbHelper.getWritableDatabase();
+                        try {
+                            dbWrit.execSQL("delete from washing_machine where id = '" + machine.getId() + "'");
+                        } finally {
+                            dbWrit.close();
+                        }
+                        // 发送复位指令
+                        serialPortUtil.sendSerialPort(machine.getCommand() + CmdConstance.RESET);
+                    }
+                }
+                return false;
+            }
+        });
+
+
+        LongClickUtils.setLongClick(new Handler(), findViewById(R.id.bt_machine7), 3000, new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                // 加载游戏洗衣机
+                initEffectiveWash();
+                // 判断该洗衣机是否在集合中
+                for (WashingMachine machine : washingMachines) {
+                    if ("7".equals(machine.getNum())) {
+                        // 还原洗衣机按钮
+                        ashButton(v.getId(), R.drawable.bt_c_royal_blue_shape, true);
+                        // 删除已注册的洗衣机
+                        sqLiteDbHelper = new SQLiteDbHelper(getApplicationContext());
+                        SQLiteDatabase dbWrit = sqLiteDbHelper.getWritableDatabase();
+                        try {
+                            dbWrit.execSQL("delete from washing_machine where id = '" + machine.getId() + "'");
+                        } finally {
+                            dbWrit.close();
+                        }
+                        // 发送复位指令
+                        serialPortUtil.sendSerialPort(machine.getCommand() + CmdConstance.RESET);
+                    }
+                }
+                return false;
+            }
+        });
+
+
+        LongClickUtils.setLongClick(new Handler(), findViewById(R.id.bt_machine8), 3000, new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                // 加载游戏洗衣机
+                initEffectiveWash();
+                // 判断该洗衣机是否在集合中
+                for (WashingMachine machine : washingMachines) {
+                    if ("8".equals(machine.getNum())) {
+                        // 还原洗衣机按钮
+                        ashButton(v.getId(), R.drawable.bt_c_royal_blue_shape, true);
+                        // 删除已注册的洗衣机
+                        sqLiteDbHelper = new SQLiteDbHelper(getApplicationContext());
+                        SQLiteDatabase dbWrit = sqLiteDbHelper.getWritableDatabase();
+                        try {
+                            dbWrit.execSQL("delete from washing_machine where id = '" + machine.getId() + "'");
+                        } finally {
+                            dbWrit.close();
+                        }
+                        // 发送复位指令
+                        serialPortUtil.sendSerialPort(machine.getCommand() + CmdConstance.RESET);
+                    }
+                }
+                return false;
+            }
+        });
+
+
+        LongClickUtils.setLongClick(new Handler(), findViewById(R.id.bt_machine9), 3000, new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                // 加载游戏洗衣机
+                initEffectiveWash();
+                // 判断该洗衣机是否在集合中
+                for (WashingMachine machine : washingMachines) {
+                    if ("9".equals(machine.getNum())) {
+                        // 还原洗衣机按钮
+                        ashButton(v.getId(), R.drawable.bt_c_royal_blue_shape, true);
+                        // 删除已注册的洗衣机
+                        sqLiteDbHelper = new SQLiteDbHelper(getApplicationContext());
+                        SQLiteDatabase dbWrit = sqLiteDbHelper.getWritableDatabase();
+                        try {
+                            dbWrit.execSQL("delete from washing_machine where id = '" + machine.getId() + "'");
+                        } finally {
+                            dbWrit.close();
+                        }
+                        // 发送复位指令
+                        serialPortUtil.sendSerialPort(machine.getCommand() + CmdConstance.RESET);
+                    }
+                }
+                return false;
+            }
+        });
+
+
+        LongClickUtils.setLongClick(new Handler(), findViewById(R.id.bt_machine10), 3000, new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                // 加载游戏洗衣机
+                initEffectiveWash();
+                // 判断该洗衣机是否在集合中
+                for (WashingMachine machine : washingMachines) {
+                    if ("10".equals(machine.getNum())) {
+                        // 还原洗衣机按钮
+                        ashButton(v.getId(), R.drawable.bt_c_royal_blue_shape, true);
+                        // 删除已注册的洗衣机
+                        sqLiteDbHelper = new SQLiteDbHelper(getApplicationContext());
+                        SQLiteDatabase dbWrit = sqLiteDbHelper.getWritableDatabase();
+                        try {
+                            dbWrit.execSQL("delete from washing_machine where id = '" + machine.getId() + "'");
+                        } finally {
+                            dbWrit.close();
+                        }
+                        // 发送复位指令
+                        serialPortUtil.sendSerialPort(machine.getCommand() + CmdConstance.RESET);
+                    }
+                }
+                return false;
+            }
+        });
+
+
+        LongClickUtils.setLongClick(new Handler(), findViewById(R.id.bt_machine11), 3000, new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                // 加载游戏洗衣机
+                initEffectiveWash();
+                // 判断该洗衣机是否在集合中
+                for (WashingMachine machine : washingMachines) {
+                    if ("11".equals(machine.getNum())) {
+                        // 还原洗衣机按钮
+                        ashButton(v.getId(), R.drawable.bt_c_royal_blue_shape, true);
+                        // 删除已注册的洗衣机
+                        sqLiteDbHelper = new SQLiteDbHelper(getApplicationContext());
+                        SQLiteDatabase dbWrit = sqLiteDbHelper.getWritableDatabase();
+                        try {
+                            dbWrit.execSQL("delete from washing_machine where id = '" + machine.getId() + "'");
+                        } finally {
+                            dbWrit.close();
+                        }
+                        // 发送复位指令
+                        serialPortUtil.sendSerialPort(machine.getCommand() + CmdConstance.RESET);
+                    }
+                }
+                return false;
+            }
+        });
+
+
+        LongClickUtils.setLongClick(new Handler(), findViewById(R.id.bt_machine12), 3000, new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                // 加载游戏洗衣机
+                initEffectiveWash();
+                // 判断该洗衣机是否在集合中
+                for (WashingMachine machine : washingMachines) {
+                    if ("12".equals(machine.getNum())) {
+                        // 还原洗衣机按钮
+                        ashButton(v.getId(), R.drawable.bt_c_royal_blue_shape, true);
+                        // 删除已注册的洗衣机
+                        sqLiteDbHelper = new SQLiteDbHelper(getApplicationContext());
+                        SQLiteDatabase dbWrit = sqLiteDbHelper.getWritableDatabase();
+                        try {
+                            dbWrit.execSQL("delete from washing_machine where id = '" + machine.getId() + "'");
+                        } finally {
+                            dbWrit.close();
+                        }
+                        // 发送复位指令
+                        serialPortUtil.sendSerialPort(machine.getCommand() + CmdConstance.RESET);
+                    }
+                }
+                return false;
+            }
+        });
+
+
+        LongClickUtils.setLongClick(new Handler(), findViewById(R.id.bt_machine13), 3000, new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                // 加载游戏洗衣机
+                initEffectiveWash();
+                // 判断该洗衣机是否在集合中
+                for (WashingMachine machine : washingMachines) {
+                    if ("13".equals(machine.getNum())) {
+                        // 还原洗衣机按钮
+                        ashButton(v.getId(), R.drawable.bt_c_royal_blue_shape, true);
+                        // 删除已注册的洗衣机
+                        sqLiteDbHelper = new SQLiteDbHelper(getApplicationContext());
+                        SQLiteDatabase dbWrit = sqLiteDbHelper.getWritableDatabase();
+                        try {
+                            dbWrit.execSQL("delete from washing_machine where id = '" + machine.getId() + "'");
+                        } finally {
+                            dbWrit.close();
+                        }
+                        // 发送复位指令
+                        serialPortUtil.sendSerialPort(machine.getCommand() + CmdConstance.RESET);
+                    }
+                }
+                return false;
+            }
+        });
+
+
+        LongClickUtils.setLongClick(new Handler(), findViewById(R.id.bt_machine14), 3000, new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                // 加载游戏洗衣机
+                initEffectiveWash();
+                // 判断该洗衣机是否在集合中
+                for (WashingMachine machine : washingMachines) {
+                    if ("14".equals(machine.getNum())) {
+                        // 还原洗衣机按钮
+                        ashButton(v.getId(), R.drawable.bt_c_royal_blue_shape, true);
+                        // 删除已注册的洗衣机
+                        sqLiteDbHelper = new SQLiteDbHelper(getApplicationContext());
+                        SQLiteDatabase dbWrit = sqLiteDbHelper.getWritableDatabase();
+                        try {
+                            dbWrit.execSQL("delete from washing_machine where id = '" + machine.getId() + "'");
+                        } finally {
+                            dbWrit.close();
+                        }
+                        // 发送复位指令
+                        serialPortUtil.sendSerialPort(machine.getCommand() + CmdConstance.RESET);
+                    }
+                }
+                return false;
+            }
+        });
+
+
+        LongClickUtils.setLongClick(new Handler(), findViewById(R.id.bt_machine15), 3000, new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                // 加载游戏洗衣机
+                initEffectiveWash();
+                // 判断该洗衣机是否在集合中
+                for (WashingMachine machine : washingMachines) {
+                    if ("15".equals(machine.getNum())) {
+                        // 还原洗衣机按钮
+                        ashButton(v.getId(), R.drawable.bt_c_royal_blue_shape, true);
+                        // 删除已注册的洗衣机
+                        sqLiteDbHelper = new SQLiteDbHelper(getApplicationContext());
+                        SQLiteDatabase dbWrit = sqLiteDbHelper.getWritableDatabase();
+                        try {
+                            dbWrit.execSQL("delete from washing_machine where id = '" + machine.getId() + "'");
+                        } finally {
+                            dbWrit.close();
+                        }
+                        // 发送复位指令
+                        serialPortUtil.sendSerialPort(machine.getCommand() + CmdConstance.RESET);
+                    }
+                }
+                return false;
+            }
+        });
+
+        LongClickUtils.setLongClick(new Handler(), findViewById(R.id.bt_machine16), 3000, new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                // 加载游戏洗衣机
+                initEffectiveWash();
+                // 判断该洗衣机是否在集合中
+                for (WashingMachine machine : washingMachines) {
+                    if ("16".equals(machine.getNum())) {
+                        // 还原洗衣机按钮
+                        ashButton(v.getId(), R.drawable.bt_c_royal_blue_shape, true);
+                        // 删除已注册的洗衣机
+                        sqLiteDbHelper = new SQLiteDbHelper(getApplicationContext());
+                        SQLiteDatabase dbWrit = sqLiteDbHelper.getWritableDatabase();
+                        try {
+                            dbWrit.execSQL("delete from washing_machine where id = '" + machine.getId() + "'");
+                        } finally {
+                            dbWrit.close();
+                        }
+                        // 发送复位指令
+                        serialPortUtil.sendSerialPort(machine.getCommand() + CmdConstance.RESET);
+                    }
+                }
+                return false;
+            }
+        });
+        LongClickUtils.setLongClick(new Handler(), findViewById(R.id.bt_machine17), 3000, new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                // 加载游戏洗衣机
+                initEffectiveWash();
+                // 判断该洗衣机是否在集合中
+                for (WashingMachine machine : washingMachines) {
+                    if ("17".equals(machine.getNum())) {
+                        // 还原洗衣机按钮
+                        ashButton(v.getId(), R.drawable.bt_c_royal_blue_shape, true);
+                        // 删除已注册的洗衣机
+                        sqLiteDbHelper = new SQLiteDbHelper(getApplicationContext());
+                        SQLiteDatabase dbWrit = sqLiteDbHelper.getWritableDatabase();
+                        try {
+                            dbWrit.execSQL("delete from washing_machine where id = '" + machine.getId() + "'");
+                        } finally {
+                            dbWrit.close();
+                        }
+                        // 发送复位指令
+                        serialPortUtil.sendSerialPort(machine.getCommand() + CmdConstance.RESET);
+                    }
+                }
+                return false;
+            }
+        });
+
+    }
+
+    @Override
+    protected void onDestroy() {
+        serialPortUtil.closeSerialPort();
+        EventBus.getDefault().unregister(this);
+        super.onDestroy();
     }
 
     /**
@@ -534,13 +998,6 @@ public class C09Activity extends AppCompatActivity {
                 }
                 break;
         }
-    }
-
-    @Override
-    protected void onDestroy() {
-        serialPortUtil.closeSerialPort();
-        EventBus.getDefault().unregister(this);
-        super.onDestroy();
     }
 
     /**
@@ -796,7 +1253,7 @@ public class C09Activity extends AppCompatActivity {
                     for (WashingMachine washingMachine : washingMachines) {
                         // 获取textView id
                         int bt_washing_machine = getResources().getIdentifier("bt_machine" + washingMachine.getNum(), "id", getPackageName());
-                        ashButton(bt_washing_machine, R.drawable.bt_registered_shape, false);
+                        ashButton(bt_washing_machine, R.drawable.bt_registered_shape, true);
                     }
                 }
             } else {
@@ -839,7 +1296,7 @@ public class C09Activity extends AppCompatActivity {
                 for (WashingMachine washingMachine : washingMachines) {
                     // 获取textView id
                     int bt_washing_machine = getResources().getIdentifier("bt_machine" + washingMachine.getNum(), "id", getPackageName());
-                    ashButton(bt_washing_machine, R.drawable.bt_registered_shape, false);
+                    ashButton(bt_washing_machine, R.drawable.bt_registered_shape, true);
                 }
             }
             handler.removeCallbacks(runnable);
