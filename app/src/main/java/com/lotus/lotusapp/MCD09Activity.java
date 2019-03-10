@@ -1,5 +1,6 @@
 package com.lotus.lotusapp;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.database.Cursor;
@@ -7,7 +8,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.media.AudioManager;
 import android.media.SoundPool;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.TextView;
@@ -15,7 +15,7 @@ import android.widget.TextView;
 import com.lotus.lotusapp.db.SQLiteDbHelper;
 import com.lotus.lotusapp.dto.PasswordRule;
 
-public class MCD09Activity extends AppCompatActivity {
+public class MCD09Activity extends Activity {
 
     // 数据库连接工具
     private SQLiteDbHelper sqLiteDbHelper;

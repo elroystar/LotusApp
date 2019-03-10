@@ -1,14 +1,14 @@
 package com.lotus.lotusapp;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.media.AudioManager;
 import android.media.SoundPool;
-import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
@@ -22,7 +22,7 @@ import com.lotus.lotusapp.utils.LongClickUtils;
 import java.util.ArrayList;
 import java.util.List;
 
-public class A09Activity extends AppCompatActivity {
+public class A09Activity extends Activity {
 
     // 数据库连接工具
     private SQLiteDbHelper sqLiteDbHelper;

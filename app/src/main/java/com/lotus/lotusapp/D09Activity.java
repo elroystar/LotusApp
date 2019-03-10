@@ -1,5 +1,6 @@
 package com.lotus.lotusapp;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.ContentValues;
 import android.content.Intent;
@@ -8,7 +9,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.media.AudioManager;
 import android.media.SoundPool;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.TextView;
@@ -21,7 +21,7 @@ import com.lotus.lotusapp.utils.DateUtil;
 import java.util.ArrayList;
 import java.util.List;
 
-public class D09Activity extends AppCompatActivity {
+public class D09Activity extends Activity {
 
     public static final String OUT_MONEY = "out_money";
     public static final String PRICE = "price";
