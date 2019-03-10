@@ -133,6 +133,7 @@ public class C09Activity extends Activity {
                         // 播放按键声音
                         playSound();
                         model = "test";
+                        washCommand = new ArrayList<>();
                         // 置灰设置键
                         ashButton(R.id.bt_set, R.drawable.bt_c_royal_blue_shape, true);
                         ashButton(R.id.bt_test, R.drawable.bt_selected_shape, true);
