@@ -537,22 +537,17 @@ public class C09Activity extends Activity {
                         handler.postDelayed(runnable, 0);
                     }
                 } else if ("test".equals(model)) {
+                    // 置灰所有洗衣机
+                    ashWashingMachineButton(null, false);
+                    // 加载游戏洗衣机
+                    initEffectiveWash();
+                    // 点亮有效洗衣机
+                    ashWashingMachineButton(washingMachines, true);
+                    // 选择洗衣机按钮
+                    ashButton(btId, R.drawable.bt_selected_shape, true);
                     WashingMachine washingMachine = getWashingMachine(machineId);
-                    if (washCommand.contains(washingMachine.getCommand())) {
-                        Iterator<String> it = washCommand.iterator();
-                        while (it.hasNext()) {
-                            String x = it.next();
-                            if (x.equals(washingMachine.getCommand())) {
-                                it.remove();
-                            }
-                        }
-                        // 还原洗衣机按钮
-                        ashButton(btId, R.drawable.bt_c_royal_blue_shape, true);
-                    } else {
-                        washCommand.add(washingMachine.getCommand());
-                        // 选择洗衣机按钮
-                        ashButton(btId, R.drawable.bt_selected_shape, true);
-                    }
+                    washCommand = new ArrayList<>();
+                    washCommand.add(washingMachine.getCommand());
                 } else {
                     alertMsg("tips", "请先选择模式！");
                 }
