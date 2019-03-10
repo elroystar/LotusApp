@@ -170,7 +170,7 @@ public class C09Activity extends Activity {
                                         serialPortUtil.sendSerialPort(cmdWashId + CmdConstance.TEST_WATER_IN_CLOSE);
                                     }
                                 } else if ("close".equals(testWaterIn)) {
-                                    v.setBackgroundResource(R.drawable.bt_dark_orange_shape);
+                                    v.setBackgroundResource(R.drawable.bt_selected_shape);
                                     testWaterIn = "open";
                                     for (String cmdWashId : washCommand) {
                                         serialPortUtil.sendSerialPort(cmdWashId + CmdConstance.TEST_WATER_IN_OPEN);
@@ -206,7 +206,7 @@ public class C09Activity extends Activity {
                                         serialPortUtil.sendSerialPort(cmdWashId + CmdConstance.TEST_WATER_OUT_CLOSE);
                                     }
                                 } else if ("close".equals(testWaterOut)) {
-                                    v.setBackgroundResource(R.drawable.bt_dark_orange_shape);
+                                    v.setBackgroundResource(R.drawable.bt_selected_shape);
                                     testWaterOut = "open";
                                     for (String cmdWashId : washCommand) {
                                         serialPortUtil.sendSerialPort(cmdWashId + CmdConstance.TEST_WATER_OUT_OPEN);
@@ -242,7 +242,7 @@ public class C09Activity extends Activity {
                                         serialPortUtil.sendSerialPort(cmdWashId + CmdConstance.TEST_DISINFECTION_CLOSE);
                                     }
                                 } else if ("close".equals(testDisinfection)) {
-                                    v.setBackgroundResource(R.drawable.bt_dark_orange_shape);
+                                    v.setBackgroundResource(R.drawable.bt_selected_shape);
                                     testDisinfection = "open";
                                     for (String cmdWashId : washCommand) {
                                         serialPortUtil.sendSerialPort(cmdWashId + CmdConstance.TEST_DISINFECTION_OPEN);
@@ -278,7 +278,7 @@ public class C09Activity extends Activity {
                                         serialPortUtil.sendSerialPort(cmdWashId + CmdConstance.TEST_SOFTENING_CLOSE);
                                     }
                                 } else if ("close".equals(testSoftening)) {
-                                    v.setBackgroundResource(R.drawable.bt_dark_orange_shape);
+                                    v.setBackgroundResource(R.drawable.bt_selected_shape);
                                     testSoftening = "open";
                                     for (String cmdWashId : washCommand) {
                                         serialPortUtil.sendSerialPort(cmdWashId + CmdConstance.TEST_SOFTENING_OPEN);
@@ -314,7 +314,7 @@ public class C09Activity extends Activity {
                                         serialPortUtil.sendSerialPort(cmdWashId + CmdConstance.TEST_WASHING_LIQUID_CLOSE);
                                     }
                                 } else if ("close".equals(testWashingLiquid)) {
-                                    v.setBackgroundResource(R.drawable.bt_dark_orange_shape);
+                                    v.setBackgroundResource(R.drawable.bt_selected_shape);
                                     testWashingLiquid = "open";
                                     for (String cmdWashId : washCommand) {
                                         serialPortUtil.sendSerialPort(cmdWashId + CmdConstance.TEST_WASHING_LIQUID_OPEN);
@@ -350,7 +350,7 @@ public class C09Activity extends Activity {
                                         serialPortUtil.sendSerialPort(cmdWashId + CmdConstance.TEST_SHORT_PROGRAM_CLOSE);
                                     }
                                 } else if ("close".equals(testShortProgram)) {
-                                    v.setBackgroundResource(R.drawable.bt_dark_orange_shape);
+                                    v.setBackgroundResource(R.drawable.bt_selected_shape);
                                     testShortProgram = "open";
                                     for (String cmdWashId : washCommand) {
                                         serialPortUtil.sendSerialPort(cmdWashId + CmdConstance.TEST_SHORT_PROGRAM_OPEN);
@@ -541,14 +541,14 @@ public class C09Activity extends Activity {
                         Iterator<String> it = washCommand.iterator();
                         while (it.hasNext()) {
                             String x = it.next();
-                            if (x.equals(machineId)) {
+                            if (x.equals(washingMachine.getCommand())) {
                                 it.remove();
                             }
                         }
                         // 还原洗衣机按钮
-                        ashButton(btId, R.drawable.bt_registered_shape, true);
+                        ashButton(btId, R.drawable.bt_c_royal_blue_shape, true);
                     } else {
-                        washCommand.add(machineId);
+                        washCommand.add(washingMachine.getCommand());
                         // 选择洗衣机按钮
                         ashButton(btId, R.drawable.bt_selected_shape, true);
                     }
@@ -791,6 +791,7 @@ public class C09Activity extends Activity {
         builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
+                washCommand = new ArrayList<>();
                 // 还原洗衣机按钮
                 ashButton(bt_coin_box, R.drawable.bt_c_royal_blue_shape, true);
                 // 删除已注册的洗衣机
