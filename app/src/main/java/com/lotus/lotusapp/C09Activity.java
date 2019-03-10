@@ -806,6 +806,12 @@ public class C09Activity extends AppCompatActivity {
                 serialPortUtil.sendSerialPort(washingMachine.getCommand() + CmdConstance.RESET);
             }
         });
+        builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                return;
+            }
+        });
         builder.show();
     }
 
