@@ -126,7 +126,7 @@ public class SQLiteDbHelper extends SQLiteOpenHelper {
 //        db.execSQL(PASSWORD_RULE_INSERT_DEFAULT_SQL);
         // 创建 washing_machine 表
         db.execSQL(WASHING_MACHINE_CREATE_TABLE_SQL);
-        db.execSQL(WASHING_MACHINE_INSERT_TEST_SQL);
+//        db.execSQL(WASHING_MACHINE_INSERT_TEST_SQL);
         // 创建 coin_box表
         db.execSQL(COIN_BOX_CREATE_TABLE_SQL);
 
