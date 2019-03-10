@@ -489,7 +489,7 @@ public class C09Activity extends AppCompatActivity {
         });
 
 
-        LongClickUtils.setLongClick(new Handler(), findViewById(R.id.bt_machine1), 3000, new View.OnLongClickListener() {
+        LongClickUtils.setLongClick(handler, findViewById(R.id.bt_machine1), 3000, new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
                 // 加载游戏洗衣机
