@@ -19,7 +19,6 @@ import com.lotus.lotusapp.constance.CmdConstance;
 import com.lotus.lotusapp.db.SQLiteDbHelper;
 import com.lotus.lotusapp.dto.CoinBox;
 import com.lotus.lotusapp.dto.WashingMachine;
-import com.lotus.lotusapp.utils.LongClickUtils;
 import com.lotus.lotusapp.utils.SerialPortUtil;
 
 import org.greenrobot.eventbus.EventBus;
@@ -881,24 +880,26 @@ public class C09Activity extends AppCompatActivity {
                     }
                 }
             }
-            dbWrit.execSQL("insert into washing_machine(num,command) values('" + washCommand.get(0) + "','" + string + "');");
-            // 置灰所有洗衣机
-            ashWashingMachineButton(null, false);
-            // 点亮洗衣机
-            ashWashingMachineButton(null, true);
-            // 加载游戏洗衣机
-            initEffectiveWash();
-            if (washingMachines.size() > 0) {
-                // 设置已注册洗衣机按钮颜色
-                for (WashingMachine washingMachine : washingMachines) {
-                    // 获取textView id
-                    int bt_washing_machine = getResources().getIdentifier("bt_machine" + washingMachine.getNum(), "id", getPackageName());
-                    ashButton(bt_washing_machine, R.drawable.bt_registered_shape, true);
+            if (washCommand.size() == 1) {
+                dbWrit.execSQL("insert into washing_machine(num,command) values('" + washCommand.get(0) + "','" + string + "');");
+                // 置灰所有洗衣机
+                ashWashingMachineButton(null, false);
+                // 点亮洗衣机
+                ashWashingMachineButton(null, true);
+                // 加载游戏洗衣机
+                initEffectiveWash();
+                if (washingMachines.size() > 0) {
+                    // 设置已注册洗衣机按钮颜色
+                    for (WashingMachine washingMachine : washingMachines) {
+                        // 获取textView id
+                        int bt_washing_machine = getResources().getIdentifier("bt_machine" + washingMachine.getNum(), "id", getPackageName());
+                        ashButton(bt_washing_machine, R.drawable.bt_registered_shape, true);
+                    }
                 }
+                handler.removeCallbacks(runnable);
+                // 发送已注册指令
+                serialPortUtil.sendSerialPort(string + CmdConstance.REGISTERED);
             }
-            handler.removeCallbacks(runnable);
-            // 发送已注册指令
-            serialPortUtil.sendSerialPort(string + CmdConstance.REGISTERED);
         } finally {
             dbWrit.close();
         }
