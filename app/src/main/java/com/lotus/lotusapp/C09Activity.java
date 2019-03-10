@@ -808,6 +808,7 @@ public class C09Activity extends Activity {
         builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
+                washCommand = new ArrayList<>();
                 return;
             }
         });
