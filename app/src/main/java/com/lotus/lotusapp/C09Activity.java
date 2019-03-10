@@ -545,6 +545,7 @@ public class C09Activity extends AppCompatActivity {
         LongClickUtils.setLongClick(new Handler(), findViewById(R.id.bt_machine3), 3000, new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
+                alertMsg("tips", "33333");
                 // 加载游戏洗衣机
                 initEffectiveWash();
                 // 判断该洗衣机是否在集合中
