@@ -473,6 +473,8 @@ public class B09Activity extends Activity {
         if ("00.0".equals(machine.getWashingLiquidPriceCoin()) && "00.0".equals(machine.getWashingLiquidPriceMobile())) {
             frameLayout = findViewById(R.id.fl_washing_liquid);
             frameLayout.setVisibility(View.INVISIBLE);
+            frameLayout = findViewById(R.id.fl_free);
+            frameLayout.setVisibility(View.INVISIBLE);
         }
     }
 
