@@ -442,16 +442,24 @@ public class B09Activity extends Activity {
      * 显示全部辅料
      */
     private void displayAccessoriesAll() {
-        frameLayout = findViewById(R.id.fl_free);
-        frameLayout.setVisibility(View.VISIBLE);
-        frameLayout = findViewById(R.id.fl_disinfection_before);
-        frameLayout.setVisibility(View.VISIBLE);
-        frameLayout = findViewById(R.id.fl_disinfection_ing);
-        frameLayout.setVisibility(View.VISIBLE);
-        frameLayout = findViewById(R.id.fl_softening);
-        frameLayout.setVisibility(View.VISIBLE);
-        frameLayout = findViewById(R.id.fl_washing_liquid);
-        frameLayout.setVisibility(View.VISIBLE);
+        if (!"00.0".equals(machine.getDisinfectionBeforePriceCoin()) && !"00.0".equals(machine.getDisinfectionBeforePriceMobile())) {
+            frameLayout = findViewById(R.id.fl_disinfection_before);
+            frameLayout.setVisibility(View.VISIBLE);
+        }
+        if (!"00.0".equals(machine.getDisinfectionIngPriceCoin()) && !"00.0".equals(machine.getDisinfectionIngPriceMobile())) {
+            frameLayout = findViewById(R.id.fl_disinfection_ing);
+            frameLayout.setVisibility(View.VISIBLE);
+        }
+        if (!"00.0".equals(machine.getSofteningPriceCoin()) && !"00.0".equals(machine.getSofteningPriceMobile())) {
+            frameLayout = findViewById(R.id.fl_softening);
+            frameLayout.setVisibility(View.VISIBLE);
+        }
+        if (!"00.0".equals(machine.getWashingLiquidPriceCoin()) && !"00.0".equals(machine.getWashingLiquidPriceMobile())) {
+            frameLayout = findViewById(R.id.fl_washing_liquid);
+            frameLayout.setVisibility(View.VISIBLE);
+            frameLayout = findViewById(R.id.fl_free);
+            frameLayout.setVisibility(View.VISIBLE);
+        }
     }
 
     /**
