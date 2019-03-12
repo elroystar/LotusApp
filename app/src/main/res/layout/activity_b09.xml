@@ -151,6 +151,7 @@
     </FrameLayout>
 
     <FrameLayout
+        android:id="@+id/fl_free"
         android:layout_width="210px"
         android:layout_height="210px"
         android:layout_gravity="top|left"

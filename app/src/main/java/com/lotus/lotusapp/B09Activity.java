@@ -153,6 +153,10 @@ public class B09Activity extends Activity {
                         cancelPriceButton(R.id.bt_drying, DRYING);
                         // 计算价格
                         calculatedPrice();
+                        // 显示全部辅料
+                        displayAccessoriesAll();
+                        frameLayout = findViewById(R.id.fl_free);
+                        frameLayout.setVisibility(View.INVISIBLE);
                         frameLayout = findViewById(R.id.fl_washing_liquid);
                         frameLayout.setVisibility(View.INVISIBLE);
                         frameLayout = findViewById(R.id.fl_softening);
@@ -181,7 +185,11 @@ public class B09Activity extends Activity {
                         cancelPriceButton(R.id.bt_rinse, RINSE);
                         // 计算价格
                         calculatedPrice();
-                        frameLayout = findViewById(R.id.fl_softening);
+                        // 显示全部辅料
+                        displayAccessoriesAll();
+                        frameLayout = findViewById(R.id.fl_free);
+                        frameLayout.setVisibility(View.INVISIBLE);
+                        frameLayout = findViewById(R.id.fl_washing_liquid);
                         frameLayout.setVisibility(View.INVISIBLE);
                         break;
                 }
@@ -205,6 +213,8 @@ public class B09Activity extends Activity {
                         cancelPriceButton(R.id.bt_cowboy, COWBOY);
                         // 计算价格
                         calculatedPrice();
+                        // 显示全部辅料
+                        displayAccessoriesAll();
                         break;
                 }
                 return false;
@@ -227,6 +237,8 @@ public class B09Activity extends Activity {
                         cancelPriceButton(R.id.bt_sheets, SHEETS);
                         // 计算价格
                         calculatedPrice();
+                        // 显示全部辅料
+                        displayAccessoriesAll();
                         break;
                 }
                 return false;
@@ -249,6 +261,8 @@ public class B09Activity extends Activity {
                         cancelPriceButton(R.id.bt_standard, STANDARD);
                         // 计算价格
                         calculatedPrice();
+                        // 显示全部辅料
+                        displayAccessoriesAll();
                         break;
                 }
                 return false;
@@ -422,6 +436,22 @@ public class B09Activity extends Activity {
                 return false;
             }
         });
+    }
+
+    /**
+     * 显示全部辅料
+     */
+    private void displayAccessoriesAll() {
+        frameLayout = findViewById(R.id.fl_free);
+        frameLayout.setVisibility(View.VISIBLE);
+        frameLayout = findViewById(R.id.fl_disinfection_before);
+        frameLayout.setVisibility(View.VISIBLE);
+        frameLayout = findViewById(R.id.fl_disinfection_ing);
+        frameLayout.setVisibility(View.VISIBLE);
+        frameLayout = findViewById(R.id.fl_softening);
+        frameLayout.setVisibility(View.VISIBLE);
+        frameLayout = findViewById(R.id.fl_washing_liquid);
+        frameLayout.setVisibility(View.VISIBLE);
     }
 
     /**
