@@ -159,7 +159,7 @@
         android:background="@drawable/bt_shape">
 
         <TextView
-            android:id="@+id/bt_water"
+            android:id="@+id/bt_free"
             android:layout_width="100px"
             android:layout_height="100px"
             android:text="送"
@@ -171,6 +171,7 @@
     </FrameLayout>
 
     <FrameLayout
+        android:id="@+id/fl_disinfection_before"
         android:layout_width="210px"
         android:layout_height="210px"
         android:layout_gravity="top|left"
@@ -193,6 +194,7 @@
     </FrameLayout>
 
     <FrameLayout
+        android:id="@+id/fl_disinfection_ing"
         android:layout_width="210px"
         android:layout_height="210px"
         android:layout_gravity="top|left"
@@ -214,6 +216,7 @@
     </FrameLayout>
 
     <FrameLayout
+        android:id="@+id/fl_softening"
         android:layout_width="210px"
         android:layout_height="210px"
         android:layout_gravity="top|left"
@@ -234,6 +237,7 @@
     </FrameLayout>
 
     <FrameLayout
+        android:id="@+id/fl_washing_liquid"
         android:layout_width="210px"
         android:layout_height="210px"
         android:layout_gravity="top|left"

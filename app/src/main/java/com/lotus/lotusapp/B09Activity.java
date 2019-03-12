@@ -34,7 +34,7 @@ public class B09Activity extends Activity {
     public static final String COWBOY = "cowboy";
     public static final String SHEETS = "sheets";
     public static final String STANDARD = "standard";
-    public static final String WATER = "water";
+    public static final String FREE = "free";
     public static final String WASHING_LIQUID = "washingLiquid";
     public static final String SOFTENING = "softening";
     public static final String DISINFECTION_BEFORE = "disinfectionBefore";
@@ -77,16 +77,23 @@ public class B09Activity extends Activity {
 
         //注册EventBus
         EventBus.getDefault().register(this);
-
         // 加载声音
         initSound();
-        // 置灰辅料
-        ashAccessories();
-
         Intent i = getIntent();
         machine = i.getParcelableExtra("WashingMachine");
         En = i.getStringExtra("En");
-
+        // 默认标准和送洗衣机默认选中
+        textView = findViewById(R.id.bt_standard);
+        priceSet.add(STANDARD);
+        textView.setBackgroundColor(getResources().getColor(R.color.red));
+        cancelPriceButton(R.id.bt_standard, STANDARD);
+        textView = findViewById(R.id.bt_free);
+        priceSet.add(FREE);
+        textView.setBackgroundColor(getResources().getColor(R.color.red));
+        // 计算价格
+        calculatedPrice();
+        // 根据价格显示辅料按钮
+        displayAccessories();
         // 返回键
         TextView numView = findViewById(R.id.b09_machine_num);
         numView.setText(Integer.toString(machine.getNum()));
@@ -138,8 +145,6 @@ public class B09Activity extends Activity {
                     case MotionEvent.ACTION_DOWN:
                         // 播放按键声音
                         playSound();
-                        // 置灰辅料
-                        ashAccessories();
                         // 清空辅料选择
                         cancelAccessories();
                         // 洗衣模式按钮设定
@@ -148,8 +153,12 @@ public class B09Activity extends Activity {
                         cancelPriceButton(R.id.bt_drying, DRYING);
                         // 计算价格
                         calculatedPrice();
-                        // 激活辅料按钮
-                        ashButton(R.id.bt_disinfection_before, getResources().getColor(R.color.green), true);
+                        frameLayout = findViewById(R.id.fl_washing_liquid);
+                        frameLayout.setVisibility(View.INVISIBLE);
+                        frameLayout = findViewById(R.id.fl_softening);
+                        frameLayout.setVisibility(View.INVISIBLE);
+                        frameLayout = findViewById(R.id.fl_disinfection_ing);
+                        frameLayout.setVisibility(View.INVISIBLE);
                         break;
                 }
                 return false;
@@ -164,8 +173,6 @@ public class B09Activity extends Activity {
                     case MotionEvent.ACTION_DOWN:
                         // 播放按键声音
                         playSound();
-                        // 置灰辅料
-                        ashAccessories();
                         // 清空辅料选择
                         cancelAccessories();
                         // 洗衣模式按钮设定
@@ -174,10 +181,8 @@ public class B09Activity extends Activity {
                         cancelPriceButton(R.id.bt_rinse, RINSE);
                         // 计算价格
                         calculatedPrice();
-                        // 激活辅料按钮
-                        ashButton(R.id.bt_disinfection_before, getResources().getColor(R.color.green), true);
-                        ashButton(R.id.bt_disinfection_ing, getResources().getColor(R.color.green), true);
-                        ashButton(R.id.bt_softening, getResources().getColor(R.color.green), true);
+                        frameLayout = findViewById(R.id.fl_softening);
+                        frameLayout.setVisibility(View.INVISIBLE);
                         break;
                 }
                 return false;
@@ -192,8 +197,6 @@ public class B09Activity extends Activity {
                     case MotionEvent.ACTION_DOWN:
                         // 播放按键声音
                         playSound();
-                        // 置灰辅料
-                        ashAccessories();
                         // 清空辅料选择
                         cancelAccessories();
                         // 洗衣模式按钮设定
@@ -202,12 +205,6 @@ public class B09Activity extends Activity {
                         cancelPriceButton(R.id.bt_cowboy, COWBOY);
                         // 计算价格
                         calculatedPrice();
-                        // 激活辅料按钮
-                        ashButton(R.id.bt_disinfection_before, getResources().getColor(R.color.green), true);
-                        ashButton(R.id.bt_disinfection_ing, getResources().getColor(R.color.green), true);
-                        ashButton(R.id.bt_softening, getResources().getColor(R.color.green), true);
-                        ashButton(R.id.bt_washing_liquid, getResources().getColor(R.color.green), true);
-                        ashButton(R.id.bt_water, getResources().getColor(R.color.green), true);
                         break;
                 }
                 return false;
@@ -222,8 +219,6 @@ public class B09Activity extends Activity {
                     case MotionEvent.ACTION_DOWN:
                         // 播放按键声音
                         playSound();
-                        // 置灰辅料
-                        ashAccessories();
                         // 清空辅料选择
                         cancelAccessories();
                         // 洗衣模式按钮设定
@@ -232,12 +227,6 @@ public class B09Activity extends Activity {
                         cancelPriceButton(R.id.bt_sheets, SHEETS);
                         // 计算价格
                         calculatedPrice();
-                        // 激活辅料按钮
-                        ashButton(R.id.bt_disinfection_before, getResources().getColor(R.color.green), true);
-                        ashButton(R.id.bt_disinfection_ing, getResources().getColor(R.color.green), true);
-                        ashButton(R.id.bt_softening, getResources().getColor(R.color.green), true);
-                        ashButton(R.id.bt_washing_liquid, getResources().getColor(R.color.green), true);
-                        ashButton(R.id.bt_water, getResources().getColor(R.color.green), true);
                         break;
                 }
                 return false;
@@ -252,8 +241,6 @@ public class B09Activity extends Activity {
                     case MotionEvent.ACTION_DOWN:
                         // 播放按键声音
                         playSound();
-                        // 置灰辅料
-                        ashAccessories();
                         // 清空辅料选择
                         cancelAccessories();
                         // 洗衣模式按钮设定
@@ -262,19 +249,13 @@ public class B09Activity extends Activity {
                         cancelPriceButton(R.id.bt_standard, STANDARD);
                         // 计算价格
                         calculatedPrice();
-                        // 激活辅料按钮
-                        ashButton(R.id.bt_disinfection_before, getResources().getColor(R.color.green), true);
-                        ashButton(R.id.bt_disinfection_ing, getResources().getColor(R.color.green), true);
-                        ashButton(R.id.bt_softening, getResources().getColor(R.color.green), true);
-                        ashButton(R.id.bt_washing_liquid, getResources().getColor(R.color.green), true);
-                        ashButton(R.id.bt_water, getResources().getColor(R.color.green), true);
                         break;
                 }
                 return false;
             }
         });
 
-        findViewById(R.id.bt_water).setOnTouchListener(new View.OnTouchListener() {
+        findViewById(R.id.bt_free).setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 switch (event.getAction()) {
@@ -286,7 +267,7 @@ public class B09Activity extends Activity {
                         if (priceSet.size() > 0) {
                             Iterator<String> it = priceSet.iterator();
                             while (it.hasNext()) {
-                                if (WATER.equals(it.next())) {
+                                if (FREE.equals(it.next())) {
                                     isPress = "up";
                                     it.remove();
                                 }
@@ -294,14 +275,12 @@ public class B09Activity extends Activity {
                         }
                         if ("on".equals(isPress)) {
                             // 选择
-                            priceSet.add(WATER);
+                            priceSet.add(FREE);
                             v.setBackgroundColor(getResources().getColor(R.color.red));
                         } else {
                             // 取消选择
                             v.setBackgroundColor(getResources().getColor(R.color.green));
                         }
-                        // 计算价格
-                        calculatedPrice();
                         break;
                 }
                 return false;
@@ -446,6 +425,28 @@ public class B09Activity extends Activity {
     }
 
     /**
+     * 根据价格显示辅料按钮
+     */
+    private void displayAccessories() {
+        if ("00.0".equals(machine.getDisinfectionBeforePriceCoin()) && "00.0".equals(machine.getDisinfectionBeforePriceMobile())) {
+            frameLayout = findViewById(R.id.fl_disinfection_before);
+            frameLayout.setVisibility(View.INVISIBLE);
+        }
+        if ("00.0".equals(machine.getDisinfectionIngPriceCoin()) && "00.0".equals(machine.getDisinfectionIngPriceMobile())) {
+            frameLayout = findViewById(R.id.fl_disinfection_ing);
+            frameLayout.setVisibility(View.INVISIBLE);
+        }
+        if ("00.0".equals(machine.getSofteningPriceCoin()) && "00.0".equals(machine.getSofteningPriceMobile())) {
+            frameLayout = findViewById(R.id.fl_softening);
+            frameLayout.setVisibility(View.INVISIBLE);
+        }
+        if ("00.0".equals(machine.getWashingLiquidPriceCoin()) && "00.0".equals(machine.getWashingLiquidPriceMobile())) {
+            frameLayout = findViewById(R.id.fl_washing_liquid);
+            frameLayout.setVisibility(View.INVISIBLE);
+        }
+    }
+
+    /**
      * 置灰所有按钮
      */
     private void ashAllButton() {
@@ -465,7 +466,7 @@ public class B09Activity extends Activity {
      */
     private void ashAccessories() {
         // 置灰辅料键
-        ashButton(R.id.bt_water, getResources().getColor(R.color.accessories), false);
+        ashButton(R.id.bt_free, getResources().getColor(R.color.accessories), false);
         ashButton(R.id.bt_washing_liquid, getResources().getColor(R.color.accessories), false);
         ashButton(R.id.bt_disinfection_before, getResources().getColor(R.color.accessories), false);
         ashButton(R.id.bt_disinfection_ing, getResources().getColor(R.color.accessories), false);
@@ -506,7 +507,7 @@ public class B09Activity extends Activity {
      * 清空辅料选择
      */
     private void cancelAccessories() {
-        String[] models = {WATER, WASHING_LIQUID, SOFTENING, DISINFECTION_BEFORE, DISINFECTION_ING};
+        String[] models = {WASHING_LIQUID, SOFTENING, DISINFECTION_BEFORE, DISINFECTION_ING};
         for (String s : models) {
             Iterator<String> it = priceSet.iterator();
             while (it.hasNext()) {
@@ -545,10 +546,6 @@ public class B09Activity extends Activity {
                     case STANDARD:
                         mobilePrice = mobilePrice.add(new BigDecimal(machine.getStandardPriceMobile()));
                         coinPrice = coinPrice.add(new BigDecimal(machine.getStandardPriceCoin()));
-                        break;
-                    case WATER:
-                        mobilePrice = mobilePrice.add(new BigDecimal("9.5"));
-                        coinPrice = coinPrice.add(new BigDecimal("10.0"));
                         break;
                     case WASHING_LIQUID:
                         mobilePrice = mobilePrice.add(new BigDecimal(machine.getWashingLiquidPriceMobile()));
@@ -664,4 +661,5 @@ public class B09Activity extends Activity {
             serialPortUtil.sendSerialPort(CmdConstance.STOP_COIN);
         }
     }
+
 }
