@@ -699,6 +699,41 @@ public class B09Activity extends Activity {
             serialPortUtil.sendSerialPort(CmdConstance.CONTINUE_COIN);
         } else {
             serialPortUtil.sendSerialPort(CmdConstance.STOP_COIN);
+            StringBuilder modelSb = new StringBuilder("00000000");
+            StringBuilder materielSb = new StringBuilder("00000000");
+            // 转换洗衣指令
+            for (String s : priceSet) {
+                if (DISINFECTION_BEFORE.equals(s)) {
+                    modelSb.replace(0, 1, "1");
+                }
+                if (STANDARD.equals(s)) {
+                    modelSb.replace(1, 2, "1");
+                }
+                if (SHEETS.equals(s)) {
+                    modelSb.replace(2, 3, "1");
+                }
+                if (COWBOY.equals(s)) {
+                    modelSb.replace(3, 4, "1");
+                }
+                if (RINSE.equals(s)) {
+                    modelSb.replace(4, 5, "1");
+                }
+                if (DISINFECTION_ING.equals(s)) {
+                    materielSb.replace(2, 3, "1");
+                }
+                if (FREE.equals(s)) {
+                    materielSb.replace(3, 4, "1");
+                }
+                if (WASHING_LIQUID.equals(s)) {
+                    materielSb.replace(4, 5, "1");
+                }
+                if (SOFTENING.equals(s)) {
+                    materielSb.replace(5, 6, "1");
+                }
+            }
+            String model = Integer.toHexString(Integer.parseInt(modelSb.toString()));
+            String materiel = Integer.toHexString(Integer.parseInt(materielSb.toString()));
+            serialPortUtil.sendSerialPort(machine.getCommand() + model + materiel);
         }
     }
 

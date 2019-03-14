@@ -1512,8 +1512,6 @@ public class D09Activity extends Activity {
                     washingMachine.setState(cursor.getString(cursor.getColumnIndex("state")));
                     washingMachines.add(washingMachine);
                 }
-            } else {
-                alertMsg("Error", "没有找到可以用的洗衣机！");
             }
         } finally {
             // 关闭数据库连接
