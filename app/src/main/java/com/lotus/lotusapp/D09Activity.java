@@ -75,6 +75,8 @@ public class D09Activity extends Activity {
     private CoinBox coinBox = new CoinBox();
     // 选中洗衣机集合
     private List<WashingMachine> washingMachinesSelect = new ArrayList<>();
+    // 定义textView
+    private TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -265,6 +267,11 @@ public class D09Activity extends Activity {
             if (flag) {
                 // 洗衣机按钮常亮
                 v.setBackgroundResource(R.drawable.bt_c_royal_blue_shape);
+                if (washingMachinesSelect.size() > 0) {
+                    WashingMachine mac = washingMachinesSelect.get(washingMachinesSelect.size() - 1);
+                    displayPrice(mac);
+
+                }
             } else {
                 // 加载游戏洗衣机
                 initEffectiveWash();
@@ -273,11 +280,57 @@ public class D09Activity extends Activity {
                         // 洗衣机按钮选中
                         v.setBackgroundResource(R.drawable.bt_selected_shape);
                         washingMachinesSelect.add(mac);
+                        // 定价区价格显示
+                        displayPrice(mac);
                     }
                 }
             }
         }
         return false;
+    }
+
+    /**
+     * 定价区价格显示
+     * @param mac
+     */
+    private void displayPrice(WashingMachine mac) {
+        // 定价区价格显示
+        textView = findViewById(R.id.tv_disinfection_before_price_coin);
+        textView.setText(mac.getDisinfectionBeforePriceCoin());
+        textView = findViewById(R.id.tv_disinfection_before_price_mobile);
+        textView.setText(mac.getDisinfectionBeforePriceMobile());
+        textView = findViewById(R.id.tv_disinfection_ing_price_coin);
+        textView.setText(mac.getDisinfectionIngPriceCoin());
+        textView = findViewById(R.id.tv_disinfection_ing_price_mobile);
+        textView.setText(mac.getDisinfectionIngPriceMobile());
+        textView = findViewById(R.id.tv_softening_price_coin);
+        textView.setText(mac.getSofteningPriceCoin());
+        textView = findViewById(R.id.tv_softening_price_mobile);
+        textView.setText(mac.getSofteningPriceMobile());
+        textView = findViewById(R.id.tv_washing_liquid_price_coin);
+        textView.setText(mac.getWashingLiquidPriceCoin());
+        textView = findViewById(R.id.tv_washing_liquid_price_mobile);
+        textView.setText(mac.getWashingLiquidPriceMobile());
+        textView = findViewById(R.id.tv_drying_price_coin);
+        textView.setText(mac.getDryingPriceCoin());
+        textView = findViewById(R.id.tv_drying_price_mobile);
+        textView.setText(mac.getDryingPriceMobile());
+        textView = findViewById(R.id.tv_cowboy_price_coin);
+        textView.setText(mac.getCowboyPriceCoin());
+        textView = findViewById(R.id.tv_cowboy_price_mobile);
+        textView.setText(mac.getCowboyPriceMobile());
+        textView = findViewById(R.id.tv_sheets_price_coin);
+        textView.setText(mac.getSheetsPriceCoin());
+        textView = findViewById(R.id.tv_sheets_price_mobile);
+        textView.setText(mac.getSheetsPriceMobile());
+        textView = findViewById(R.id.tv_rinse_price_coin);
+        textView.setText(mac.getRinsePriceCoin());
+        textView = findViewById(R.id.tv_rinse_price_mobile);
+        textView.setText(mac.getRinsePriceMobile());
+        textView = findViewById(R.id.tv_standard_price_coin);
+        textView.setText(mac.getStandardPriceCoin());
+        textView = findViewById(R.id.tv_standard_price_mobile);
+        textView.setText(mac.getStandardPriceMobile());
     }
 
     /**
@@ -997,7 +1050,7 @@ public class D09Activity extends Activity {
         findViewById(R.id.tv_cowboy).setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                return onTouchPrice(v, event, R.id.tv_drying, PRICE_COWBOY);
+                return onTouchPrice(v, event, R.id.tv_cowboy, PRICE_COWBOY);
             }
         });
         // 牛仔移动支付
@@ -1234,7 +1287,6 @@ public class D09Activity extends Activity {
     private void restorePriceButton(int btId) {
         int[] ints = {R.id.tv_drying,
                 R.id.tv_rinse,
-                R.id.tv_drying,
                 R.id.tv_sheets,
                 R.id.tv_cowboy,
                 R.id.tv_standard,
@@ -1404,6 +1456,7 @@ public class D09Activity extends Activity {
                     coinBox = new CoinBox();
                     coinBox.setId(cursor.getInt(cursor.getColumnIndex("id")));
                     coinBox.setNum(cursor.getInt(cursor.getColumnIndex("num")));
+                    coinBox.setCommand(cursor.getString(cursor.getColumnIndex("command")));
                     coinBox.setState(cursor.getString(cursor.getColumnIndex("state")));
                 }
             }

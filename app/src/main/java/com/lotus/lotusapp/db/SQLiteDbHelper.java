@@ -41,10 +41,11 @@ public class SQLiteDbHelper extends SQLiteOpenHelper {
             + "type varchar(2) not null,"
             + "create_time timestamp default (datetime('now','localtime'))"
             + ");";
-    // 创建 password_rule 表的 sql 语句
+    // 创建 coin_box 表的 sql 语句
     private static final String COIN_BOX_CREATE_TABLE_SQL = "create table " + TABLE_COIN_BOX + "("
             + "id integer primary key autoincrement,"
             + "num integer not null,"
+            + "command varchar(10) not null,"
             + "state varchar(2) not null default '1',"
             + "create_time timestamp default (datetime('now','localtime'))"
             + ");";

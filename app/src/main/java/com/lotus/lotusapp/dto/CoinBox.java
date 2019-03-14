@@ -13,7 +13,12 @@ public class CoinBox implements Parcelable {
 
     private Integer num;
 
+    private String command;
+
     private String state;
+
+    public CoinBox() {
+    }
 
     public Integer getId() {
         return id;
@@ -39,15 +44,20 @@ public class CoinBox implements Parcelable {
         this.num = num;
     }
 
+    public String getCommand() {
+        return command;
+    }
+
+    public void setCommand(String command) {
+        this.command = command;
+    }
+
     public String getState() {
         return state;
     }
 
     public void setState(String state) {
         this.state = state;
-    }
-
-    public CoinBox() {
     }
 
     protected CoinBox(Parcel in) {
@@ -61,6 +71,7 @@ public class CoinBox implements Parcelable {
         } else {
             num = in.readInt();
         }
+        command = in.readString();
         state = in.readString();
     }
 
@@ -95,6 +106,7 @@ public class CoinBox implements Parcelable {
             dest.writeByte((byte) 1);
             dest.writeInt(num);
         }
+        dest.writeString(command);
         dest.writeString(state);
     }
 }
