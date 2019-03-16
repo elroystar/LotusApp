@@ -865,6 +865,9 @@ public class C09Activity extends Activity {
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onEventMainThread(String string) {
         Log.d("C09Activity", "获取到了从传感器发送到Android主板的串口数据：" + string);
+        if (string.equals(CmdConstance.RESET)) {
+            return;
+        }
         sqLiteDbHelper = new SQLiteDbHelper(getApplicationContext());
         SQLiteDatabase dbWrit = sqLiteDbHelper.getWritableDatabase();
         try {

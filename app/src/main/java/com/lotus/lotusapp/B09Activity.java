@@ -661,6 +661,9 @@ public class B09Activity extends Activity {
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onEventMainThread(String string) {
         Log.d("B09Activity", "获取到了从传感器发送到Android主板的串口数据：" + string);
+        if (string.equals(CmdConstance.RESET)) {
+            return;
+        }
         BigDecimal price = new BigDecimal("0");
         switch (string) {
             case CmdConstance.FIVE_THAI_BAHT:
