@@ -155,6 +155,14 @@ public class B09Activity extends Activity {
                         calculatedPrice();
                         // 显示全部辅料
                         displayAccessoriesAll();
+                        if (priceSet.size() > 0) {
+                            Iterator<String> it = priceSet.iterator();
+                            while (it.hasNext()) {
+                                if (FREE.equals(it.next())) {
+                                    it.remove();
+                                }
+                            }
+                        }
                         frameLayout = findViewById(R.id.fl_free);
                         frameLayout.setVisibility(View.INVISIBLE);
                         frameLayout = findViewById(R.id.fl_washing_liquid);
@@ -187,6 +195,14 @@ public class B09Activity extends Activity {
                         calculatedPrice();
                         // 显示全部辅料
                         displayAccessoriesAll();
+                        if (priceSet.size() > 0) {
+                            Iterator<String> it = priceSet.iterator();
+                            while (it.hasNext()) {
+                                if (FREE.equals(it.next())) {
+                                    it.remove();
+                                }
+                            }
+                        }
                         frameLayout = findViewById(R.id.fl_free);
                         frameLayout.setVisibility(View.INVISIBLE);
                         frameLayout = findViewById(R.id.fl_washing_liquid);
