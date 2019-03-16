@@ -959,9 +959,6 @@ public class D09Activity extends Activity {
                 }
                 break;
             default:
-                stringTx = stringTx + num;
-                tv = findViewById(R.id.tv_password);
-                tv.setText(stringTx);
                 break;
         }
     }
