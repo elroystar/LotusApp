@@ -1229,6 +1229,7 @@ public class A09Activity extends Activity {
             loadImage(ib_num, this, thaiFilePath + File.separator + "cg", "ib_num_OK.png");
             if (stringTx.length() == 0) {
                 TextView tv = findViewById(R.id.tx_num_0);
+                stringTx = "0";
                 tv.setText("0");
             } else if (stringTx.length() >= 1 && stringTx.length() < 10) {
                 // 获取textView id
@@ -1237,13 +1238,13 @@ public class A09Activity extends Activity {
                 tv.setText(txStr);
                 stringTx = stringTx + txStr;
             } else {
-                for (int i = 0; i < 10; i++) {
+                for (int i = 1; i < 10; i++) {
                     // 获取textView id
                     int tx_num_id = getResources().getIdentifier("tx_num_" + i, "id", getPackageName());
                     TextView tv = findViewById(tx_num_id);
                     tv.setText("");
                 }
-                stringTx = "";
+                stringTx = "0";
             }
         }
         if (event.getAction() == MotionEvent.ACTION_UP) {
