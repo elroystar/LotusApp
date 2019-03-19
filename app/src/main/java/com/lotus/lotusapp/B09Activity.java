@@ -79,7 +79,7 @@ public class B09Activity extends Activity {
 //        serialPortUtil.closeSerialPort();
     }
 
-    @Override
+    /*@Override
     protected void onPause() {
         price = new BigDecimal("0");
         super.onPause();
@@ -89,6 +89,18 @@ public class B09Activity extends Activity {
     protected void onStop() {
         price = new BigDecimal("0");
         super.onStop();
+    }*/
+
+    @Override
+    protected void onStart() {
+        serialPortUtil.openSerialPort();
+        super.onStart();
+    }
+
+    @Override
+    protected void onResume() {
+        serialPortUtil.openSerialPort();
+        super.onResume();
     }
 
     @Override
