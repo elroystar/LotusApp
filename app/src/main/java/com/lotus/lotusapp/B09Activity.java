@@ -80,6 +80,12 @@ public class B09Activity extends Activity {
     }
 
     @Override
+    protected void onRestart() {
+        super.onRestart();
+        price = new BigDecimal("0");
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_b09);
