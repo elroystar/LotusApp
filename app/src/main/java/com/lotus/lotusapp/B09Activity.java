@@ -694,16 +694,16 @@ public class B09Activity extends Activity {
 
         switch (string) {
             case CmdConstance.FIVE_THAI_BAHT:
-                calculatedPrice(price, "5");
+                calculatedPrice("5");
                 break;
             case CmdConstance.TEN_THAI_BAHT:
-                calculatedPrice(price, "10");
+                calculatedPrice("10");
                 break;
             case CmdConstance.ONE_EURO:
-                calculatedPrice(price, "30");
+                calculatedPrice("30");
                 break;
             case CmdConstance.ONE_DOLLAR:
-                calculatedPrice(price, "30");
+                calculatedPrice("30");
                 break;
         }
     }
@@ -711,10 +711,9 @@ public class B09Activity extends Activity {
     /**
      * 接收投币箱币值命令，计算显示价格
      *
-     * @param price
      * @param coinPrice
      */
-    private void calculatedPrice(BigDecimal price, String coinPrice) {
+    private void calculatedPrice(String coinPrice) {
         handler.removeCallbacks(returnA09);
         // TODO: 2019/3/19 关闭二维码支付
 
@@ -772,6 +771,7 @@ public class B09Activity extends Activity {
             Log.d("B09Activity", "发送materiel：" + materiel);
             Log.d("B09Activity", "发送materielSb：" + materielSb.toString());
             Log.d("B09Activity", "发送materielInt：" + Integer.parseInt(materielSb.toString(), 2));
+            Log.d("B09Activity", "洗衣机码：" + machine.getCommand());
             serialPortUtil.sendSerialPort(machine.getCommand() + model + materiel);
             if (!"".equals(user.getPhone()) && null != user.getPhone()) {
                 // 查询数据库
