@@ -46,8 +46,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/a09_tv_num_shape"
                     android:gravity="center"
-                    android:text="0"
-                    android:textSize="25sp" />
+                    android:textSize="35sp" />
 
                 <TextView
                     android:id="@+id/tx_num_1"
@@ -56,7 +55,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/a09_tv_num_shape"
                     android:gravity="center"
-                    android:textSize="55sp" />
+                    android:textSize="35sp" />
 
                 <TextView
                     android:id="@+id/tx_num_2"
@@ -65,7 +64,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/a09_tv_num_shape"
                     android:gravity="center"
-                    android:textSize="55sp" />
+                    android:textSize="35sp" />
 
                 <TextView
                     android:id="@+id/tx_num_3"
@@ -74,7 +73,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/a09_tv_num_shape"
                     android:gravity="center"
-                    android:textSize="55sp" />
+                    android:textSize="35sp" />
 
                 <TextView
                     android:id="@+id/tx_num_4"
@@ -83,7 +82,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/a09_tv_num_shape"
                     android:gravity="center"
-                    android:textSize="55sp" />
+                    android:textSize="35sp" />
 
                 <TextView
                     android:id="@+id/tx_num_5"
@@ -92,7 +91,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/a09_tv_num_shape"
                     android:gravity="center"
-                    android:textSize="55sp" />
+                    android:textSize="35sp" />
 
                 <TextView
                     android:id="@+id/tx_num_6"
@@ -101,7 +100,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/a09_tv_num_shape"
                     android:gravity="center"
-                    android:textSize="55sp" />
+                    android:textSize="35sp" />
 
                 <TextView
                     android:id="@+id/tx_num_7"
@@ -110,7 +109,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/a09_tv_num_shape"
                     android:gravity="center"
-                    android:textSize="55sp" />
+                    android:textSize="35sp" />
 
                 <TextView
                     android:id="@+id/tx_num_8"
@@ -119,7 +118,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/a09_tv_num_shape"
                     android:gravity="center"
-                    android:textSize="55sp" />
+                    android:textSize="35sp" />
 
                 <TextView
                     android:id="@+id/tx_num_9"
@@ -128,7 +127,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/a09_tv_num_shape"
                     android:gravity="center"
-                    android:textSize="55sp" />
+                    android:textSize="35sp" />
 
             </LinearLayout>
 

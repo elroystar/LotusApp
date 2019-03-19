@@ -54,7 +54,7 @@ public class A09Activity extends Activity {
     private RequestOptions requestOptions = new RequestOptions()
             .error(R.drawable.ic_launcher_background);
     // 数字输入框字符串
-    private String stringTx = "0";
+    private String stringTx = "";
     // User实体类定义
     private User user = new User();
     // 图片存放路径
@@ -542,13 +542,13 @@ public class A09Activity extends Activity {
                         playSound();
                         // 重新设置按下时的背景图片
 //                        loadImage(v.getId(), this, thaiFilePath + File.separator + "cg", "ib_num_OK.png");
-                        for (int i = 1; i < 10; i++) {
+                        for (int i = 0; i < 10; i++) {
                             // 获取textView id
                             int tx_num_id = getResources().getIdentifier("tx_num_" + i, "id", getPackageName());
                             TextView tv = findViewById(tx_num_id);
                             tv.setText("");
                         }
-                        stringTx = "0";
+                        stringTx = "";
                         break;
                     case MotionEvent.ACTION_UP:
 
@@ -1230,20 +1230,23 @@ public class A09Activity extends Activity {
             playSound();
             // 重新设置按下时的背景图片
             loadImage(ib_num, this, thaiFilePath + File.separator + "cg", "ib_num_OK.png");
-            if (stringTx.length() < 10) {
+            if (stringTx.length() == 0) {
+                TextView tv = findViewById(R.id.tx_num_0);
+                tv.setText("0");
+            } else if (stringTx.length() > 0 && stringTx.length() < 10) {
                 // 获取textView id
                 int tx_num_id = getResources().getIdentifier("tx_num_" + stringTx.length(), "id", getPackageName());
                 TextView tv = findViewById(tx_num_id);
                 tv.setText(txStr);
                 stringTx = stringTx + txStr;
             } else {
-                for (int i = 1; i < 10; i++) {
+                for (int i = 0; i < 10; i++) {
                     // 获取textView id
                     int tx_num_id = getResources().getIdentifier("tx_num_" + i, "id", getPackageName());
                     TextView tv = findViewById(tx_num_id);
                     tv.setText("");
                 }
-                stringTx = "0";
+                stringTx = "";
             }
         }
         if (event.getAction() == MotionEvent.ACTION_UP) {
