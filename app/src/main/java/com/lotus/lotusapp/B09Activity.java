@@ -65,12 +65,14 @@ public class B09Activity extends Activity {
     private BigDecimal mobilePrice;
     // 硬币支付价格
     private BigDecimal coinPrice;
+    private BigDecimal price = new BigDecimal("0");
     // 价格继续数组
     private Set<String> priceSet = new HashSet<>();
     // User实体类定义
     private User user = new User();
     // 定义handler对象
     private Handler handler = new Handler();
+
     @Override
     protected void onDestroy() {
         super.onDestroy();
@@ -689,7 +691,7 @@ public class B09Activity extends Activity {
         if (string.equals(CmdConstance.RESET)) {
             return;
         }
-        BigDecimal price = new BigDecimal("0");
+
         switch (string) {
             case CmdConstance.FIVE_THAI_BAHT:
                 calculatedPrice(price, "5");
@@ -718,9 +720,9 @@ public class B09Activity extends Activity {
 
         String showPrice;
         price = price.add(new BigDecimal(coinPrice));
-        this.coinPrice = this.coinPrice.subtract(price);
-        if (this.coinPrice.compareTo(new BigDecimal("0")) == 1) {
-            showPrice = this.coinPrice.toString();
+        BigDecimal p = this.coinPrice.subtract(price);
+        if (p.compareTo(new BigDecimal("0")) == 1) {
+            showPrice = p.toString();
         } else {
             showPrice = "0";
         }
@@ -762,14 +764,14 @@ public class B09Activity extends Activity {
                     materielSb.replace(5, 6, "1");
                 }
             }
-            String model = Integer.toHexString(Integer.parseInt(modelSb.toString()));
-            String materiel = Integer.toHexString(Integer.parseInt(materielSb.toString()));
+            String model = Integer.toHexString(Integer.parseInt(modelSb.toString(), 2));
+            String materiel = Integer.toHexString(Integer.parseInt(materielSb.toString(), 2));
             Log.d("B09Activity", "发送model：" + model);
             Log.d("B09Activity", "发送modelSb：" + modelSb.toString());
-            Log.d("B09Activity", "发送modelInt：" + Integer.parseInt(materielSb.toString()));
+            Log.d("B09Activity", "发送modelInt：" + Integer.parseInt(materielSb.toString(), 2));
             Log.d("B09Activity", "发送materiel：" + materiel);
             Log.d("B09Activity", "发送materielSb：" + materielSb.toString());
-            Log.d("B09Activity", "发送materielInt：" + Integer.parseInt(materielSb.toString()));
+            Log.d("B09Activity", "发送materielInt：" + Integer.parseInt(materielSb.toString(), 2));
             serialPortUtil.sendSerialPort(machine.getCommand() + model + materiel);
             if (!"".equals(user.getPhone()) && null != user.getPhone()) {
                 // 查询数据库
