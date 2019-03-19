@@ -729,7 +729,7 @@ public class B09Activity extends Activity {
         if (price.compareTo(this.coinPrice) == -1) {
             serialPortUtil.sendSerialPort(CmdConstance.CONTINUE_COIN);
         } else {
-            serialPortUtil.sendSerialPort(CmdConstance.STOP_COIN);
+//            serialPortUtil.sendSerialPort(CmdConstance.STOP_COIN);
             StringBuilder modelSb = new StringBuilder("00000000");
             StringBuilder materielSb = new StringBuilder("00000000");
             // 转换洗衣指令
@@ -764,6 +764,12 @@ public class B09Activity extends Activity {
             }
             String model = Integer.toHexString(Integer.parseInt(modelSb.toString()));
             String materiel = Integer.toHexString(Integer.parseInt(materielSb.toString()));
+            Log.d("B09Activity", "发送model：" + model);
+            Log.d("B09Activity", "发送modelSb：" + modelSb.toString());
+            Log.d("B09Activity", "发送modelInt：" + Integer.parseInt(materielSb.toString()));
+            Log.d("B09Activity", "发送materiel：" + materiel);
+            Log.d("B09Activity", "发送materielSb：" + materielSb.toString());
+            Log.d("B09Activity", "发送materielInt：" + Integer.parseInt(materielSb.toString()));
             serialPortUtil.sendSerialPort(machine.getCommand() + model + materiel);
             if (!"".equals(user.getPhone()) && null != user.getPhone()) {
                 // 查询数据库
