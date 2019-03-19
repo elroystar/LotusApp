@@ -18,13 +18,10 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
-import com.lotus.lotusapp.constance.CmdConstance;
 import com.lotus.lotusapp.db.SQLiteDbHelper;
 import com.lotus.lotusapp.dto.User;
 import com.lotus.lotusapp.dto.WashingMachine;
 import com.lotus.lotusapp.utils.LongClickUtils;
-import com.lotus.lotusapp.utils.PasswordRuleUtil;
-import com.lotus.lotusapp.utils.SerialPortUtil;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -1233,7 +1230,7 @@ public class A09Activity extends Activity {
             if (stringTx.length() == 0) {
                 TextView tv = findViewById(R.id.tx_num_0);
                 tv.setText("0");
-            } else if (stringTx.length() > 1 && stringTx.length() < 10) {
+            } else if (stringTx.length() >= 1 && stringTx.length() < 10) {
                 // 获取textView id
                 int tx_num_id = getResources().getIdentifier("tx_num_" + stringTx.length(), "id", getPackageName());
                 TextView tv = findViewById(tx_num_id);

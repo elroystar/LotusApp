@@ -26,7 +26,6 @@ import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 public class C09Activity extends Activity {
