@@ -65,7 +65,7 @@ public class B09Activity extends Activity {
     private BigDecimal mobilePrice;
     // 硬币支付价格
     private BigDecimal coinPrice;
-    private BigDecimal price = new BigDecimal("0");
+    private BigDecimal price;
     // 价格继续数组
     private Set<String> priceSet = new HashSet<>();
     // User实体类定义
@@ -83,7 +83,7 @@ public class B09Activity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_b09);
-
+        price = new BigDecimal("0");
         //注册EventBus
         EventBus.getDefault().register(this);
         // 加载声音
@@ -691,7 +691,6 @@ public class B09Activity extends Activity {
         if (string.equals(CmdConstance.RESET)) {
             return;
         }
-
         switch (string) {
             case CmdConstance.FIVE_THAI_BAHT:
                 calculatedPrice("5");
@@ -777,7 +776,22 @@ public class B09Activity extends Activity {
                 // 查询数据库
                 sqLiteDbHelper = new SQLiteDbHelper(getApplicationContext());
                 SQLiteDatabase dbWrit = sqLiteDbHelper.getWritableDatabase();
-                dbWrit.execSQL("update user set washing_total = washing_total + 1,washing_num = washing_num + 1 where phone = '" + user.getPhone() + "'");
+                int washingNum = user.getWashingNum();
+                int rewardNum = user.getRewardNum();
+                int rewardTotal = user.getRewardTotal();
+                if (rewardNum == 1) {
+                    rewardNum = 0;
+                    rewardTotal++;
+                }
+                if (washingNum == 10) {
+                    washingNum = 0;
+                    rewardNum = 1;
+                }
+                dbWrit.execSQL("update user set " +
+                        "washing_total = washing_total + 1, " +
+                        "washing_num = " + washingNum + ", " +
+                        "reward_num=" + rewardNum + ", " +
+                        "reward_total = " + rewardTotal + " where phone = '" + user.getPhone() + "'");
                 // 显示倒计时提示框
                 alertMsg("tips", "请前往" + machine.getNum() + "号洗衣机洗衣！");
                 /** 倒计时6秒，一次1秒 */
