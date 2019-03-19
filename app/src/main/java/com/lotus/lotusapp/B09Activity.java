@@ -714,6 +714,8 @@ public class B09Activity extends Activity {
      */
     private void calculatedPrice(BigDecimal price, String coinPrice) {
         handler.removeCallbacks(returnA09);
+        // TODO: 2019/3/19 关闭二维码支付
+
         String showPrice;
         price = price.add(new BigDecimal(coinPrice));
         this.coinPrice = this.coinPrice.subtract(price);
@@ -792,6 +794,8 @@ public class B09Activity extends Activity {
 
         @Override
         public void onFinish() {
+            // TODO: 2019/3/19 关闭二维码支付
+
             // 返回A界面
             Intent i = new Intent(B09Activity.this, A09Activity.class);
             startActivity(i);

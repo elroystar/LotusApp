@@ -71,6 +71,8 @@ public class A09Activity extends Activity {
         initEffectiveWash();
         // 显示洗衣机按钮
         displayMachineBtn();
+        // 加载数字键盘图案
+        loadNumBtn();
         // 长按logo进入M界面
         LongClickUtils.setLongClick(new Handler(), findViewById(R.id.logo), 1000, new View.OnLongClickListener() {
             @Override
