@@ -93,12 +93,14 @@ public class B09Activity extends Activity {
 
     @Override
     protected void onStart() {
+        serialPortUtil = new SerialPortUtil();
         serialPortUtil.openSerialPort();
         super.onStart();
     }
 
     @Override
     protected void onResume() {
+        serialPortUtil = new SerialPortUtil();
         serialPortUtil.openSerialPort();
         super.onResume();
     }
@@ -162,8 +164,6 @@ public class B09Activity extends Activity {
                         // TODO: 2019/3/19 随机位置显示付款二维码
 
                         // 打开串口，启动投币箱
-                        serialPortUtil = new SerialPortUtil();
-                        serialPortUtil.openSerialPort();
                         serialPortUtil.sendSerialPort(CmdConstance.START_COIN);
                         handler.postDelayed(returnA09, 10000);
                         break;
