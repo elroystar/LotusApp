@@ -1233,7 +1233,7 @@ public class A09Activity extends Activity {
             if (stringTx.length() == 0) {
                 TextView tv = findViewById(R.id.tx_num_0);
                 tv.setText("0");
-            } else if (stringTx.length() > 0 && stringTx.length() < 10) {
+            } else if (stringTx.length() > 1 && stringTx.length() < 10) {
                 // 获取textView id
                 int tx_num_id = getResources().getIdentifier("tx_num_" + stringTx.length(), "id", getPackageName());
                 TextView tv = findViewById(tx_num_id);
