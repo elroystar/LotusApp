@@ -830,6 +830,7 @@ public class B09Activity extends Activity {
         public void onFinish() {
             // TODO: 2019/3/19 关闭二维码支付
 
+            price = new BigDecimal("0");
             // 返回A界面
             Intent i = new Intent(B09Activity.this, A09Activity.class);
             startActivity(i);
@@ -844,6 +845,7 @@ public class B09Activity extends Activity {
         public void run() {
             // TODO: 2019/3/19 关闭二维码支付
 
+            price = new BigDecimal("0");
             // 关闭投币箱
             serialPortUtil.sendSerialPort(CmdConstance.STOP_COIN);
             // 返回A界面
