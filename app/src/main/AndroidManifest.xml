@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.lotus.lotusapp">
+    package="com.lotus.lotusapp"
+    android:installLocation="internalOnly">
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <application
         android:allowBackup="true"
@@ -23,6 +25,13 @@
         <activity android:name=".C09Activity" />
         <activity android:name=".D09Activity" />
         <activity android:name=".MCD09Activity"></activity>
+
+        <receiver android:name=".common.BootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <category android:name="android.intent.category.HOME" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

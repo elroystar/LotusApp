@@ -1,24 +1,32 @@
 package com.lotus.lotusapp;
 
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.media.AudioManager;
 import android.media.SoundPool;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.Handler;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
+import com.lotus.lotusapp.constance.CmdConstance;
 import com.lotus.lotusapp.db.SQLiteDbHelper;
+import com.lotus.lotusapp.dto.User;
 import com.lotus.lotusapp.dto.WashingMachine;
 import com.lotus.lotusapp.utils.LongClickUtils;
+import com.lotus.lotusapp.utils.PasswordRuleUtil;
+import com.lotus.lotusapp.utils.SerialPortUtil;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,11 +46,20 @@ public class A09Activity extends Activity {
     private FrameLayout frameLayout;
     // 图片按钮定义
     private ImageView imageView;
+    // 图片按钮定义
+    private ImageButton imageButton;
     // En.选择
     private String En = "Thai";
     // 定义RequestOptions
     private RequestOptions requestOptions = new RequestOptions()
             .error(R.drawable.ic_launcher_background);
+    // 数字输入框字符串
+    private String stringTx = "0";
+    // User实体类定义
+    private User user = new User();
+    // 图片存放路径
+    private static String thaiFilePath = Environment.getExternalStorageDirectory().getPath() + File.separator + "data" + File.separator + "lotus" + File.separator + "a09";
+    private static String enFilePath = Environment.getExternalStorageDirectory().getPath() + File.separator + "data" + File.separator + "lotus" + File.separator + "a09";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,7 +82,13 @@ public class A09Activity extends Activity {
                 return false;
             }
         });
+        // 数字键盘区按钮逻辑
+        functionNumButton();
+        // 洗衣机按钮区逻辑
+        functionMachine();
+    }
 
+    private void functionMachine() {
         if (findViewById(R.id.machine_1) != null) {
             findViewById(R.id.machine_1).setOnTouchListener(new View.OnTouchListener() {
                 @Override
@@ -79,6 +102,7 @@ public class A09Activity extends Activity {
                             Intent i = new Intent(A09Activity.this, B09Activity.class);
                             i.putExtra("WashingMachine", washingMachines.get(0));
                             i.putExtra("En", En);
+                            i.putExtra("user", user);
                             startActivity(i);
                             break;
                     }
@@ -100,6 +124,7 @@ public class A09Activity extends Activity {
                             Intent i = new Intent(A09Activity.this, B09Activity.class);
                             i.putExtra("WashingMachine", washingMachines.get(1));
                             i.putExtra("En", En);
+                            i.putExtra("user", user);
                             startActivity(i);
                             break;
                     }
@@ -121,6 +146,7 @@ public class A09Activity extends Activity {
                             Intent i = new Intent(A09Activity.this, B09Activity.class);
                             i.putExtra("WashingMachine", washingMachines.get(2));
                             i.putExtra("En", En);
+                            i.putExtra("user", user);
                             startActivity(i);
                             break;
                     }
@@ -142,6 +168,7 @@ public class A09Activity extends Activity {
                             Intent i = new Intent(A09Activity.this, B09Activity.class);
                             i.putExtra("WashingMachine", washingMachines.get(3));
                             i.putExtra("En", En);
+                            i.putExtra("user", user);
                             startActivity(i);
                             break;
                     }
@@ -163,6 +190,7 @@ public class A09Activity extends Activity {
                             Intent i = new Intent(A09Activity.this, B09Activity.class);
                             i.putExtra("WashingMachine", washingMachines.get(4));
                             i.putExtra("En", En);
+                            i.putExtra("user", user);
                             startActivity(i);
                             break;
                     }
@@ -184,6 +212,7 @@ public class A09Activity extends Activity {
                             Intent i = new Intent(A09Activity.this, B09Activity.class);
                             i.putExtra("WashingMachine", washingMachines.get(5));
                             i.putExtra("En", En);
+                            i.putExtra("user", user);
                             startActivity(i);
                             break;
                     }
@@ -205,6 +234,7 @@ public class A09Activity extends Activity {
                             Intent i = new Intent(A09Activity.this, B09Activity.class);
                             i.putExtra("WashingMachine", washingMachines.get(6));
                             i.putExtra("En", En);
+                            i.putExtra("user", user);
                             startActivity(i);
                             break;
                     }
@@ -226,6 +256,7 @@ public class A09Activity extends Activity {
                             Intent i = new Intent(A09Activity.this, B09Activity.class);
                             i.putExtra("WashingMachine", washingMachines.get(7));
                             i.putExtra("En", En);
+                            i.putExtra("user", user);
                             startActivity(i);
                             break;
                     }
@@ -247,6 +278,7 @@ public class A09Activity extends Activity {
                             Intent i = new Intent(A09Activity.this, B09Activity.class);
                             i.putExtra("WashingMachine", washingMachines.get(8));
                             i.putExtra("En", En);
+                            i.putExtra("user", user);
                             startActivity(i);
                             break;
                     }
@@ -268,6 +300,7 @@ public class A09Activity extends Activity {
                             Intent i = new Intent(A09Activity.this, B09Activity.class);
                             i.putExtra("WashingMachine", washingMachines.get(9));
                             i.putExtra("En", En);
+                            i.putExtra("user", user);
                             startActivity(i);
                             break;
                     }
@@ -289,6 +322,7 @@ public class A09Activity extends Activity {
                             Intent i = new Intent(A09Activity.this, B09Activity.class);
                             i.putExtra("WashingMachine", washingMachines.get(10));
                             i.putExtra("En", En);
+                            i.putExtra("user", user);
                             startActivity(i);
                             break;
                     }
@@ -310,6 +344,7 @@ public class A09Activity extends Activity {
                             Intent i = new Intent(A09Activity.this, B09Activity.class);
                             i.putExtra("WashingMachine", washingMachines.get(11));
                             i.putExtra("En", En);
+                            i.putExtra("user", user);
                             startActivity(i);
                             break;
                     }
@@ -331,6 +366,7 @@ public class A09Activity extends Activity {
                             Intent i = new Intent(A09Activity.this, B09Activity.class);
                             i.putExtra("WashingMachine", washingMachines.get(12));
                             i.putExtra("En", En);
+                            i.putExtra("user", user);
                             startActivity(i);
                             break;
                     }
@@ -352,6 +388,7 @@ public class A09Activity extends Activity {
                             Intent i = new Intent(A09Activity.this, B09Activity.class);
                             i.putExtra("WashingMachine", washingMachines.get(13));
                             i.putExtra("En", En);
+                            i.putExtra("user", user);
                             startActivity(i);
                             break;
                     }
@@ -373,6 +410,7 @@ public class A09Activity extends Activity {
                             Intent i = new Intent(A09Activity.this, B09Activity.class);
                             i.putExtra("WashingMachine", washingMachines.get(14));
                             i.putExtra("En", En);
+                            i.putExtra("user", user);
                             startActivity(i);
                             break;
                     }
@@ -394,6 +432,7 @@ public class A09Activity extends Activity {
                             Intent i = new Intent(A09Activity.this, B09Activity.class);
                             i.putExtra("WashingMachine", washingMachines.get(15));
                             i.putExtra("En", En);
+                            i.putExtra("user", user);
                             startActivity(i);
                             break;
                     }
@@ -415,6 +454,7 @@ public class A09Activity extends Activity {
                             Intent i = new Intent(A09Activity.this, B09Activity.class);
                             i.putExtra("WashingMachine", washingMachines.get(16));
                             i.putExtra("En", En);
+                            i.putExtra("user", user);
                             startActivity(i);
                             break;
                     }
@@ -422,6 +462,162 @@ public class A09Activity extends Activity {
                 }
             });
         }
+    }
+
+    /**
+     * 数字区键盘逻辑
+     */
+    private void functionNumButton() {
+        // 数字键
+        findViewById(R.id.ib_num_0).setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                return onTouchNumFunction(v, event, R.id.ib_num_0, "0", "ib_num_0.png");
+            }
+        });
+        findViewById(R.id.ib_num_1).setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                return onTouchNumFunction(v, event, R.id.ib_num_1, "1", "ib_num_1.png");
+            }
+        });
+        findViewById(R.id.ib_num_2).setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                return onTouchNumFunction(v, event, R.id.ib_num_2, "2", "ib_num_2.png");
+            }
+        });
+        findViewById(R.id.ib_num_3).setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                return onTouchNumFunction(v, event, R.id.ib_num_3, "3", "ib_num_3.png");
+            }
+        });
+        findViewById(R.id.ib_num_4).setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                return onTouchNumFunction(v, event, R.id.ib_num_4, "4", "ib_num_4.png");
+            }
+        });
+        findViewById(R.id.ib_num_5).setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                return onTouchNumFunction(v, event, R.id.ib_num_5, "5", "ib_num_5.png");
+            }
+        });
+        findViewById(R.id.ib_num_6).setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                return onTouchNumFunction(v, event, R.id.ib_num_6, "6", "ib_num_6.png");
+            }
+        });
+        findViewById(R.id.ib_num_7).setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                return onTouchNumFunction(v, event, R.id.ib_num_7, "7", "ib_num_7.png");
+            }
+        });
+        findViewById(R.id.ib_num_8).setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                return onTouchNumFunction(v, event, R.id.ib_num_8, "8", "ib_num_8.png");
+            }
+        });
+        findViewById(R.id.ib_num_9).setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                return onTouchNumFunction(v, event, R.id.ib_num_9, "9", "ib_num_9.png");
+            }
+        });
+        // Esc键
+        findViewById(R.id.ib_num_esc).setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()) {
+                    //按下
+                    case MotionEvent.ACTION_DOWN:
+                        // 播放按键声音
+                        playSound();
+                        // 重新设置按下时的背景图片
+//                        loadImage(v.getId(), this, thaiFilePath + File.separator + "cg", "ib_num_OK.png");
+                        for (int i = 1; i < 10; i++) {
+                            // 获取textView id
+                            int tx_num_id = getResources().getIdentifier("tx_num_" + i, "id", getPackageName());
+                            TextView tv = findViewById(tx_num_id);
+                            tv.setText("");
+                        }
+                        stringTx = "0";
+                        break;
+                    case MotionEvent.ACTION_UP:
+
+                        break;
+                }
+                return false;
+            }
+        });
+        // OK键
+        findViewById(R.id.ib_num_ok).setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                switch (event.getAction()) {
+                    //按下
+                    case MotionEvent.ACTION_DOWN:
+                        // 播放按键声音
+                        playSound();
+                        if (stringTx.length() == 10) {
+                            // 查询数据库
+                            sqLiteDbHelper = new SQLiteDbHelper(getApplicationContext());
+                            SQLiteDatabase dbRead = sqLiteDbHelper.getReadableDatabase();
+                            SQLiteDatabase dbWrit = sqLiteDbHelper.getWritableDatabase();
+                            try {
+                                // select * from user where phone = 'stringTx'
+                                Cursor cursor = dbRead.query(SQLiteDbHelper.TABLE_USER,
+                                        null,
+                                        "phone = ?",
+                                        new String[]{stringTx},
+                                        null,
+                                        null,
+                                        null);
+                                if (cursor.getCount() > 0) {
+                                    // user实体赋值
+                                    while (cursor.moveToNext()) {
+                                        user.setId(cursor.getInt(cursor.getColumnIndex("id")));
+                                        user.setPhone(cursor.getString(cursor.getColumnIndex("phone")));
+                                        user.setRewardNum(cursor.getInt(cursor.getColumnIndex("reward_num")));
+                                        user.setRewardTotal(cursor.getInt(cursor.getColumnIndex("reward_total")));
+                                        user.setWashingNum(cursor.getInt(cursor.getColumnIndex("washing_num")));
+                                        user.setWashingTotal(cursor.getInt(cursor.getColumnIndex("washing_total")));
+                                    }
+                                    // 显示洗衣次数及奖励
+                                    TextView tv = findViewById(R.id.tx_washing);
+                                    tv.setText(user.getWashingNum());
+                                } else {
+                                    // 自动注册
+                                    user.setPhone(stringTx);
+                                    user.setRewardNum(0);
+                                    user.setRewardTotal(0);
+                                    user.setWashingNum(0);
+                                    user.setWashingTotal(0);
+                                    dbWrit.execSQL("insert into user(phone) values ('" + stringTx + "')");
+                                    // 显示洗衣次数及奖励
+                                    TextView tv = findViewById(R.id.tx_washing);
+                                    tv.setText("0");
+                                }
+                            } finally {
+                                dbRead.close();
+                                dbWrit.close();
+                            }
+                        }
+                        break;
+                    case MotionEvent.ACTION_UP:
+
+                        break;
+                }
+                return false;
+            }
+
+        });
+
     }
 
     /**
@@ -981,17 +1177,78 @@ public class A09Activity extends Activity {
     }
 
     /**
-     * 弹框提示
-     *
-     * @param tips
-     * @param msg
+     * 加载数字键
      */
-    private void alertMsg(String tips, String msg) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(A09Activity.this);
-        builder.setTitle(tips);
-        builder.setMessage(msg);
-        builder.setPositiveButton("OK", null);
-        builder.show();
+    private void loadNumBtn() {
+        // 数字按钮区图片
+        for (int i = 0; i < 10; i++) {
+            // 获取按钮id
+            int ib_id = getResources().getIdentifier("ib_num_" + i, "id", getPackageName());
+            imageButton = findViewById(ib_id);
+            //加载图片
+            Glide.with(this)
+                    .load(new File(thaiFilePath + File.separator + "cg", "ib_num_" + i + ".png"))
+                    .apply(requestOptions)
+                    .into(imageButton);
+        }
+//        loadImage(R.id.ib_num_en, this, thaiFilePath + File.separator + "cg", "ib_num_En.png");
+        loadImage(R.id.ib_num_esc, this, thaiFilePath + File.separator + "cg", "ib_num_Esc.png");
+        loadImage(R.id.ib_num_ok, this, thaiFilePath + File.separator + "cg", "ib_num_OK.png");
+    }
+
+    /**
+     * 加载图片
+     *
+     * @param ib_washing
+     * @param activity
+     * @param filePath
+     * @param imgStr
+     */
+    private void loadImage(int ib_washing, Activity activity, String filePath, String imgStr) {
+        imageButton = findViewById(ib_washing);
+        Glide.with(activity)
+                .load(new File(filePath, imgStr))
+                .apply(requestOptions)
+                .into(imageButton);
+    }
+
+    /**
+     * 数字键触摸逻辑控制
+     *
+     * @param v
+     * @param event
+     * @param ib_num
+     * @param txStr
+     * @param imgStr
+     * @return
+     */
+    private boolean onTouchNumFunction(View v, MotionEvent event, int ib_num, String txStr, String imgStr) {
+        if (event.getAction() == MotionEvent.ACTION_DOWN) {
+            // 播放按键声音
+            playSound();
+            // 重新设置按下时的背景图片
+            loadImage(ib_num, this, thaiFilePath + File.separator + "cg", "ib_num_OK.png");
+            if (stringTx.length() < 10) {
+                // 获取textView id
+                int tx_num_id = getResources().getIdentifier("tx_num_" + stringTx.length(), "id", getPackageName());
+                TextView tv = findViewById(tx_num_id);
+                tv.setText(txStr);
+                stringTx = stringTx + txStr;
+            } else {
+                for (int i = 1; i < 10; i++) {
+                    // 获取textView id
+                    int tx_num_id = getResources().getIdentifier("tx_num_" + i, "id", getPackageName());
+                    TextView tv = findViewById(tx_num_id);
+                    tv.setText("");
+                }
+                stringTx = "0";
+            }
+        }
+        if (event.getAction() == MotionEvent.ACTION_UP) {
+            // 再修改为抬起时的正常图片
+            loadImage(ib_num, this, thaiFilePath + File.separator + "cg", imgStr);
+        }
+        return false;
     }
 
     /**

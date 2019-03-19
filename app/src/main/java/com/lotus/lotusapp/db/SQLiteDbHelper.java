@@ -135,23 +135,7 @@ public class SQLiteDbHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        // 删除表
-        db.execSQL("drop table user");
-        db.execSQL("drop table password_bank");
-        db.execSQL("drop table password_rule");
-        db.execSQL("drop table washing_machine");
-        // 创建 user 表
-        db.execSQL(USER_CREATE_TABLE_SQL);
-        // 创建 password_bank 表
-        db.execSQL(PASSWORD_BANK_CREATE_TABLE_SQL);
-        // 创建 password_rule 表
-        db.execSQL(PASSWORD_RULE_CREATE_TABLE_SQL);
-        // 添加默认密码规则
-//        db.execSQL(PASSWORD_RULE_INSERT_DEFAULT_SQL);
-        // 创建 washing_machine 表
-        db.execSQL(WASHING_MACHINE_CREATE_TABLE_SQL);
-        // 创建 coin_box表
-        db.execSQL(COIN_BOX_CREATE_TABLE_SQL);
 
     }
+
 }

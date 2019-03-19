@@ -3,9 +3,12 @@ package com.lotus.lotusapp;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.media.AudioManager;
 import android.media.SoundPool;
 import android.os.Bundle;
+import android.os.CountDownTimer;
+import android.os.Handler;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
@@ -15,6 +18,7 @@ import android.widget.TextView;
 
 import com.lotus.lotusapp.constance.CmdConstance;
 import com.lotus.lotusapp.db.SQLiteDbHelper;
+import com.lotus.lotusapp.dto.User;
 import com.lotus.lotusapp.dto.WashingMachine;
 import com.lotus.lotusapp.utils.SerialPortUtil;
 
@@ -63,11 +67,14 @@ public class B09Activity extends Activity {
     private BigDecimal coinPrice;
     // 价格继续数组
     private Set<String> priceSet = new HashSet<>();
-
+    // User实体类定义
+    private User user = new User();
+    // 定义handler对象
+    private Handler handler = new Handler();
     @Override
     protected void onDestroy() {
         super.onDestroy();
-//        serialPortUtil.closeSerialPort();
+        serialPortUtil.closeSerialPort();
     }
 
     @Override
@@ -82,6 +89,7 @@ public class B09Activity extends Activity {
         Intent i = getIntent();
         machine = i.getParcelableExtra("WashingMachine");
         En = i.getStringExtra("En");
+        user = i.getParcelableExtra("user");
         // 默认标准和送洗衣机默认选中
         textView = findViewById(R.id.bt_standard);
         priceSet.add(STANDARD);
@@ -125,12 +133,13 @@ public class B09Activity extends Activity {
                         playSound();
                         // 置灰所有按键
                         ashAllButton();
-                        // 随机位置显示付款二维码
+                        // TODO: 2019/3/19 随机位置显示付款二维码
 
                         // 打开串口，启动投币箱
                         serialPortUtil = new SerialPortUtil();
                         serialPortUtil.openSerialPort();
                         serialPortUtil.sendSerialPort(CmdConstance.START_COIN);
+                        handler.postDelayed(returnA09, 10000);
                         break;
                 }
                 return false;
@@ -704,6 +713,7 @@ public class B09Activity extends Activity {
      * @param coinPrice
      */
     private void calculatedPrice(BigDecimal price, String coinPrice) {
+        handler.removeCallbacks(returnA09);
         String showPrice;
         price = price.add(new BigDecimal(coinPrice));
         this.coinPrice = this.coinPrice.subtract(price);
@@ -753,7 +763,55 @@ public class B09Activity extends Activity {
             String model = Integer.toHexString(Integer.parseInt(modelSb.toString()));
             String materiel = Integer.toHexString(Integer.parseInt(materielSb.toString()));
             serialPortUtil.sendSerialPort(machine.getCommand() + model + materiel);
+            if (!"".equals(user.getPhone()) && null != user.getPhone()) {
+                // 查询数据库
+                sqLiteDbHelper = new SQLiteDbHelper(getApplicationContext());
+                SQLiteDatabase dbWrit = sqLiteDbHelper.getWritableDatabase();
+                dbWrit.execSQL("update user set washing_total = washing_total + 1,washing_num = washing_num + 1 where phone = '" + user.getPhone() + "'");
+                // 显示倒计时提示框
+                alertMsg("tips", "请前往" + machine.getNum() + "号洗衣机洗衣！");
+                /** 倒计时6秒，一次1秒 */
+                countDownTimer.start();
+            } else {
+                // 显示倒计时提示框
+                alertMsg("tips", "请前往" + machine.getNum() + "号洗衣机洗衣！");
+                /** 倒计时6秒，一次1秒 */
+                countDownTimer.start();
+            }
         }
     }
+
+    /**
+     * CountDownTimer 实现倒计时
+     */
+    private CountDownTimer countDownTimer = new CountDownTimer(5 * 1000, 1000) {
+        @Override
+        public void onTick(long millisUntilFinished) {
+
+        }
+
+        @Override
+        public void onFinish() {
+            // 返回A界面
+            Intent i = new Intent(B09Activity.this, A09Activity.class);
+            startActivity(i);
+        }
+    };
+
+    /**
+     * 循环发送询问指令
+     */
+    Runnable returnA09 = new Runnable() {
+        @Override
+        public void run() {
+            // TODO: 2019/3/19 关闭二维码支付
+
+            // 关闭投币箱
+            serialPortUtil.sendSerialPort(CmdConstance.STOP_COIN);
+            // 返回A界面
+            Intent i = new Intent(B09Activity.this, A09Activity.class);
+            startActivity(i);
+        }
+    };
 
 }

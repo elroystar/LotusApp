@@ -33,6 +33,105 @@
             android:layout_marginTop="50px"
             android:background="@drawable/bt_shape">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="right"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tx_num_0"
+                    android:layout_width="40px"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/a09_tv_num_shape"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textSize="25sp" />
+
+                <TextView
+                    android:id="@+id/tx_num_1"
+                    android:layout_width="40px"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/a09_tv_num_shape"
+                    android:gravity="center"
+                    android:textSize="55sp" />
+
+                <TextView
+                    android:id="@+id/tx_num_2"
+                    android:layout_width="40px"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/a09_tv_num_shape"
+                    android:gravity="center"
+                    android:textSize="55sp" />
+
+                <TextView
+                    android:id="@+id/tx_num_3"
+                    android:layout_width="40px"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/a09_tv_num_shape"
+                    android:gravity="center"
+                    android:textSize="55sp" />
+
+                <TextView
+                    android:id="@+id/tx_num_4"
+                    android:layout_width="40px"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/a09_tv_num_shape"
+                    android:gravity="center"
+                    android:textSize="55sp" />
+
+                <TextView
+                    android:id="@+id/tx_num_5"
+                    android:layout_width="40px"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/a09_tv_num_shape"
+                    android:gravity="center"
+                    android:textSize="55sp" />
+
+                <TextView
+                    android:id="@+id/tx_num_6"
+                    android:layout_width="40px"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/a09_tv_num_shape"
+                    android:gravity="center"
+                    android:textSize="55sp" />
+
+                <TextView
+                    android:id="@+id/tx_num_7"
+                    android:layout_width="40px"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/a09_tv_num_shape"
+                    android:gravity="center"
+                    android:textSize="55sp" />
+
+                <TextView
+                    android:id="@+id/tx_num_8"
+                    android:layout_width="40px"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/a09_tv_num_shape"
+                    android:gravity="center"
+                    android:textSize="55sp" />
+
+                <TextView
+                    android:id="@+id/tx_num_9"
+                    android:layout_width="40px"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/a09_tv_num_shape"
+                    android:gravity="center"
+                    android:textSize="55sp" />
+
+            </LinearLayout>
+
         </FrameLayout>
 
         <FrameLayout
@@ -42,6 +141,16 @@
             android:layout_marginLeft="1505px"
             android:layout_marginTop="100px"
             android:background="@drawable/bt_shape">
+
+            <ImageButton
+                android:id="@+id/ib_num_7"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/bt_num_selector"
+                android:text="7"
+                android:textColor="@android:color/white"
+                android:textSize="35sp" />
 
         </FrameLayout>
 
@@ -53,6 +162,16 @@
             android:layout_marginTop="100px"
             android:background="@drawable/bt_shape">
 
+            <ImageButton
+                android:id="@+id/ib_num_8"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/bt_num_selector"
+                android:text="8"
+                android:textColor="@android:color/white"
+                android:textSize="35sp" />
+
         </FrameLayout>
 
         <FrameLayout
@@ -63,6 +182,16 @@
             android:layout_marginTop="100px"
             android:background="@drawable/bt_shape">
 
+            <ImageButton
+                android:id="@+id/ib_num_9"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/bt_num_selector"
+                android:text="9"
+                android:textColor="@android:color/white"
+                android:textSize="35sp" />
+
         </FrameLayout>
 
         <FrameLayout
@@ -72,6 +201,16 @@
             android:layout_marginLeft="1805px"
             android:layout_marginTop="100px"
             android:background="@drawable/bt_shape">
+
+            <ImageButton
+                android:id="@+id/ib_num_0"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/bt_num_selector"
+                android:text="0"
+                android:textColor="@android:color/white"
+                android:textSize="35sp" />
 
         </FrameLayout>
 
@@ -83,6 +222,16 @@
             android:layout_marginTop="200px"
             android:background="@drawable/bt_shape">
 
+            <ImageButton
+                android:id="@+id/ib_num_4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/bt_num_selector"
+                android:text="4"
+                android:textColor="@android:color/white"
+                android:textSize="35sp" />
+
         </FrameLayout>
 
         <FrameLayout
@@ -92,6 +241,16 @@
             android:layout_marginLeft="1605px"
             android:layout_marginTop="200px"
             android:background="@drawable/bt_shape">
+
+            <ImageButton
+                android:id="@+id/ib_num_5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/bt_num_selector"
+                android:text="5"
+                android:textColor="@android:color/white"
+                android:textSize="35sp" />
 
         </FrameLayout>
 
@@ -103,6 +262,16 @@
             android:layout_marginTop="200px"
             android:background="@drawable/bt_shape">
 
+            <ImageButton
+                android:id="@+id/ib_num_6"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/bt_num_selector"
+                android:text="6"
+                android:textColor="@android:color/white"
+                android:textSize="35sp" />
+
         </FrameLayout>
 
         <FrameLayout
@@ -112,6 +281,17 @@
             android:layout_marginLeft="1805px"
             android:layout_marginTop="200px"
             android:background="@drawable/bt_shape">
+
+            <ImageButton
+                android:id="@+id/ib_num_esc"
+                android:layout_width="114px"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/bt_num_selector"
+                android:text="Esc"
+                android:textAllCaps="false"
+                android:textColor="@android:color/black"
+                android:textSize="25sp" />
 
         </FrameLayout>
 
@@ -123,6 +303,16 @@
             android:layout_marginTop="300px"
             android:background="@drawable/bt_shape">
 
+            <ImageButton
+                android:id="@+id/ib_num_1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/bt_num_selector"
+                android:text="1"
+                android:textColor="@android:color/white"
+                android:textSize="35sp" />
+
         </FrameLayout>
 
         <FrameLayout
@@ -132,6 +322,16 @@
             android:layout_marginLeft="1605px"
             android:layout_marginTop="300px"
             android:background="@drawable/bt_shape">
+
+            <ImageButton
+                android:id="@+id/ib_num_2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/bt_num_selector"
+                android:text="2"
+                android:textColor="@android:color/white"
+                android:textSize="35sp" />
 
         </FrameLayout>
 
@@ -143,6 +343,16 @@
             android:layout_marginTop="300px"
             android:background="@drawable/bt_shape">
 
+            <ImageButton
+                android:id="@+id/ib_num_3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/bt_num_selector"
+                android:text="3"
+                android:textColor="@android:color/white"
+                android:textSize="35sp" />
+
         </FrameLayout>
 
         <FrameLayout
@@ -152,6 +362,16 @@
             android:layout_marginLeft="1805px"
             android:layout_marginTop="300px"
             android:background="@drawable/bt_shape">
+
+            <ImageButton
+                android:id="@+id/ib_num_ok"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/bt_num_selector"
+                android:text="OK"
+                android:textColor="@android:color/white"
+                android:textSize="35sp" />
 
         </FrameLayout>
 
@@ -172,6 +392,15 @@
             android:layout_marginLeft="1803px"
             android:layout_marginTop="407px"
             android:background="@drawable/bt_shape">
+
+            <TextView
+                android:id="@+id/tx_washing"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/a09_tv_num_shape"
+                android:gravity="center"
+                android:textSize="40sp" />
 
         </FrameLayout>
 
