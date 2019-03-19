@@ -76,13 +76,19 @@ public class B09Activity extends Activity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        serialPortUtil.closeSerialPort();
+//        serialPortUtil.closeSerialPort();
     }
 
     @Override
-    protected void onRestart() {
-        super.onRestart();
+    protected void onPause() {
         price = new BigDecimal("0");
+        super.onPause();
+    }
+
+    @Override
+    protected void onStop() {
+        price = new BigDecimal("0");
+        super.onStop();
     }
 
     @Override

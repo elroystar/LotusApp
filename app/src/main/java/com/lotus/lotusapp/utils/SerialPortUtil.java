@@ -47,6 +47,7 @@ public class SerialPortUtil {
      */
     public void closeSerialPort() {
         Log.i("test", "关闭串口");
+        serialPort = null;
         try {
             if (inputStream != null) {
                 inputStream.close();
