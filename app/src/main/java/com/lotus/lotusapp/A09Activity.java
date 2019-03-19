@@ -589,7 +589,7 @@ public class A09Activity extends Activity {
                                     }
                                     // 显示洗衣次数及奖励
                                     TextView tv = findViewById(R.id.tx_washing);
-                                    tv.setText(user.getWashingNum());
+                                    tv.setText(Integer.toString(user.getWashingNum()));
                                 } else {
                                     // 自动注册
                                     user.setPhone(stringTx);
