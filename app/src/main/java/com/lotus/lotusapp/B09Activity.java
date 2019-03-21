@@ -78,7 +78,7 @@ public class B09Activity extends Activity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-//        serialPortUtil.closeSerialPort();
+        serialPortUtil.closeSerialPort();
     }
 
     @Override
@@ -756,9 +756,11 @@ public class B09Activity extends Activity {
         }
         textView = findViewById(R.id.coin_price);
         textView.setText(showPrice);
+        Log.d("B09Activity", "price：" + price.toString());
+        Log.d("B09Activity", "coinPrice：" + coinPrice.toString());
         if (price.compareTo(this.coinPrice) == -1) {
             serialPortUtil.sendSerialPort(CmdConstance.CONTINUE_COIN);
-        } else {
+        } else  {
             serialPortUtil.sendSerialPort(CmdConstance.STOP_COIN);
             // 发送洗衣指令
             sendWashingCmd();
