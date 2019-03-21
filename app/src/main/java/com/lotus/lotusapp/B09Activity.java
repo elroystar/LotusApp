@@ -82,10 +82,15 @@ public class B09Activity extends Activity {
     }
 
     @Override
+    protected void onStart() {
+        super.onStart();
+        price = new BigDecimal("0");
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_b09);
-        price = new BigDecimal("0");
         //注册EventBus
         EventBus.getDefault().register(this);
         // 加载声音
@@ -757,7 +762,7 @@ public class B09Activity extends Activity {
         textView = findViewById(R.id.coin_price);
         textView.setText(showPrice);
         Log.d("B09Activity", "price：" + price.toString());
-        Log.d("B09Activity", "coinPrice：" + coinPrice.toString());
+        Log.d("B09Activity", "coinPrice：" + this.coinPrice.toString());
         if (!"0".equals(showPrice)) {
             serialPortUtil.sendSerialPort(CmdConstance.CONTINUE_COIN);
         } else {
