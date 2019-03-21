@@ -74,6 +74,7 @@ public class B09Activity extends Activity {
     private Handler handler = new Handler();
     // 是否免费
     private Boolean isFree = false;
+
     @Override
     protected void onDestroy() {
         super.onDestroy();
@@ -93,18 +94,20 @@ public class B09Activity extends Activity {
         machine = i.getParcelableExtra("washingMachine");
         En = i.getStringExtra("en");
         user = i.getParcelableExtra("user");
-        if (user.getWashingNum() == 10) {
-            machine.setStandardPriceCoin("00.0");
-            machine.setStandardPriceMobile("00.0");
-            machine.setRinsePriceCoin("00.0");
-            machine.setRinsePriceMobile("00.0");
-            machine.setDryingPriceCoin("00.0");
-            machine.setDryingPriceMobile("00.0");
-            machine.setCowboyPriceCoin("00.0");
-            machine.setCowboyPriceMobile("00.0");
-            machine.setSheetsPriceCoin("00.0");
-            machine.setSheetsPriceMobile("00.0");
-            isFree = true;
+        if (null != user.getWashingNum()) {
+            if (user.getWashingNum() == 10) {
+                machine.setStandardPriceCoin("00.0");
+                machine.setStandardPriceMobile("00.0");
+                machine.setRinsePriceCoin("00.0");
+                machine.setRinsePriceMobile("00.0");
+                machine.setDryingPriceCoin("00.0");
+                machine.setDryingPriceMobile("00.0");
+                machine.setCowboyPriceCoin("00.0");
+                machine.setCowboyPriceMobile("00.0");
+                machine.setSheetsPriceCoin("00.0");
+                machine.setSheetsPriceMobile("00.0");
+                isFree = true;
+            }
         }
         // 默认标准和送洗衣机默认选中
         textView = findViewById(R.id.bt_standard);
