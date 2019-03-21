@@ -65,44 +65,19 @@ public class B09Activity extends Activity {
     private BigDecimal mobilePrice;
     // 硬币支付价格
     private BigDecimal coinPrice;
-    private BigDecimal price;
+    private BigDecimal price = new BigDecimal("0");
     // 价格继续数组
     private Set<String> priceSet = new HashSet<>();
     // User实体类定义
     private User user = new User();
     // 定义handler对象
     private Handler handler = new Handler();
-
+    // 是否免费
+    private Boolean isFree = false;
     @Override
     protected void onDestroy() {
         super.onDestroy();
 //        serialPortUtil.closeSerialPort();
-    }
-
-    /*@Override
-    protected void onPause() {
-        price = new BigDecimal("0");
-        super.onPause();
-    }
-
-    @Override
-    protected void onStop() {
-        price = new BigDecimal("0");
-        super.onStop();
-    }*/
-
-    @Override
-    protected void onStart() {
-        serialPortUtil = new SerialPortUtil();
-        serialPortUtil.openSerialPort();
-        super.onStart();
-    }
-
-    @Override
-    protected void onResume() {
-        serialPortUtil = new SerialPortUtil();
-        serialPortUtil.openSerialPort();
-        super.onResume();
     }
 
     @Override
@@ -115,9 +90,22 @@ public class B09Activity extends Activity {
         // 加载声音
         initSound();
         Intent i = getIntent();
-        machine = i.getParcelableExtra("WashingMachine");
-        En = i.getStringExtra("En");
+        machine = i.getParcelableExtra("washingMachine");
+        En = i.getStringExtra("en");
         user = i.getParcelableExtra("user");
+        if (user.getWashingNum() == 10) {
+            machine.setStandardPriceCoin("00.0");
+            machine.setStandardPriceMobile("00.0");
+            machine.setRinsePriceCoin("00.0");
+            machine.setRinsePriceMobile("00.0");
+            machine.setDryingPriceCoin("00.0");
+            machine.setDryingPriceMobile("00.0");
+            machine.setCowboyPriceCoin("00.0");
+            machine.setCowboyPriceMobile("00.0");
+            machine.setSheetsPriceCoin("00.0");
+            machine.setSheetsPriceMobile("00.0");
+            isFree = true;
+        }
         // 默认标准和送洗衣机默认选中
         textView = findViewById(R.id.bt_standard);
         priceSet.add(STANDARD);
@@ -144,6 +132,7 @@ public class B09Activity extends Activity {
                         // 进入B界面
                         Intent i = new Intent(B09Activity.this, A09Activity.class);
                         startActivity(i);
+                        finish();
                         break;
                 }
                 return false;
@@ -161,11 +150,18 @@ public class B09Activity extends Activity {
                         playSound();
                         // 置灰所有按键
                         ashAllButton();
-                        // TODO: 2019/3/19 随机位置显示付款二维码
+                        // 判断价格是否为0
+                        if (isFree) {
+                            sendWashingCommond();
+                        } else {
+                            // TODO: 2019/3/19 随机位置显示付款二维码
 
-                        // 打开串口，启动投币箱
-                        serialPortUtil.sendSerialPort(CmdConstance.START_COIN);
-                        handler.postDelayed(returnA09, 10000);
+                            // 打开串口，启动投币箱
+                            serialPortUtil = new SerialPortUtil();
+                            serialPortUtil.openSerialPort();
+                            serialPortUtil.sendSerialPort(CmdConstance.START_COIN);
+                            handler.postDelayed(returnA09, 10000);
+                        }
                         break;
                 }
                 return false;
@@ -753,53 +749,56 @@ public class B09Activity extends Activity {
         if (price.compareTo(this.coinPrice) == -1) {
             serialPortUtil.sendSerialPort(CmdConstance.CONTINUE_COIN);
         } else {
-//            serialPortUtil.sendSerialPort(CmdConstance.STOP_COIN);
-            StringBuilder modelSb = new StringBuilder("00000000");
-            StringBuilder materielSb = new StringBuilder("00000000");
-            // 转换洗衣指令
-            for (String s : priceSet) {
-                if (DISINFECTION_BEFORE.equals(s)) {
-                    modelSb.replace(0, 1, "1");
-                }
-                if (STANDARD.equals(s)) {
-                    modelSb.replace(1, 2, "1");
-                }
-                if (SHEETS.equals(s)) {
-                    modelSb.replace(2, 3, "1");
-                }
-                if (COWBOY.equals(s)) {
-                    modelSb.replace(3, 4, "1");
-                }
-                if (RINSE.equals(s)) {
-                    modelSb.replace(4, 5, "1");
-                }
-                if (DISINFECTION_ING.equals(s)) {
-                    materielSb.replace(2, 3, "1");
-                }
-                if (FREE.equals(s)) {
-                    materielSb.replace(3, 4, "1");
-                }
-                if (WASHING_LIQUID.equals(s)) {
-                    materielSb.replace(4, 5, "1");
-                }
-                if (SOFTENING.equals(s)) {
-                    materielSb.replace(5, 6, "1");
-                }
+            serialPortUtil.sendSerialPort(CmdConstance.STOP_COIN);
+            // 发送洗衣指令
+            sendWashingCommond();
+        }
+    }
+
+    /**
+     * 发送洗衣指令
+     */
+    private void sendWashingCommond() {
+        StringBuilder modelSb = new StringBuilder("00000000");
+        StringBuilder materielSb = new StringBuilder("00000000");
+        // 转换洗衣指令
+        for (String s : priceSet) {
+            if (DISINFECTION_BEFORE.equals(s)) {
+                modelSb.replace(0, 1, "1");
             }
-            String model = Integer.toHexString(Integer.parseInt(modelSb.toString(), 2));
-            String materiel = Integer.toHexString(Integer.parseInt(materielSb.toString(), 2));
-            Log.d("B09Activity", "发送model：" + model);
-            Log.d("B09Activity", "发送modelSb：" + modelSb.toString());
-            Log.d("B09Activity", "发送modelInt：" + Integer.parseInt(materielSb.toString(), 2));
-            Log.d("B09Activity", "发送materiel：" + materiel);
-            Log.d("B09Activity", "发送materielSb：" + materielSb.toString());
-            Log.d("B09Activity", "发送materielInt：" + Integer.parseInt(materielSb.toString(), 2));
-            Log.d("B09Activity", "洗衣机码：" + machine.getCommand());
-            serialPortUtil.sendSerialPort(machine.getCommand() + model + materiel);
-            if (!"".equals(user.getPhone()) && null != user.getPhone()) {
-                // 查询数据库
-                sqLiteDbHelper = new SQLiteDbHelper(getApplicationContext());
-                SQLiteDatabase dbWrit = sqLiteDbHelper.getWritableDatabase();
+            if (STANDARD.equals(s)) {
+                modelSb.replace(1, 2, "1");
+            }
+            if (SHEETS.equals(s)) {
+                modelSb.replace(2, 3, "1");
+            }
+            if (COWBOY.equals(s)) {
+                modelSb.replace(3, 4, "1");
+            }
+            if (RINSE.equals(s)) {
+                modelSb.replace(4, 5, "1");
+            }
+            if (DISINFECTION_ING.equals(s)) {
+                materielSb.replace(2, 3, "1");
+            }
+            if (FREE.equals(s)) {
+                materielSb.replace(3, 4, "1");
+            }
+            if (WASHING_LIQUID.equals(s)) {
+                materielSb.replace(4, 5, "1");
+            }
+            if (SOFTENING.equals(s)) {
+                materielSb.replace(5, 6, "1");
+            }
+        }
+        String model = Integer.toHexString(Integer.parseInt(modelSb.toString(), 2));
+        String materiel = Integer.toHexString(Integer.parseInt(materielSb.toString(), 2));
+        serialPortUtil.sendSerialPort(machine.getCommand() + model + materiel);
+        if (!"".equals(user.getPhone()) && null != user.getPhone()) {
+            // 查询数据库
+            sqLiteDbHelper = new SQLiteDbHelper(getApplicationContext());
+            SQLiteDatabase dbWrit = sqLiteDbHelper.getWritableDatabase();
+            try {
                 int washingNum = user.getWashingNum();
                 int rewardNum = user.getRewardNum();
                 int rewardTotal = user.getRewardTotal();
@@ -816,16 +815,18 @@ public class B09Activity extends Activity {
                         "washing_num = " + washingNum + ", " +
                         "reward_num=" + rewardNum + ", " +
                         "reward_total = " + rewardTotal + " where phone = '" + user.getPhone() + "'");
-                // 显示倒计时提示框
-                alertMsg("tips", "请前往" + machine.getNum() + "号洗衣机洗衣！");
-                /** 倒计时6秒，一次1秒 */
-                countDownTimer.start();
-            } else {
-                // 显示倒计时提示框
-                alertMsg("tips", "请前往" + machine.getNum() + "号洗衣机洗衣！");
-                /** 倒计时6秒，一次1秒 */
-                countDownTimer.start();
+            } finally {
+                dbWrit.close();
             }
+            // 显示倒计时提示框
+            alertMsg("tips", "请前往" + machine.getNum() + "号洗衣机洗衣！");
+            /** 倒计时6秒，一次1秒 */
+            countDownTimer.start();
+        } else {
+            // 显示倒计时提示框
+            alertMsg("tips", "请前往" + machine.getNum() + "号洗衣机洗衣！");
+            /** 倒计时6秒，一次1秒 */
+            countDownTimer.start();
         }
     }
 
@@ -842,10 +843,10 @@ public class B09Activity extends Activity {
         public void onFinish() {
             // TODO: 2019/3/19 关闭二维码支付
 
-            price = new BigDecimal("0");
             // 返回A界面
             Intent i = new Intent(B09Activity.this, A09Activity.class);
             startActivity(i);
+            finish();
         }
     };
 
@@ -857,12 +858,12 @@ public class B09Activity extends Activity {
         public void run() {
             // TODO: 2019/3/19 关闭二维码支付
 
-            price = new BigDecimal("0");
             // 关闭投币箱
             serialPortUtil.sendSerialPort(CmdConstance.STOP_COIN);
             // 返回A界面
             Intent i = new Intent(B09Activity.this, A09Activity.class);
             startActivity(i);
+            finish();
         }
     };
 

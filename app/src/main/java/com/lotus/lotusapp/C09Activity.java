@@ -81,6 +81,7 @@ public class C09Activity extends Activity {
                         playSound();
                         Intent i = new Intent(C09Activity.this, A09Activity.class);
                         startActivity(i);
+                        finish();
                         break;
                 }
                 return false;

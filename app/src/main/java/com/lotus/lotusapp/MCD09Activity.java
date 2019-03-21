@@ -70,6 +70,7 @@ public class MCD09Activity extends Activity {
                         playSound();
                         Intent i = new Intent(MCD09Activity.this, D09Activity.class);
                         startActivity(i);
+                        finish();
                         break;
                 }
                 return false;

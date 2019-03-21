@@ -108,6 +108,7 @@ public class D09Activity extends Activity {
                         // 跳转MCD界面
                         Intent i = new Intent(D09Activity.this, MCD09Activity.class);
                         startActivity(i);
+                        finish();
                         break;
                 }
                 return false;
@@ -119,6 +120,7 @@ public class D09Activity extends Activity {
             public void onClick(View v) {
                 Intent i = new Intent(D09Activity.this, A09Activity.class);
                 startActivity(i);
+                finish();
             }
         });
         // 返回安卓

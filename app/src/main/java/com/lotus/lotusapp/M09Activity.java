@@ -85,6 +85,7 @@ public class M09Activity extends Activity {
                                 // 跳转C界面
                                 Intent i = new Intent(M09Activity.this, D09Activity.class);
                                 startActivity(i);
+                                finish();
                             } else {
                                 // 校验C界面，先判断密码是否启用
                                 if ("1".equals(cRule.getState())) {
@@ -94,6 +95,7 @@ public class M09Activity extends Activity {
                                         // 跳转C界面
                                         Intent i = new Intent(M09Activity.this, C09Activity.class);
                                         startActivity(i);
+                                        finish();
                                     } else {
                                         alertMsg("Tips", "密码输入有误，请重新输入！");
                                     }
@@ -102,6 +104,7 @@ public class M09Activity extends Activity {
                                         // 跳转C界面
                                         Intent i = new Intent(M09Activity.this, C09Activity.class);
                                         startActivity(i);
+                                        finish();
                                     } else {
                                         alertMsg("Tips", "密码输入有误，请重新输入！");
                                     }
@@ -127,6 +130,7 @@ public class M09Activity extends Activity {
                         playSound();
                         Intent i = new Intent(M09Activity.this, A09Activity.class);
                         startActivity(i);
+                        finish();
                         break;
                 }
                 return false;
