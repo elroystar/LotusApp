@@ -54,7 +54,6 @@ public class SerialPortUtil {
             if (outputStream != null) {
                 outputStream.close();
             }
-            serialPort.close();
             isStart = false;
         } catch (IOException e) {
             e.printStackTrace();
