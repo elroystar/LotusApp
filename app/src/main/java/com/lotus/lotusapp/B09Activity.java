@@ -1,7 +1,6 @@
 package com.lotus.lotusapp;
 
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.media.AudioManager;
@@ -15,6 +14,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.lotus.lotusapp.constance.CmdConstance;
 import com.lotus.lotusapp.db.SQLiteDbHelper;
@@ -675,17 +675,24 @@ public class B09Activity extends Activity {
     }
 
     /**
-     * 弹框提示
-     *
-     * @param tips
-     * @param msg
+     * 显示toast，自己定义显示长短。
+     * param1:activity  传入context
+     * param2:word   我们需要显示的toast的内容
+     * param3:time length  long类型，我们传入的时间长度（如500）
      */
-    private void alertMsg(String tips, String msg) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(B09Activity.this);
-        builder.setTitle(tips);
-        builder.setMessage(msg);
-        builder.setPositiveButton("OK", null);
-        builder.show();
+    public static void showToast(final Activity activity, final String word, final long time) {
+        activity.runOnUiThread(new Runnable() {
+            public void run() {
+                final Toast toast = Toast.makeText(activity, word, Toast.LENGTH_LONG);
+                toast.show();
+                Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    public void run() {
+                        toast.cancel();
+                    }
+                }, time);
+            }
+        });
     }
 
     /**
@@ -822,12 +829,12 @@ public class B09Activity extends Activity {
                 dbWrit.close();
             }
             // 显示倒计时提示框
-            alertMsg("tips", "请前往" + machine.getNum() + "号洗衣机洗衣！");
+            showToast(B09Activity.this, "请前往" + machine.getNum() + "号洗衣机洗衣！", 5000);
             /** 倒计时6秒，一次1秒 */
             countDownTimer.start();
         } else {
             // 显示倒计时提示框
-            alertMsg("tips", "请前往" + machine.getNum() + "号洗衣机洗衣！");
+            showToast(B09Activity.this, "请前往" + machine.getNum() + "号洗衣机洗衣！", 5000);
             /** 倒计时6秒，一次1秒 */
             countDownTimer.start();
         }
