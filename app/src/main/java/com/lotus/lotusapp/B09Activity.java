@@ -819,6 +819,8 @@ public class B09Activity extends Activity {
                 if (washingNum == 10) {
                     washingNum = 0;
                     rewardNum = 1;
+                } else {
+                    washingNum++;
                 }
                 dbWrit.execSQL("update user set " +
                         "washing_total = washing_total + 1, " +
