@@ -91,8 +91,8 @@ public class B09Activity extends Activity {
         // 加载声音
         initSound();
         Intent i = getIntent();
-        machine = i.getParcelableExtra("washingMachine");
-        En = i.getStringExtra("en");
+        machine = i.getParcelableExtra("WashingMachine");
+        En = i.getStringExtra("En");
         user = i.getParcelableExtra("user");
         if (null != user.getWashingNum()) {
             if (user.getWashingNum() == 10) {
