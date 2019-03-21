@@ -758,9 +758,9 @@ public class B09Activity extends Activity {
         textView.setText(showPrice);
         Log.d("B09Activity", "price：" + price.toString());
         Log.d("B09Activity", "coinPrice：" + coinPrice.toString());
-        if (price.compareTo(this.coinPrice) == -1) {
+        if (!"0".equals(showPrice)) {
             serialPortUtil.sendSerialPort(CmdConstance.CONTINUE_COIN);
-        } else  {
+        } else {
             serialPortUtil.sendSerialPort(CmdConstance.STOP_COIN);
             // 发送洗衣指令
             sendWashingCmd();
