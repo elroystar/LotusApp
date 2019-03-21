@@ -99,8 +99,8 @@ public class A09Activity extends Activity {
                             playSound();
                             // 进入B界面
                             Intent i = new Intent(A09Activity.this, B09Activity.class);
-                            i.putExtra("washingMachine", washingMachines.get(0));
-                            i.putExtra("en", En);
+                            i.putExtra("WashingMachine", washingMachines.get(0));
+                            i.putExtra("En", En);
                             i.putExtra("user", user);
                             startActivity(i);
                             break;
