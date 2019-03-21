@@ -155,7 +155,7 @@ public class B09Activity extends Activity {
                         ashAllButton();
                         // 判断价格是否为0
                         if (isFree) {
-                            sendWashingCommond();
+                            sendWashingCmd();
                         } else {
                             // TODO: 2019/3/19 随机位置显示付款二维码
 
@@ -754,14 +754,14 @@ public class B09Activity extends Activity {
         } else {
             serialPortUtil.sendSerialPort(CmdConstance.STOP_COIN);
             // 发送洗衣指令
-            sendWashingCommond();
+            sendWashingCmd();
         }
     }
 
     /**
      * 发送洗衣指令
      */
-    private void sendWashingCommond() {
+    private void sendWashingCmd() {
         StringBuilder modelSb = new StringBuilder("00000000");
         StringBuilder materielSb = new StringBuilder("00000000");
         // 转换洗衣指令
