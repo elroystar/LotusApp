@@ -102,24 +102,24 @@ public class B09Activity extends Activity {
         user = i.getParcelableExtra("user");
         if (null != user.getWashingNum()) {
             if (user.getWashingNum() == 10) {
-                machine.setStandardPriceCoin("00.0");
-                machine.setStandardPriceMobile("00.0");
-                machine.setRinsePriceCoin("00.0");
-                machine.setRinsePriceMobile("00.0");
-                machine.setDryingPriceCoin("00.0");
-                machine.setDryingPriceMobile("00.0");
-                machine.setCowboyPriceCoin("00.0");
-                machine.setCowboyPriceMobile("00.0");
-                machine.setSheetsPriceCoin("00.0");
-                machine.setSheetsPriceMobile("00.0");
-                machine.setWashingLiquidPriceCoin("00.0");
-                machine.setWashingLiquidPriceMobile("00.0");
-                machine.setDisinfectionBeforePriceCoin("00.0");
-                machine.setDisinfectionBeforePriceMobile("00.0");
-                machine.setDisinfectionIngPriceCoin("00.0");
-                machine.setDisinfectionIngPriceMobile("00.0");
-                machine.setSofteningPriceCoin("00.0");
-                machine.setSofteningPriceMobile("00.0");
+//                machine.setStandardPriceCoin("00.0");
+//                machine.setStandardPriceMobile("00.0");
+//                machine.setRinsePriceCoin("00.0");
+//                machine.setRinsePriceMobile("00.0");
+//                machine.setDryingPriceCoin("00.0");
+//                machine.setDryingPriceMobile("00.0");
+//                machine.setCowboyPriceCoin("00.0");
+//                machine.setCowboyPriceMobile("00.0");
+//                machine.setSheetsPriceCoin("00.0");
+//                machine.setSheetsPriceMobile("00.0");
+//                machine.setWashingLiquidPriceCoin("00.0");
+//                machine.setWashingLiquidPriceMobile("00.0");
+//                machine.setDisinfectionBeforePriceCoin("00.0");
+//                machine.setDisinfectionBeforePriceMobile("00.0");
+//                machine.setDisinfectionIngPriceCoin("00.0");
+//                machine.setDisinfectionIngPriceMobile("00.0");
+//                machine.setSofteningPriceCoin("00.0");
+//                machine.setSofteningPriceMobile("00.0");
                 isFree = true;
             }
         }
@@ -670,6 +670,10 @@ public class B09Activity extends Activity {
                         break;
                 }
             }
+        }
+        if (isFree) {
+            mobilePrice = new BigDecimal("0");
+            coinPrice = new BigDecimal("0");
         }
         textView = findViewById(R.id.mobile_price);
         textView.setText(mobilePrice.toString());
