@@ -159,15 +159,16 @@ public class B09Activity extends Activity {
                         playSound();
                         // 置灰所有按键
                         ashAllButton();
+                        // 打开串口
+                        serialPortUtil = new SerialPortUtil();
+                        serialPortUtil.openSerialPort();
                         // 判断价格是否为0
                         if (isFree) {
                             sendWashingCmd();
                         } else {
                             // TODO: 2019/3/19 随机位置显示付款二维码
 
-                            // 打开串口，启动投币箱
-                            serialPortUtil = new SerialPortUtil();
-                            serialPortUtil.openSerialPort();
+                            // 发送接收投币指令
                             serialPortUtil.sendSerialPort(CmdConstance.START_COIN);
                             handler.postDelayed(returnA09, 10000);
                         }
