@@ -112,6 +112,14 @@ public class B09Activity extends Activity {
                 machine.setCowboyPriceMobile("00.0");
                 machine.setSheetsPriceCoin("00.0");
                 machine.setSheetsPriceMobile("00.0");
+                machine.setWashingLiquidPriceCoin("00.0");
+                machine.setWashingLiquidPriceMobile("00.0");
+                machine.setDisinfectionBeforePriceCoin("00.0");
+                machine.setDisinfectionBeforePriceMobile("00.0");
+                machine.setDisinfectionIngPriceCoin("00.0");
+                machine.setDisinfectionIngPriceMobile("00.0");
+                machine.setSofteningPriceCoin("00.0");
+                machine.setSofteningPriceMobile("00.0");
                 isFree = true;
             }
         }
