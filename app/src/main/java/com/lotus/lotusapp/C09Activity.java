@@ -57,6 +57,13 @@ public class C09Activity extends Activity {
     private String testShortProgram = "close";
 
     @Override
+    protected void onDestroy() {
+        serialPortUtil.closeSerialPort();
+        EventBus.getDefault().unregister(this);
+        super.onDestroy();
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_c09);
@@ -489,13 +496,6 @@ public class C09Activity extends Activity {
             }
         });
 
-    }
-
-    @Override
-    protected void onDestroy() {
-        serialPortUtil.closeSerialPort();
-        EventBus.getDefault().unregister(this);
-        super.onDestroy();
     }
 
     /**

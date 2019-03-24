@@ -77,22 +77,23 @@ public class B09Activity extends Activity {
 
     @Override
     protected void onDestroy() {
-        super.onDestroy();
         serialPortUtil.closeSerialPort();
+        EventBus.getDefault().unregister(this);
+        super.onDestroy();
     }
 
     @Override
     protected void onStart() {
-        super.onStart();
+        //注册EventBus
+        EventBus.getDefault().register(this);
         price = new BigDecimal("0");
+        super.onStart();
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_b09);
-        //注册EventBus
-        EventBus.getDefault().register(this);
         // 加载声音
         initSound();
         Intent i = getIntent();
